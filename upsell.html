@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Last Step · Legacy Wealth Blueprint + Legacy Wealth AI — $1,776</title>
-  <meta name="description" content="Your Wealth Plan is secured. Add the complete Legacy Wealth Blueprint video course and your private Legacy Wealth AI to today's order — one time, $1,776.">
+  <title>One Last Step · Legacy Wealth Blueprint + Legacy Wealth AI · $1,776</title>
+  <meta name="description" content="Your Wealth Plan is secured. Add the full Legacy Wealth Blueprint video course and your private Legacy Wealth AI to today's order. One time, $1,776.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -523,6 +523,55 @@
       line-height: 1;
     }
 
+    .price-promo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .price-was {
+      font-family: var(--mono);
+      font-size: 0.62em;
+      font-weight: 400;
+      color: var(--faint);
+      text-decoration: line-through;
+      letter-spacing: 0;
+    }
+
+    .price-now { color: inherit; }
+
+    .decision-price .price-was {
+      font-size: 0.45em;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .scta-price .price-was {
+      font-size: 0.72em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .hero-lede .price-promo {
+      gap: 0.35rem;
+    }
+
+    .hero-lede .price-was {
+      font-size: 0.88em;
+      color: var(--faint);
+    }
+
+    .btn-price-promo .price-was,
+    .btn-primary .price-was,
+    .btn-primary-lg .price-was {
+      font-size: 0.82em;
+      font-weight: 400;
+      text-decoration: line-through;
+      opacity: 0.65;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .btn-primary .price-was { font-size: 0.78em; }
+
     .uc-terms {
       font-family: var(--mono);
       font-size: 0.6rem;
@@ -943,7 +992,7 @@
         width: calc(100% - 1.5rem);
         left: 50%;
         bottom: max(0.75rem, env(safe-area-inset-bottom));
-        border-radius: var(--radius-md);
+        border-radius: 100px;
         padding: 0.65rem 0.75rem;
         gap: 0.65rem;
         justify-content: space-between;
@@ -976,8 +1025,8 @@
       </span>
       <a href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
          class="btn-primary"
-         aria-label="Add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776">
-        Add · $1,776
+         aria-label="Add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776, regularly $5,000">
+        Add · <span class="price-was">$5,000</span> $1,776
       </a>
     </div>
   </header>
@@ -992,23 +1041,23 @@
 
           <div class="hero-copy">
             <span class="hero-eyebrow-1">&#9733; Members-Only Upgrade &middot; Step 2 of 2</span>
-            <span class="hero-eyebrow-2">A one-time offer &#8212; it won't be shown on this page again</span>
+            <span class="hero-eyebrow-2">A one-time offer. You won't see it on this page again.</span>
 
             <h1 class="hero-h1" id="hero-h1">
-              Your plan names the moves.<br>
-              This is where you learn to make them.
+              Your plan will show you the moves.<br>
+              This is how you actually make them.
             </h1>
 
             <p class="hero-lede">
-              Your Wealth Plan is locked in. Add the <strong>Legacy Wealth Blueprint</strong> and <strong>Legacy Wealth AI</strong> to execute it — <strong>$1,776</strong>.
+              Your Wealth Plan is secured and on its way. Add the <strong>Legacy Wealth Blueprint</strong> and <strong>Legacy Wealth AI</strong> now, so you're ready to act the moment it lands. <strong class="price-promo"><span class="price-was">$5,000</span> <span class="price-now">$1,776</span></strong>.
             </p>
 
             <div class="hero-cta-group">
-              <a class="btn-primary-lg"
+              <a class="btn-primary-lg btn-price-promo"
                  id="acceptOffer"
                  href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
-                 aria-label="Yes — add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776">
-                Yes &#8212; Add the Blueprint + AI &middot; $1,776
+                 aria-label="Yes, add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776, regularly $5,000">
+                Yes, Add the Blueprint + AI &middot; <span class="price-was">$5,000</span> $1,776
               </a>
               <p class="hero-reassurance">One-time payment &middot; Charged to the card you just used &middot; Instant lifetime access</p>
             </div>
@@ -1016,7 +1065,7 @@
             <a class="decline-link"
                id="declineOfferTop"
                href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/decline">
-              No thanks &#8212; I'll keep just my Wealth Plan
+              No thanks, continue with my Wealth Plan
             </a>
           </div>
 
@@ -1027,18 +1076,18 @@
                 <span class="uc-no">1</span>
                 <div>
                   <div class="uc-h">Legacy Wealth Blueprint</div>
-                  <div class="uc-d">All 5 pillars, 100+ lessons — taught move by move.</div>
+                  <div class="uc-d">All 5 pillars and 100+ lessons, taught move by move.</div>
                 </div>
               </div>
               <div class="uc-item">
                 <span class="uc-no">2</span>
                 <div>
                   <div class="uc-h">Legacy Wealth AI</div>
-                  <div class="uc-d">Framework-trained answers when you're stuck on a move.</div>
+                  <div class="uc-d">Answers trained on Preston's system, for when you're stuck on a move.</div>
                 </div>
               </div>
               <div class="uc-foot">
-                <span class="uc-price">$1,776</span>
+                <span class="uc-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></span>
                 <span class="uc-terms">Added to today's order</span>
               </div>
             </div>
@@ -1054,30 +1103,30 @@
         <span class="kicker">What You're Adding</span>
         <h2 class="section-h2" id="unlocks-h2">The course and the coach that turn your plan into action.</h2>
         <p class="body-text prose-wrap">
-          You just bought the diagnosis. Most people stall between knowing the move and making it — the Blueprint shows you how on video, and the AI answers the questions that come up while you do.
+          Your plan is the diagnosis. It will tell you exactly what to fix. The doing is the hard part, and it's where most people stall, right between knowing the move and making it. The Blueprint shows you how, on video. The AI answers the questions that come up while you do it.
         </p>
 
         <div class="unlock-details">
 
           <article class="unlock-block">
             <span class="kicker">Legacy Wealth Blueprint</span>
-            <h3>The full video course — 5 pillars, 100+ lessons, lifetime access.</h3>
-            <p>A structured path through tax, debt, income, investing, and protection — taught move by move, not as surface-level finance content.</p>
+            <h3>The full video course. 5 pillars, 100+ lessons, lifetime access.</h3>
+            <p>A clear path through tax, debt, income, investing, and protection. Taught move by move, not the surface-level stuff you find free online.</p>
             <ul class="unlock-list">
               <li>Tax strategy that <strong>plans next year</strong>, not just files last year</li>
-              <li>Debt and credit <strong>sequencing</strong> — what to clear, refinance, or leverage first</li>
-              <li>Income, entity structure, investing, and asset protection as <strong>one connected system</strong></li>
+              <li>Debt and credit <strong>in order</strong>. What to clear, refinance, or borrow against first</li>
+              <li>Income, business setup, investing, and asset protection as <strong>one connected system</strong></li>
             </ul>
           </article>
 
           <article class="unlock-block">
             <span class="kicker">Legacy Wealth AI</span>
-            <h3>Preston's framework-trained advisor — 24/7, unlimited answers.</h3>
-            <p>Trained on the Blueprint, not generic internet finance. Ask it the questions that come up while you execute.</p>
+            <h3>A private AI guide trained on Preston's system. Any hour, no limit on questions.</h3>
+            <p>Trained on the Blueprint, not random internet finance. No appointment, no waiting. Ask it the real questions that come up while you put your plan to work, like:</p>
             <ul class="unlock-list">
-              <li><strong>Pressure-test a move</strong> before you make it — structure, sequencing, opportunity cost</li>
-              <li>There when you stall — <strong>after the lesson, before the action</strong></li>
-              <li>No appointment, no support ticket, no waiting</li>
+              <li><strong>"Should I clear this debt or invest first?"</strong></li>
+              <li><strong>"Does an S-Corp make sense at my income?"</strong></li>
+              <li><strong>"Which retirement account should I fund before the others?"</strong></li>
             </ul>
           </article>
 
@@ -1091,15 +1140,15 @@
         <span class="kicker">Inside the Course</span>
         <h2 class="section-h2" id="pillars-h2">Five pillars. Taught in the order that compounds.</h2>
         <p class="body-text prose-wrap" style="margin-bottom:0;">
-          Every pillar is a system you can act on — and each one sets up the next.
+          Your plan points to the moves. These five pillars teach you how to make each one. Every pillar is a system you can act on, and each one sets up the next.
         </p>
 
         <ol class="method-list">
-          <li data-step="01"><strong>Tax Optimization</strong> Entity structures (LLC, S-Corp), deductions and write-offs, tax-advantaged accounts, and the W-2 + business strategies most high earners never set up.</li>
-          <li data-step="02"><strong>Debt &amp; Credit Leverage</strong> Eliminate the right debt first, refinance or use 0% balance transfers, repair and build credit, and open access to real, usable business credit.</li>
-          <li data-step="03"><strong>Income Diversification</strong> Side-business frameworks, passive income, and income-stacking that grow what you earn without trading away more of your time.</li>
-          <li data-step="04"><strong>Investment Vehicles</strong> The market, real estate step by step, and retirement accounts — 401(k), Roth, HSA, and the lesser-known ones — used to their full advantage.</li>
-          <li data-step="05"><strong>Protection</strong> Asset protection, insurance done right, estate planning, and the systems that quietly keep everything you build.</li>
+          <li data-step="01"><strong>Tax Optimization</strong> Business setups like an LLC or S-Corp, deductions and write-offs, tax-advantaged accounts, and the W-2-plus-business moves most high earners never set up.</li>
+          <li data-step="02"><strong>Debt &amp; Credit</strong> Clear the right debt first, refinance or use 0% balance transfers, repair and build your credit, and open the door to real business credit.</li>
+          <li data-step="03"><strong>Income Diversification</strong> Side-business playbooks, passive income, and income stacking that grow what you earn without trading away more of your time.</li>
+          <li data-step="04"><strong>Investment Vehicles</strong> The market, real estate step by step, and retirement accounts. 401(k), Roth, HSA, and the lesser-known ones, all used to their full advantage.</li>
+          <li data-step="05"><strong>Protection</strong> Asset protection, insurance done right, estate planning, and the systems that keep everything you build.</li>
         </ol>
       </div>
     </section>
@@ -1108,26 +1157,26 @@
     <section class="section section-alt" id="choice" aria-labelledby="choice-h2">
       <div class="container">
         <span class="kicker">Two Ways To Leave This Page</span>
-        <h2 class="section-h2" id="choice-h2">Same plan. Two very different next 12 months.</h2>
+        <h2 class="section-h2" id="choice-h2">Your next 12 months split right here.</h2>
 
         <div class="fit-grid">
           <div class="fit-card yes">
-            <div class="fit-heading">&#9733; The buyer who adds it today</div>
+            <div class="fit-heading">&#9733; Add it today</div>
             <h3>Walks out with the plan <em>and</em> the way to run it.</h3>
             <ul class="fit-list">
-              <li>Starts executing while the plan is still fresh, with the video for every move.</li>
-              <li>Has the AI on call the first time a "how do I actually..." question shows up.</li>
-              <li>Pays once, today, at the lowest price this will ever be offered to them.</li>
+              <li>Starts acting while the plan is still fresh, with a video for every move.</li>
+              <li>Has the AI on call the first time a "how do I actually do this" question shows up.</li>
+              <li>Pays once, today, at the lowest price this will ever be offered.</li>
               <li>Never has to hunt for the course or wonder what the next step was.</li>
             </ul>
           </div>
           <div class="fit-card no">
-            <div class="fit-heading">The buyer who skips it</div>
-            <h3>Leaves with the plan alone.</h3>
+            <div class="fit-heading">Skip it</div>
+            <h3>Leaves with the plan, and figures out the how alone.</h3>
             <ul class="fit-list">
-              <li>Hits the first real "how do I do this" and has nowhere to turn.</li>
-              <li>Means to figure it out later &#8212; and later keeps moving.</li>
-              <li>Watches the plan become one more document that never got run.</li>
+              <li>Hits the first "how do I actually do this" and has to work it out solo.</li>
+              <li>Means to start later. Later has a way of slipping.</li>
+              <li>Moves slower, because the plan shows the what, not the how.</li>
             </ul>
           </div>
         </div>
@@ -1140,26 +1189,27 @@
         <div class="prose-wrap">
         <span class="kicker">The Upgrade</span>
         <h2 class="section-h2" id="decision-h2">Add both to today's order.</h2>
+        <p class="body-text">You just secured the plan that will tell you what to do. This is everything that helps you actually do it: lifetime access to all 5 pillars and 100+ lessons, plus the AI on call whenever you get stuck. It normally goes for $5,000. On this page, with today's order, it's $1,776. One payment, no subscription.</p>
 
         <div class="decision-card">
           <div class="decision-card-head">
             <div class="decision-bundle"><b>Legacy Wealth Blueprint</b> + <b>Legacy Wealth AI</b></div>
-            <div class="decision-price">$1,776</div>
+            <div class="decision-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></div>
             <div class="decision-terms">One-time payment · Instant access</div>
           </div>
           <div class="decision-body">
             <a class="btn-primary-lg"
                id="acceptOfferMain"
                href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
-               aria-label="Yes — add the Blueprint and Wealth AI to my order for $1,776">
-              Yes &#8212; Add the Blueprint + AI to My Order
+               aria-label="Yes, add the Blueprint and Wealth AI to my order for $1,776">
+              Yes, Add the Blueprint + AI to My Order
             </a>
             <p class="decision-note">Charged to the card you just used · Lifetime access</p>
             <div class="decision-decline-wrap">
               <a class="decline-link"
                  id="declineOffer"
                  href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/decline">
-                No thanks &#8212; I'll keep just my Wealth Plan for now
+                No thanks, continue with my Wealth Plan for now
               </a>
             </div>
           </div>
@@ -1168,7 +1218,7 @@
         <div class="guarantee-prose">
           <div class="guarantee-item">
             <h3 class="g-title">Yours for life</h3>
-            <p class="g-body">The course is <strong>yours to keep and revisit forever</strong>, and the Wealth AI is ready the moment your order completes — using the same email you just checked out with.</p>
+            <p class="g-body">The course is <strong>yours to keep and revisit forever</strong>. The Wealth AI is ready the moment your order completes, using the same email you just checked out with.</p>
           </div>
           <div class="guarantee-item">
             <h3 class="g-title">14-day promise</h3>
@@ -1192,14 +1242,14 @@
               <span>Is this the same as my Wealth Plan?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
-            <div class="faq-answer">No. Your Wealth Plan is your personalized document. This is the video course and AI that help you execute it.</div>
+            <div class="faq-answer">No. Your Wealth Plan is your personalized document. This is the video course and AI that help you run it.</div>
           </details>
           <details>
             <summary>
               <span>When do I get access?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
-            <div class="faq-answer">Immediately — the moment you add it, both unlock for the email you just used at checkout.</div>
+            <div class="faq-answer">Right away. The moment you add it, both open up for the email you just used at checkout.</div>
           </details>
           <details>
             <summary>
@@ -1244,7 +1294,7 @@
 
   <!-- STICKY CTA -->
   <div id="sticky-cta" aria-hidden="true">
-    <span class="scta-price">$1,776</span>
+    <span class="scta-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></span>
     <span class="scta-note">One-time &middot; This page only</span>
     <a class="scta-btn" href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept" aria-label="Add the Blueprint and AI to my order for $1,776">Add to my order</a>
   </div>
