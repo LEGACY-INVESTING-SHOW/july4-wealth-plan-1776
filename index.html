@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legacy Wealth Plan · $1,776 for America's 250th</title>
   <meta name="description" content="A personalized 25 to 30 page wealth plan built on your real numbers. Taxes, retirement, business, and real estate, in the right order. Private clients only, until now. $1,776 through July 5 at midnight ET.">
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   <style>
     /* ======================================================
        CSS CUSTOM PROPERTIES — MODERN MINIMALIST PALETTE
@@ -56,7 +59,7 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    img { display: block; max-width: 100%; height: auto; }
+    picture, img { display: block; max-width: 100%; height: auto; }
 
     a { color: inherit; text-decoration: none; }
 
@@ -1851,6 +1854,62 @@
     @media (prefers-reduced-motion: reduce) {
       #sticky-cta { transition: none; }
     }
+
+    /* ======================================================
+       ALIGNMENT REFINEMENTS
+       Center the lead-in cluster of each section for balance.
+       Long body copy and lists stay left-aligned for readability.
+    ====================================================== */
+    /* Desktop & tablet: center heads of standalone, full-width sections only.
+       Two-column sections (hero, money, founder, pricing) keep their left heads. */
+    @media (min-width: 641px) {
+      #plan      > .container > .kicker,
+      #method    > .container > .kicker,
+      #scenarios > .container > .kicker,
+      #who       > .container > .kicker,
+      #guarantee > .container > .kicker {
+        display: block;
+        text-align: center;
+      }
+      #plan      > .container > .section-h2,
+      #method    > .container > .section-h2,
+      #scenarios > .container > .section-h2,
+      #who       > .container > .section-h2,
+      #guarantee > .container > .section-h2 {
+        text-align: center;
+      }
+      #plan > .container > .body-text,
+      #method .method-lede,
+      #scenarios .scenarios-lede,
+      #who .who-intro {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Mobile: center every section's lead-in for a balanced, symmetrical feel. */
+    @media (max-width: 640px) {
+      .kicker { display: block; text-align: center; }
+      .section-h2 { text-align: center; }
+
+      /* Hero */
+      .hero-eyebrow-1,
+      .hero-eyebrow-2,
+      .hero-h1,
+      .hero-lede { text-align: center; }
+      .hero-lede-turn { border-left: none; padding-left: 0; }
+
+      /* Short section intros (long multi-paragraph bodies stay left) */
+      #plan > .container > .body-text,
+      .method-lede,
+      .who-intro,
+      .scenarios-lede {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1899,7 +1958,7 @@
             <p class="hero-vsl-label">Watch before you claim</p>
             <div class="vsl-frame" id="hero-vsl">
               <!-- Replace button with iframe/script embed (Wistia, Vimeo, etc.) -->
-              <button type="button" class="vsl-play" aria-label="Play video, how the Wealth Plan works">
+              <button type="button" class="vsl-play">
                 <span class="vsl-play-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </span>
@@ -1919,7 +1978,7 @@
             </div>
 
             <div class="hero-cta-group">
-              <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg" aria-label="Claim your Wealth Plan for $1,776, proceed to checkout">
+              <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg">
                 Claim My Wealth Plan · $1,776
               </a>
               <p class="hero-reassurance">One payment · Built on your real numbers · Worth at least $1,776, or your money back</p>
@@ -1945,13 +2004,22 @@
           <div class="plan-showcase-doc">
             <div class="doc-card">
               <p class="doc-tab">Prepared For You</p>
-              <img
-                src="assets/sample-cover.png"
-                width="1408"
-                height="1770"
-                alt="Cover of a real Comprehensive Wealth Plan, shown as a specimen with the client's name redacted"
-                loading="lazy"
-              >
+              <picture>
+                <source
+                  srcset="assets/sample-cover-480.webp 480w, assets/sample-cover-720.webp 720w, assets/sample-cover.webp 1408w"
+                  sizes="(max-width: 768px) 82vw, 328px"
+                  type="image/webp"
+                >
+                <img
+                  src="assets/sample-cover.png"
+                  sizes="(max-width: 768px) 82vw, 328px"
+                  width="1408"
+                  height="1770"
+                  alt="Cover of a real Comprehensive Wealth Plan, shown as a specimen with the client's name redacted"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
               <div class="price-chip">
                 $1,776 <span class="chip-sub">Limited release</span>
               </div>
@@ -2068,6 +2136,7 @@
                 width="1000"
                 height="714"
                 loading="lazy"
+                decoding="async"
                 alt="Preston Seo with his wife and their two sons"
               >
               <figcaption class="founder-caption">Preston, his wife, and their two boys.</figcaption>
@@ -2092,14 +2161,18 @@
         <!-- Flip-through -->
         <div class="flipthrough-card">
           <div class="flipthrough-inner">
-            <img
-              class="flipthrough-img"
-              src="assets/plan-flipthrough.gif"
-              width="600"
-              height="512"
-              loading="lazy"
-              alt="Animated flip-through of a real Legacy Wealth Plan, showing pages cover to calendar with client details removed"
-            >
+            <picture>
+              <source srcset="assets/plan-flipthrough.webp" type="image/webp">
+              <img
+                class="flipthrough-img"
+                src="assets/plan-flipthrough.gif"
+                width="600"
+                height="512"
+                loading="lazy"
+                decoding="async"
+                alt="Animated flip-through of a real Legacy Wealth Plan, showing pages cover to calendar with client details removed"
+              >
+            </picture>
             <div class="flipthrough-info">
               <span class="tag-chip">Specimen · Real Plan · Redacted</span>
               <h3 class="flipthrough-h">Twenty-six pages, in a few seconds.</h3>
@@ -2110,13 +2183,17 @@
 
         <!-- One specimen detail -->
         <div class="plan-specimen">
-          <img
-            src="assets/specimen-timeline.png"
-            width="1200"
-            height="931"
-            loading="lazy"
-            alt="Specimen first-30-days timeline from a real plan, showing week-by-week action items"
-          >
+          <picture>
+            <source srcset="assets/specimen-timeline.webp" type="image/webp">
+            <img
+              src="assets/specimen-timeline.png"
+              width="1200"
+              height="931"
+              loading="lazy"
+              decoding="async"
+              alt="Specimen first-30-days timeline from a real plan, showing week-by-week action items"
+            >
+          </picture>
           <div>
             <h3 class="plan-specimen-h">It ends with a calendar, not a pile of ideas.</h3>
             <p class="plan-specimen-desc">The last pages turn it all into dates. What to do now. What fits this month. What needs a pro to sign off first. You close the plan already knowing your first move.</p>
@@ -2156,7 +2233,7 @@
     <!-- ====================================================
          §5 CASE RESULTS / SCENARIOS
     ==================================================== -->
-    <section class="section" aria-labelledby="scenarios-h2">
+    <section class="section" id="scenarios" aria-labelledby="scenarios-h2">
       <div class="container">
         <span class="kicker">What it found for people like you</span>
         <h2 class="section-h2" id="scenarios-h2">Seven people. Seven starting points. Seven very different numbers.</h2>
@@ -2229,7 +2306,7 @@
     <!-- ====================================================
          §6 WHO IT'S FOR
     ==================================================== -->
-    <section class="section section-alt" aria-labelledby="who-h2">
+    <section class="section section-alt" id="who" aria-labelledby="who-h2">
       <div class="container">
         <span class="kicker">Who it's for</span>
         <h2 class="section-h2" id="who-h2">There's no single right answer. So your plan looks for yours.</h2>
@@ -2345,7 +2422,7 @@
                 </div>
               </div>
               <div class="ledger-cta">
-                <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg" style="width:100%; justify-content:center;" aria-label="Claim your Wealth Plan for $1,776, proceed to checkout">
+                <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg" style="width:100%; justify-content:center;">
                   Claim My Wealth Plan · $1,776
                 </a>
               </div>
@@ -2501,7 +2578,6 @@
           <a
             href="https://checkout.legacyinvestingshow.com/wealth-plan-1776"
             class="claim-btn"
-            aria-label="Claim your Wealth Plan for $1,776, proceed to checkout"
           >Claim My Wealth Plan · $1,776</a>
 
           <p class="claim-note">Secure checkout · One payment · Built on your real numbers · Worth at least $1,776, or your money back</p>
@@ -2527,10 +2603,10 @@
   <!-- ====================================================
        STICKY FLOATING CTA
   ==================================================== -->
-  <div id="sticky-cta" aria-label="Floating purchase prompt" aria-hidden="true">
+  <div id="sticky-cta" aria-label="Floating purchase prompt" aria-hidden="true" inert>
     <span class="scta-price">$1,776</span>
     <span class="scta-note">Ends July 5 · Midnight ET</span>
-    <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="scta-btn" aria-label="Claim your Wealth Plan for $1,776, proceed to checkout">
+    <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="scta-btn">
       Claim my plan
     </a>
   </div>
@@ -2562,8 +2638,11 @@
         const bh = bar ? bar.offsetHeight : 0;
         document.documentElement.style.scrollPaddingTop = (bh + 12) + 'px';
       }
-      setOffsets();
-      window.addEventListener('resize', setOffsets, {passive:true});
+      function scheduleOffsets(){
+        window.requestAnimationFrame(setOffsets);
+      }
+      scheduleOffsets();
+      window.addEventListener('resize', scheduleOffsets, {passive:true});
     })();
 
     /* ======================================================
@@ -2582,9 +2661,11 @@
         if(heroOut && !claimIn){
           cta.classList.add('visible');
           cta.setAttribute('aria-hidden','false');
+          cta.removeAttribute('inert');
         } else {
           cta.classList.remove('visible');
           cta.setAttribute('aria-hidden','true');
+          cta.setAttribute('inert','');
         }
       }
 
@@ -2620,14 +2701,23 @@
     (function(){
       const wrap = document.querySelector('.table-wrap');
       if(!wrap) return;
+      let queued = false;
       function check(){
+        queued = false;
         wrap.classList.toggle('is-scrollable', wrap.scrollWidth > wrap.clientWidth + 2);
       }
-      check();
-      window.addEventListener('resize', check, {passive:true});
-      wrap.addEventListener('scroll', ()=>{
-        wrap.classList.toggle('is-scrollable', wrap.scrollLeft + wrap.clientWidth < wrap.scrollWidth - 2);
-      }, {passive:true});
+      function scheduleCheck(){
+        if(queued) return;
+        queued = true;
+        window.requestAnimationFrame(check);
+      }
+      if('requestIdleCallback' in window){
+        window.requestIdleCallback(scheduleCheck, {timeout: 1000});
+      } else {
+        scheduleCheck();
+      }
+      window.addEventListener('resize', scheduleCheck, {passive:true});
+      wrap.addEventListener('scroll', scheduleCheck, {passive:true});
     })();
   </script>
 

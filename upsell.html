@@ -6,9 +6,12 @@
   <title>One Last Step · Legacy Wealth Blueprint + Legacy Wealth AI · $1,776</title>
   <meta name="description" content="Your Wealth Plan is secured. Add the full Legacy Wealth Blueprint video course and your private Legacy Wealth AI to today's order. One time, $1,776.">
   <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:,">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
   <style>
     :root {
       --bg:         #FCFCFB;
@@ -1005,6 +1008,49 @@
       html { scroll-behavior: auto; }
       #sticky-cta { transition: none; }
     }
+
+    /* ======================================================
+       ALIGNMENT REFINEMENTS
+       Center the lead-in cluster of each section for balance.
+    ====================================================== */
+    /* Desktop & tablet: center heads of standalone, full-width sections.
+       The two-column hero keeps its left-aligned copy column. */
+    @media (min-width: 641px) {
+      #unlocks > .container > .kicker,
+      #pillars > .container > .kicker,
+      #choice  > .container > .kicker {
+        display: block;
+        text-align: center;
+      }
+      #unlocks > .container > .section-h2,
+      #pillars > .container > .section-h2,
+      #choice  > .container > .section-h2 {
+        text-align: center;
+      }
+      #unlocks > .container > .body-text,
+      #pillars > .container > .body-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    /* Mobile: center every section's lead-in for a balanced, symmetrical feel. */
+    @media (max-width: 640px) {
+      .kicker { display: block; text-align: center; }
+      .section-h2 { text-align: center; }
+
+      .hero-eyebrow-1,
+      .hero-eyebrow-2,
+      .hero-h1,
+      .hero-lede { text-align: center; }
+
+      .body-text {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1024,8 +1070,7 @@
         <span class="star">&#9733;</span> Legacy Investing Show
       </span>
       <a href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
-         class="btn-primary"
-         aria-label="Add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776, regularly $5,000">
+         class="btn-primary">
         Add · <span class="price-was">$5,000</span> $1,776
       </a>
     </div>
@@ -1055,8 +1100,7 @@
             <div class="hero-cta-group">
               <a class="btn-primary-lg btn-price-promo"
                  id="acceptOffer"
-                 href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
-                 aria-label="Yes, add the Legacy Wealth Blueprint and Legacy Wealth AI to my order for $1,776, regularly $5,000">
+                 href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept">
                 Yes, Add the Blueprint + AI &middot; <span class="price-was">$5,000</span> $1,776
               </a>
               <p class="hero-reassurance">One-time payment &middot; Charged to the card you just used &middot; Instant lifetime access</p>
@@ -1200,8 +1244,7 @@
           <div class="decision-body">
             <a class="btn-primary-lg"
                id="acceptOfferMain"
-               href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept"
-               aria-label="Yes, add the Blueprint and Wealth AI to my order for $1,776">
+               href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept">
               Yes, Add the Blueprint + AI to My Order
             </a>
             <p class="decision-note">Charged to the card you just used · Lifetime access</p>
@@ -1293,10 +1336,10 @@
   </footer>
 
   <!-- STICKY CTA -->
-  <div id="sticky-cta" aria-hidden="true">
+  <div id="sticky-cta" aria-hidden="true" inert>
     <span class="scta-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></span>
     <span class="scta-note">One-time &middot; This page only</span>
-    <a class="scta-btn" href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept" aria-label="Add the Blueprint and AI to my order for $1,776">Add to my order</a>
+    <a class="scta-btn" href="https://checkout.legacyinvestingshow.com/upgrade/blueprint-ai/accept">Add to my order</a>
   </div>
 
   <script>
@@ -1319,7 +1362,9 @@
       var hero = document.getElementById('hero');
       if (!stickyCta || !hero) return;
 
+      var ticking = false;
       function updateSticky() {
+        ticking = false;
         var scrolled = window.scrollY;
         var heroBottom = hero.offsetTop + hero.offsetHeight;
         var decision = document.getElementById('decision');
@@ -1329,14 +1374,23 @@
         if (shouldShow) {
           stickyCta.classList.add('visible');
           stickyCta.setAttribute('aria-hidden', 'false');
+          stickyCta.removeAttribute('inert');
         } else {
           stickyCta.classList.remove('visible');
           stickyCta.setAttribute('aria-hidden', 'true');
+          stickyCta.setAttribute('inert', '');
         }
       }
 
-      window.addEventListener('scroll', updateSticky, { passive: true });
-      window.addEventListener('resize', updateSticky);
+      function scheduleStickyUpdate() {
+        if (!ticking) {
+          ticking = true;
+          window.requestAnimationFrame(updateSticky);
+        }
+      }
+
+      window.addEventListener('scroll', scheduleStickyUpdate, { passive: true });
+      window.addEventListener('resize', scheduleStickyUpdate);
       updateSticky();
     })();
 
