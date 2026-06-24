@@ -1,1022 +1,2586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legacy Wealth Plan | $1,776 July 4 Release</title>
-<meta name="description" content="The same personalized wealth plan our private clients receive inside the $9,800 Legacy Wealth Blueprint. Standalone for one week only, for America's 250th birthday. $1,776, built on your exact numbers.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    /* paper + ink, OKLCH, neutrals tinted toward gold */
-    --paper:       oklch(0.972 0.012 88);
-    --paper-deep:  oklch(0.948 0.018 86);
-    --paper-shade: oklch(0.915 0.022 84);
-    --ink:         oklch(0.235 0.034 262);
-    --ink-soft:    oklch(0.40 0.028 262);
-    --ink-faint:   oklch(0.55 0.02 262);
-    --gold:        oklch(0.745 0.085 85);
-    --gold-text:   oklch(0.565 0.092 80);
-    --gold-faint:  oklch(0.745 0.085 85 / 0.35);
-    --oxblood:     oklch(0.45 0.155 25);
-    --liberty-red: oklch(0.49 0.18 25);
-    --red-faint:   oklch(0.45 0.155 25 / 0.22);
-    --navy-text:   oklch(0.36 0.075 258);
-    --liberty-blue: oklch(0.29 0.085 258);
-    --night:       oklch(0.215 0.055 258);
-    --night-soft:  oklch(0.275 0.06 256);
-    --paper-on-night: oklch(0.93 0.018 88);
-    --faded-on-night: oklch(0.72 0.025 90);
-    --document: #FFFFFF;
-    --focus-ring: oklch(0.745 0.085 85 / 0.92);
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legacy Wealth Plan | $1,776 July 4 Release</title>
+  <meta name="description" content="A personalized 25–30 page wealth blueprint built on your exact numbers — tax, retirement, entity, real estate. Reserved for private clients until now. $1,776 through July 5, midnight ET.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ======================================================
+       CSS CUSTOM PROPERTIES — MODERN MINIMALIST PALETTE
+    ====================================================== */
+    :root {
+      --bg:         #FCFCFB;
+      --panel:      #F4F5F3;
+      --white:      #FFFFFF;
+      --ink:        #16181D;
+      --gray:       #585E66;
+      --faint:      #8B919A;
+      --accent:     #18654A;
+      --accent-h:   #1F8A63;
+      --hair:       #E7E8E5;
+      --hair-dark:  #D0D2CE;
+      --radius-sm:  10px;
+      --radius-md:  14px;
+      --radius-lg:  18px;
+      --shadow-sm:  0 2px 12px rgba(22,24,29,0.06);
+      --shadow-md:  0 4px 28px rgba(22,24,29,0.08);
+      --shadow-lg:  0 8px 48px rgba(22,24,29,0.10);
+      --ease:       cubic-bezier(0.22,1,0.36,1);
+      --mono:       'JetBrains Mono', monospace;
+      --sans:       'Plus Jakarta Sans', system-ui, sans-serif;
+      --max-prose:  65ch;
+      --max-wide:   1120px;
+    }
 
-    --display: 'Libre Caslon Display', 'Iowan Old Style', Georgia, serif;
-    --serif: 'Libre Caslon Text', Georgia, serif;
-    --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    --mono: 'JetBrains Mono', monospace;
+    /* ======================================================
+       RESET + BASE
+    ====================================================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    --rule: 1px solid oklch(0.235 0.034 262 / 0.18);
-    --rule-gold: 1px solid var(--gold-faint);
-    --space-1: 4px;
-    --space-2: 8px;
-    --space-3: 12px;
-    --space-4: 16px;
-    --space-5: 20px;
-    --space-6: 24px;
-    --space-7: 28px;
-    --space-8: 32px;
-    --space-10: 40px;
-    --space-12: 48px;
-    --space-14: 56px;
-    --space-16: 64px;
-    --space-20: 80px;
-    --space-24: 96px;
-    --mobile-nav-clearance: 118px;
-  }
+    html {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+      -webkit-text-size-adjust: 100%;
+    }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; scroll-padding-top: 124px; }
-  body {
-    font-family: var(--sans);
-    background: var(--paper);
-    color: var(--ink);
-    line-height: 1.7;
-    font-size: 18px;
-    letter-spacing: -0.003em;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-  }
-  img { max-width: 100%; height: auto; }
-  a, summary { -webkit-tap-highlight-color: oklch(0.745 0.085 85 / 0.18); }
-  :where(a, summary, .scen-table):focus-visible {
-    outline: 2px solid var(--focus-ring);
-    outline-offset: 4px;
-  }
-  main:focus { outline: none; }
-  .skip-link {
-    position: fixed; left: 18px; top: 18px; z-index: 200;
-    transform: translateY(-160%);
-    background: var(--night); color: var(--paper-on-night);
-    font-family: var(--mono); font-size: 11px; font-weight: 700;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 11px 14px; border: 1px solid var(--gold);
-    text-decoration: none; box-shadow: 4px 4px 0 var(--red-faint);
-    transition: transform .24s var(--ease-out);
-  }
-  .skip-link:focus-visible { transform: translateY(0); }
-  @media (max-width: 760px) {
-    html { scroll-padding-top: 24px; }
-    body { font-size: 17px; line-height: 1.65; padding-bottom: calc(var(--mobile-nav-clearance) + env(safe-area-inset-bottom)); }
-    .col, .col-wide { padding: 0 clamp(18px, 5vw, 28px); }
-    section { padding: clamp(56px, 8vh, 96px) 0; }
-    h2 { font-size: clamp(26px, 6.2vw, 36px); margin-bottom: 18px; }
-    .sec-head { margin-bottom: 14px; gap: 14px; flex-wrap: wrap; }
-    .section-lede, .preview-intro, .articles-intro { font-size: 16px; line-height: 1.7; }
-  }
-  /* paper grain + certificate frame removed for a cleaner, more readable surface */
-  .page-frame { display: none; }
+    body {
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  main { position: relative; z-index: 2; }
-  .col { max-width: 760px; margin: 0 auto; padding: 0 28px; }
-  .col-wide { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
-  #founder, #plan, #method, #proof, #why, #claim, #guarantee { scroll-margin-top: 120px; }
+    img { display: block; max-width: 100%; height: auto; }
 
-  ::selection { background: var(--gold-faint); }
+    a { color: inherit; text-decoration: none; }
 
-  /* ---------- type ---------- */
-  h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0.005em; }
-  h1 { font-size: clamp(46px, 7vw, 86px); line-height: 1.04; }
-  h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.12; margin-bottom: 24px; text-wrap: balance; }
-  .smallcaps {
-    font-family: var(--sans); font-size: 12.5px; font-weight: 700;
-    letter-spacing: 0.11em; text-transform: uppercase; color: var(--ink-soft);
-  }
-  .smallcaps .g { color: var(--gold-text); }
-  p { max-width: 68ch; }
-  em { font-style: italic; }
-  .gold-i { font-style: italic; color: var(--gold-text); }
+    strong { font-weight: 700; }
 
-  /* ---------- ornaments ---------- */
-  .ornament-rule { display: flex; align-items: center; gap: 18px; color: var(--gold-text); font-size: 13px; }
-  .ornament-rule::before, .ornament-rule::after { content: ""; flex: 1; border-top: var(--rule); }
-  .fleuron { font-size: 13px; color: var(--oxblood); letter-spacing: 10px; padding-left: 10px; }
+    em { font-style: italic; }
 
-  /* ---------- reveal ---------- */
-  .reveal { opacity: 0; transform: translateY(10px); transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out); }
-  .reveal.in { opacity: 1; transform: none; }
-  .reveal[data-d="1"] { transition-delay: .06s; }
-  .reveal[data-d="2"] { transition-delay: .12s; }
-  .reveal[data-d="3"] { transition-delay: .18s; }
-  @media (prefers-reduced-motion: reduce) {
-    .reveal { opacity: 1; transform: none; transition: none; }
-    html { scroll-behavior: auto; }
-  }
+    /* ======================================================
+       SKIP LINK
+    ====================================================== */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+    }
 
-  /* ---------- promo bar ---------- */
-  .promo-bar {
-    position: sticky; top: 0; z-index: 100;
-    background: var(--night); color: var(--paper-on-night);
-    text-align: center; padding: 10px 16px;
-    font-family: var(--sans); font-size: 12.5px; font-weight: 600;
-    letter-spacing: 0.01em;
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg, var(--oxblood) 0 33.4%, var(--gold) 33.4% 66.7%, var(--navy-text) 66.7% 100%) 1;
-  }
-  .promo-bar b { color: var(--gold); font-weight: 700; }
-  @media (max-width: 720px) { .promo-bar .pb-long { display: none; } }
+    /* ======================================================
+       FOCUS VISIBLE
+    ====================================================== */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
 
-  /* ---------- navigation ---------- */
-  .liberty-nav {
-    position: fixed; left: 50%; top: 48px; transform: translateX(-50%);
-    z-index: 90; width: min(980px, calc(100% - 48px));
-    display: flex; align-items: center; justify-content: space-between; gap: 22px;
-    padding: 10px 12px 10px 18px;
-    color: var(--ink);
-    background: oklch(0.972 0.012 88 / 0.94);
-    border: 1px solid oklch(0.235 0.034 262 / 0.18);
-    box-shadow: 0 16px 42px oklch(0.235 0.034 262 / 0.13);
-    backdrop-filter: blur(10px);
-  }
-  .nav-lockup { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; white-space: nowrap; }
-  .nav-lockup .g { color: var(--gold-text); }
-  .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
-  .nav-links a {
-    font-family: var(--mono); font-size: 10px; font-weight: 700;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--ink-soft); text-decoration: none;
-    min-height: 38px; display: inline-flex; align-items: center;
-    transition: color .28s var(--ease-out), transform .28s var(--ease-out), background .28s var(--ease-out), box-shadow .28s var(--ease-out);
-  }
-  .nav-links a:hover { color: var(--liberty-red); transform: translateY(-1px); }
-  .nav-links a:active { transform: translateY(1px); }
-  .nav-links a.nav-cta {
-    color: var(--paper-on-night); background: var(--liberty-blue);
-    padding: 10px 14px; border: 1px solid var(--liberty-blue); transition: background .28s var(--ease-out);
-  }
-  .nav-links a.nav-cta:hover { color: var(--paper-on-night); background: var(--night); }
-  .nav-links a.nav-cta:active { background: var(--night-soft); }
-  @media (max-width: 760px) {
-    .liberty-nav { top: auto; bottom: calc(14px + env(safe-area-inset-bottom)); width: calc(100% - 28px); padding: 10px; background: oklch(0.972 0.012 88 / 0.96); }
-    .nav-lockup { letter-spacing: 0.18em; }
-    .nav-links a:not(.nav-cta) { display: none; }
-    .nav-links a.nav-cta { padding: 12px 14px; min-height: 46px; }
-  }
+    /* ======================================================
+       UTILITY
+    ====================================================== */
+    .container {
+      width: 100%;
+      max-width: var(--max-wide);
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
 
-  /* ---------- masthead ---------- */
-  .masthead {
-    padding: clamp(94px, 11vh, 128px) 0 clamp(56px, 7vh, 84px);
-    color: var(--ink); position: relative; overflow: hidden;
-    background: var(--paper);
-    border-bottom: 3px solid;
-    border-image: linear-gradient(90deg, var(--liberty-red) 0 33.4%, var(--gold) 33.4% 66.7%, var(--liberty-blue) 66.7% 100%) 1;
-  }
-  .masthead .col-wide { position: relative; z-index: 1; }
-  .eyebrow { margin-bottom: clamp(20px, 3vw, 28px); }
-  .eyebrow .brand { display: block; font-family: var(--sans); font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-text); }
-  .eyebrow .brand .st { color: var(--liberty-red); }
-  .eyebrow .occasion { display: block; margin-top: 10px; font-family: var(--serif); font-style: italic; font-size: clamp(15px, 1.6vw, 18px); color: var(--ink-soft); letter-spacing: 0; }
-  .masthead h1 { margin: 0 0 22px; max-width: 16ch; font-size: clamp(34px, 4vw, 54px); line-height: 1.07; color: var(--ink); text-wrap: balance; }
-  .masthead h1 .line2 { display: block; margin-top: 8px; font-style: italic; color: var(--liberty-red); }
+    .prose { max-width: var(--max-prose); }
 
-  /* offer row under masthead */
-  .offer-row {
-    display: grid; grid-template-columns: minmax(0, 1.04fr) minmax(290px, 0.8fr);
-    gap: clamp(38px, 5vw, 74px); align-items: center;
-    padding: 0;
-  }
-  .offer-copy { padding-top: 0; }
-  .offer-copy p.lede { font-size: clamp(16px, 1.5vw, 19px); line-height: 1.65; color: var(--ink-soft); margin-bottom: 26px; max-width: 48ch; }
-  .offer-copy p.lede strong { color: var(--ink); font-weight: 700; }
+    .kicker {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
 
-  .btn {
-    display: inline-flex; align-items: center; justify-content: center;
-    font-family: var(--sans); font-size: 15px; font-weight: 700;
-    line-height: 1.2; min-height: 52px;
-    letter-spacing: 0.005em;
-    text-align: center;
-    color: var(--paper); background: var(--night);
-    padding: 16px 32px; border: 1px solid var(--night);
-    border-radius: 3px; text-decoration: none;
-    transition: background .25s var(--ease-out), color .25s var(--ease-out);
-  }
-  .btn:hover { background: var(--night-soft); }
-  .btn:active { background: var(--night); transform: scale(0.99); }
-  .masthead .btn {
-    color: var(--paper-on-night); background: var(--liberty-blue); border-color: var(--liberty-blue);
-  }
-  .masthead .btn:hover { background: var(--night); }
-  .btn-note { display: block; margin-top: 14px; font-family: var(--sans); font-size: 13px; letter-spacing: 0; color: var(--ink-faint); }
+    .section-h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
 
-  /* hero document (real plan screenshot framed) */
-  .hero-art { position: relative; align-self: center; }
-  .hero-doc {
-    position: relative; background: var(--document); border: 1px solid oklch(0.235 0.034 262 / 0.14);
-    box-shadow: 0 8px 32px -8px oklch(0.235 0.034 262 / 0.22);
-    overflow: hidden;
-  }
-  .hero-doc img { display: block; width: 100%; height: auto; }
-  .doc-tab {
-    position: absolute; z-index: 3; top: 0; left: 0;
-    font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-    background: var(--night); color: var(--paper-on-night); padding: 8px 12px;
-  }
-  .price-stamp {
-    position: absolute; right: 16px; bottom: -24px; z-index: 6;
-    width: clamp(100px, 11vw, 130px); aspect-ratio: 1; border-radius: 50%;
-    background: var(--paper-deep); border: 1px solid oklch(0.235 0.034 262 / 0.14);
-    box-shadow: 0 6px 20px oklch(0.235 0.034 262 / 0.15);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 1px;
-  }
-  .price-stamp .ps-was { font-family: var(--mono); font-size: 11px; color: var(--ink-faint); text-decoration: line-through; text-decoration-color: var(--oxblood); }
-  .price-stamp .ps-now { font-family: var(--display); font-size: clamp(27px, 3vw, 35px); line-height: 1; color: var(--gold-text); }
-  .price-stamp .ps-terms { font-family: var(--mono); font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-soft); margin-top: 4px; }
+    .body-text {
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--gray);
+    }
 
-  /* countdown */
-  .countdown { margin-top: 18px; display: flex; justify-content: flex-start; align-items: baseline; gap: 6px; font-family: var(--mono); font-variant-numeric: tabular-nums; }
-  .masthead .countdown { margin-top: 24px; gap: 5px; }
-  .countdown .cd-num { font-size: 26px; font-weight: 700; color: var(--ink); }
-  .countdown .cd-sep { color: var(--gold-text); font-size: 20px; }
-  .cd-caption { text-align: left; margin-top: 8px; font-family: var(--sans); font-size: 11.5px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-faint); max-width: none; margin-inline: 0; }
+    .body-text p { margin-bottom: 1.25em; }
+    .body-text p:last-child { margin-bottom: 0; }
 
-  /* ---------- claim (final CTA) ---------- */
-  .claim { background: var(--paper-deep); border-top: var(--rule); }
-  .claim-card {
-    margin-top: clamp(40px, 5vw, 56px);
-    border: var(--rule);
-    padding: clamp(32px, 4vw, 44px);
-    background: var(--paper);
-    background-image: linear-gradient(90deg, var(--navy-text) 0 33.4%, var(--gold) 33.4% 66.7%, var(--oxblood) 66.7% 100%);
-    background-size: 100% 3px;
-    background-repeat: no-repeat;
-    background-position: top;
-  }
-  .claim-price { margin-bottom: 28px; padding-bottom: 24px; border-bottom: var(--rule); }
-  .claim-was { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 8px; }
-  .claim-was s { text-decoration-color: var(--oxblood); }
-  .claim-now { font-family: var(--display); font-size: clamp(40px, 5vw, 52px); line-height: 1; color: var(--gold-text); }
-  .claim-terms { margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
-  .claim-card .btn {
-    display: block; width: 100%; text-align: center;
-    color: var(--paper-on-night); background: var(--liberty-blue); border-color: var(--liberty-blue);
-  }
-  .claim-card .btn:hover { background: var(--night); }
-  .claim-note { margin-top: 16px; font-size: 14px; line-height: 1.6; color: var(--ink-soft); max-width: 52ch; }
-  .claim-card .countdown { margin-top: 28px; }
-  @media (max-width: 760px) { .claim { padding-bottom: calc(var(--mobile-nav-clearance) + 24px); } }
+    .accent-num {
+      color: var(--accent);
+      font-weight: 700;
+    }
 
-  /* simplified nav: brand + one CTA */
-  .nav-brand { font-family: var(--display); font-size: 19px; font-weight: 400; letter-spacing: 0; color: var(--ink); text-decoration: none; white-space: nowrap; transition: color .25s var(--ease-out); }
-  .nav-brand .st { color: var(--liberty-red); font-size: 0.8em; }
-  .nav-brand:hover { color: var(--liberty-red); }
-  .liberty-nav .nav-cta { font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.005em; color: var(--paper-on-night); background: var(--liberty-blue); padding: 11px 18px; border: 1px solid var(--liberty-blue); border-radius: 3px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; white-space: nowrap; transition: background .25s var(--ease-out); }
-  .liberty-nav .nav-cta:hover { background: var(--night); color: var(--paper-on-night); }
+    .hairline { border: 0; border-top: 1px solid var(--hair); margin: 0; }
 
-  /* founder / Preston */
-  .founder-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: clamp(34px, 5vw, 66px); align-items: center; margin-top: clamp(30px, 4vw, 46px); }
-  @media (max-width: 860px) { .founder-grid { grid-template-columns: 1fr; gap: 30px; } }
-  .founder-copy p { font-size: clamp(16px, 1.55vw, 18px); line-height: 1.72; color: var(--ink-soft); margin-bottom: 18px; }
-  .founder-copy p:last-child { margin-bottom: 0; }
-  .founder-copy strong { color: var(--ink); font-weight: 700; }
-  .founder-photo { margin: 0; }
-  .founder-photo img { width: 100%; height: auto; border-radius: 10px; display: block; border: 1px solid oklch(0.235 0.034 262 / 0.14); box-shadow: 0 1px 0 oklch(0.86 0.018 70), 16px 16px 0 oklch(0.29 0.085 258 / 0.07), 0 30px 60px -28px oklch(0.235 0.034 262 / 0.42); }
-  .founder-photo figcaption { margin-top: 13px; font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--ink-faint); text-align: center; }
-  @media (max-width: 860px) { .founder-photo { max-width: 460px; margin: 0 auto; } }
+    .tag-chip {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      background: var(--panel);
+      padding: 0.2em 0.65em;
+      border-radius: 100px;
+    }
 
-  @media (max-width: 1000px) {
-    .offer-row { grid-template-columns: 1fr; max-width: 600px; margin-inline: auto; }
-    .masthead h1 { max-width: 18ch; }
-    .hero-art { margin-top: 36px; max-width: 440px; margin-inline: auto; }
-  }
-  @media (max-width: 560px) {
-    .masthead { padding-top: 76px; }
-    .masthead h1 { font-size: clamp(32px, 8.6vw, 44px); max-width: 100%; }
-    .price-stamp { right: 10px; bottom: -16px; width: 92px; }
-  }
-  @media (max-width: 430px) {
-    .nav-brand { display: none; }
-    .liberty-nav { justify-content: center; }
-    .liberty-nav .nav-cta { width: 100%; text-align: center; justify-content: center; }
-  }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
 
-  /* ---------- proof band (post-hero credibility) ---------- */
-  .proof-band {
-    padding: clamp(40px, 5vh, 56px) 0;
-    border-top: var(--rule);
-    border-bottom: var(--rule);
-    background: var(--paper-deep);
-  }
-  .proof-copy {
-    font-size: clamp(17px, 1.8vw, 19px);
-    line-height: 1.78;
-    color: var(--ink-soft);
-    max-width: 62ch;
-    text-wrap: pretty;
-  }
-  .proof-copy strong { color: var(--ink); font-weight: 700; }
-  .proof-note {
-    margin-top: 18px;
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.04em;
-    color: var(--ink-faint);
-    line-height: 1.7;
-    max-width: 68ch;
-  }
+    /* ======================================================
+       PROMO BAR
+    ====================================================== */
+    #promo-bar {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      padding: 0.65rem 1rem;
+      font-family: var(--sans);
+      font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
 
-  /* ---------- sections ---------- */
-  section { padding: clamp(80px, 11vh, 140px) 0; }
-  section.section-tight { padding-top: clamp(48px, 6vh, 80px); }
-  .text-center-narrow { margin-inline: auto; text-align: center; max-width: 46ch; }
-  .preview-intro.text-center-narrow { max-width: 46ch; }
-  .sec-head { display: flex; align-items: baseline; gap: 22px; margin-bottom: 18px; }
-  .sec-head .no { font-family: var(--display); font-size: 15px; color: var(--oxblood); white-space: nowrap; }
-  .sec-head .smallcaps { color: var(--gold-text); }
-  .section-lede { font-size: 17px; color: var(--ink-soft); line-height: 1.75; max-width: 62ch; text-wrap: pretty; }
-  .section-copy-soft { color: var(--ink-soft); line-height: 1.78; text-wrap: pretty; }
-  .section-heading-narrow { max-width: 18em; }
-  .section-heading-medium { max-width: 20em; }
-  .section-heading-compact { font-size: clamp(28px, 3.2vw, 38px); }
-  .section-offset { margin-top: var(--space-24); }
-  .gold-label { color: var(--gold-text); }
+    #promo-bar .promo-text { opacity: 0.9; }
 
-  /* preamble */
-  .preamble p { font-size: clamp(17px, 2vw, 19px); line-height: 1.78; color: var(--ink-soft); margin-bottom: 24px; }
-  .preamble p strong { color: var(--ink); font-weight: 700; }
-  .preamble p.opener { font-weight: 500; }
-  .pull-quote { margin: 48px 0; text-align: center; }
-  .pull-quote .ornament-rule { max-width: 200px; margin: 0 auto 20px; font-size: 11px; }
-  .pull-quote p { font-family: var(--display); font-style: italic; font-size: clamp(20px, 2.4vw, 26px); line-height: 1.5; color: var(--ink); max-width: 30em; margin: 0 auto; }
-  .pull-quote .ornament-rule.below { margin-top: 20px; margin-bottom: 0; }
-  @media (max-width: 760px) {
-    .pull-quote { margin: 36px 0; }
-    .pull-quote p { font-size: clamp(19px, 5vw, 22px); }
-    summary { min-height: 64px; padding: 20px 4px; font-size: clamp(17px, 4.2vw, 20px); }
-    .proof-copy { font-size: 16px; line-height: 1.72; }
-  }
+    #promo-bar .countdown {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #6EE7B7;
+      letter-spacing: 0.04em;
+    }
 
-  /* ---------- preview gallery (real plan plates) ---------- */
-  .preview { background: var(--paper-deep); border-top: var(--rule); border-bottom: var(--rule); }
-  .preview-intro { max-width: 60ch; font-size: 17px; color: var(--ink-soft); line-height: 1.75; }
-  .preview-rows { margin-top: 64px; display: grid; gap: clamp(48px, 7vw, 88px); }
-  .preview-row { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(34px, 5vw, 66px); align-items: center; }
-  .preview-row:nth-child(even) .plate-frame { order: 2; }
-  @media (max-width: 880px) { .preview-row { grid-template-columns: 1fr; gap: 30px; } .preview-row:nth-child(even) .plate-frame { order: 0; } }
-  .plate-frame { position: relative; background: var(--document); border: 1px solid oklch(0.235 0.034 262 / 0.14);
-    box-shadow: 0 8px 28px -10px oklch(0.235 0.034 262 / 0.28); }
-  .plate-frame img { display: block; width: 100%; height: auto; }
-  .plate-tag {
-    position: absolute; z-index: 3; top: 0; left: 22px; transform: translateY(-50%);
-    font-family: var(--mono); font-size: 9px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
-    background: var(--night); color: var(--paper-on-night); padding: 7px 13px;
-  }
-  .plate-copy .pg-label { font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-text); }
-  .plate-copy h3 { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.8vw, 32px); line-height: 1.12; margin: 12px 0 14px; }
-  .plate-copy p { font-size: 16px; color: var(--ink-soft); line-height: 1.72; }
-  .plate-list { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 11px; }
-  .plate-list li { display: grid; grid-template-columns: 16px 1fr; gap: 12px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.5; }
-  .plate-list li::before { content: "★"; color: var(--oxblood); font-size: 10px; line-height: 1.6; }
-  .plate-value { margin-top: 18px; font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 13px; letter-spacing: 0.04em; color: var(--ink); border-top: var(--rule); padding-top: 14px; }
-  .plate-value b { color: var(--gold-text); }
+    #promo-bar .cd-sep { opacity: 0.5; }
 
-  /* ---------- method ---------- */
-  .method-rows { margin-top: 56px; border-top: var(--rule); }
-  .method-row { display: grid; grid-template-columns: 110px 1fr 1.3fr; gap: 28px; padding: 34px 0; border-bottom: var(--rule); align-items: baseline; }
-  @media (max-width: 720px) { .method-row { grid-template-columns: 56px 1fr; } .method-row .m-body { grid-column: 2; } }
-  .method-row .rn { font-family: var(--display); font-size: clamp(30px, 3.4vw, 40px); color: var(--gold-text); line-height: 1; }
-  .method-row h3 { font-family: var(--display); font-weight: 400; font-size: 23px; }
-  .method-row .m-body { font-size: 15.5px; color: var(--ink-soft); line-height: 1.7; }
+    /* ======================================================
+       NAV
+    ====================================================== */
+    #site-nav {
+      background: rgba(252,252,251,0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--hair);
+      position: sticky;
+      top: var(--promo-h, 38px);
+      z-index: 800;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
 
-  /* ---------- strategy value ledger ---------- */
-  .strat { margin-top: 54px; border-top: 1px solid oklch(0.235 0.034 262 / 0.3); }
-  .strat-row { display: grid; grid-template-columns: 2.6ch 1fr auto; gap: 26px; align-items: baseline; padding: 24px 0; border-bottom: var(--rule); }
-  .strat-row .idx { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--oxblood); }
-  .strat-row .s-name { font-family: var(--display); font-size: clamp(19px, 2vw, 23px); }
-  .strat-row .s-desc { font-size: 14.5px; color: var(--ink-soft); line-height: 1.6; margin-top: 5px; max-width: 64ch; }
-  .strat-row .s-val { text-align: right; white-space: nowrap; }
-  .strat-row .s-val .vn { font-family: var(--display); font-size: clamp(18px, 1.9vw, 22px); color: var(--gold-text); }
-  .strat-row .s-val .vl { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 3px; }
-  @media (max-width: 680px) { .strat-row { grid-template-columns: 2.6ch 1fr; } .strat-row .s-val { grid-column: 2; text-align: left; margin-top: 8px; } }
+    .nav-inner {
+      max-width: var(--max-wide);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      gap: 1.5rem;
+    }
 
-  /* ---------- articles ---------- */
-  .articles { background: var(--paper-deep); border-top: var(--rule); border-bottom: var(--rule); }
-  .articles-intro { max-width: 56ch; font-size: 17px; color: var(--ink-soft); line-height: 1.75; }
-  .article-list { margin-top: 60px; columns: 2; column-gap: 72px; }
-  @media (max-width: 860px) { .article-list { columns: 1; } }
-  .article { break-inside: avoid; padding: 26px 0 30px; border-top: var(--rule); }
-  .article .a-label { font-family: var(--mono); font-size: 10.5px; font-weight: 700; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold-text); }
-  .article h3 { font-family: var(--display); font-weight: 400; font-size: 24px; margin: 10px 0 10px; }
-  .article p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
+    .nav-brand {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      white-space: nowrap;
+    }
 
-  /* ---------- scenarios ---------- */
-  .scen-table {
-    margin-top: 56px; overflow-x: auto; position: relative;
-    border: var(--rule); box-shadow: 0 24px 70px oklch(0.235 0.034 262 / 0.08);
-    background: var(--paper); touch-action: pan-x; overscroll-behavior-inline: contain;
-    -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity;
-    scrollbar-color: var(--gold-text) var(--paper-shade);
-  }
-  .scen-table:focus-visible { outline-offset: 6px; }
-  table { width: 100%; border-collapse: collapse; min-width: 760px; border: var(--rule); }
-  @media (max-width: 820px) {
-    .scen-table {
+    .nav-brand .star { color: var(--accent); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: background 0.2s var(--ease), transform 0.15s var(--ease), box-shadow 0.2s;
+    }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+    }
+    .btn-primary:hover { background: var(--accent-h); }
+
+    .btn-primary-lg {
+      background: var(--accent);
+      color: var(--white);
+      padding: clamp(0.85rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2.25rem);
+      border-radius: var(--radius-md);
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      letter-spacing: 0.005em;
+    }
+    .btn-primary-lg:hover { background: var(--accent-h); box-shadow: var(--shadow-md); }
+
+    /* ======================================================
+       HERO
+    ====================================================== */
+    #hero {
+      padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(3rem, 7vw, 6rem);
       background:
-        linear-gradient(90deg, var(--paper) 0, oklch(0.972 0.012 88 / 0) 28px) left / 48px 100% no-repeat,
-        linear-gradient(270deg, var(--paper) 0, oklch(0.972 0.012 88 / 0) 28px) right / 48px 100% no-repeat,
-        var(--paper);
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(24,101,74,0.05) 0%, transparent 70%),
+        var(--bg);
     }
-    .scen-table::after {
-      content: "Scroll ledger →";
-      position: sticky; left: 12px; bottom: 10px; display: inline-flex;
-      font-family: var(--mono); font-size: 9px; font-weight: 700;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--paper-on-night); background: var(--night);
-      padding: 6px 9px; margin: 0 0 10px 12px;
-      box-shadow: 3px 3px 0 var(--red-faint);
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "intro vsl"
+        "body  vsl";
+      gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    .hero-intro { grid-area: intro; }
+    .hero-body  { grid-area: body; }
+    .hero-vsl   { grid-area: vsl; align-self: center; width: 100%; }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "intro"
+          "vsl"
+          "body";
+        gap: 1.5rem;
+      }
+      .hero-vsl { margin: 0 auto; max-width: 520px; }
+    }
+
+    .hero-eyebrow-1 {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-eyebrow-2 {
+      font-family: var(--sans);
+      font-size: clamp(0.85rem, 1.5vw, 1rem);
+      font-style: italic;
+      color: var(--faint);
+      margin-bottom: 1.75rem;
+      line-height: 1.5;
+    }
+
+    .hero-h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+      margin-bottom: 1.5rem;
+      color: var(--ink);
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-lede {
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--gray);
+      margin-bottom: 2rem;
+      max-width: 56ch;
+    }
+
+    .hero-lede strong { color: var(--ink); font-weight: 600; }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      align-items: flex-start;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-reassurance {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      color: var(--faint);
+      line-height: 1.6;
+    }
+
+    .cd-display {
+      display: flex;
+      gap: clamp(0.75rem, 2vw, 1.25rem);
+      align-items: flex-end;
+    }
+
+    .cd-unit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .cd-digit {
+      font-family: var(--mono);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      min-width: 2ch;
+      text-align: center;
+    }
+
+    .cd-label {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .cd-colon {
+      font-family: var(--mono);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      color: var(--hair-dark);
+      line-height: 1;
+      padding-bottom: 0.3rem;
+    }
+
+    /* Hero VSL placeholder */
+    .hero-vsl-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.65rem;
+      text-align: center;
+    }
+
+    .vsl-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 70% 80% at 50% 100%, rgba(24,101,74,0.2) 0%, transparent 65%),
+        linear-gradient(145deg, #1a1d22 0%, #0f1216 55%, #16181d 100%);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .vsl-play {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--white);
+      font-family: var(--sans);
+      padding: 1rem;
+      transition: opacity 0.25s var(--ease);
+    }
+
+    .vsl-play:hover { opacity: 0.92; }
+    .vsl-play:focus-visible { outline: 2px solid var(--accent-h); outline-offset: -4px; border-radius: var(--radius-lg); }
+
+    .vsl-play-icon {
+      width: clamp(3.25rem, 7vw, 4.25rem);
+      height: clamp(3.25rem, 7vw, 4.25rem);
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(6px);
+      border: 2px solid rgba(255,255,255,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      transition: transform 0.2s var(--ease), background 0.2s var(--ease);
+    }
+
+    .vsl-play:hover .vsl-play-icon {
+      transform: scale(1.05);
+      background: rgba(24,101,74,0.5);
+      border-color: rgba(255,255,255,0.45);
+    }
+
+    .vsl-play-icon svg {
+      width: 38%;
+      height: 38%;
+      margin-left: 4%;
+    }
+
+    .vsl-play-text {
+      font-size: clamp(0.8rem, 1.5vw, 0.9rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+    }
+
+    .vsl-duration {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Plan showcase (moved hero document) */
+    #plan-showcase {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .plan-showcase-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .plan-showcase-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .plan-showcase-doc { justify-self: center; }
+    }
+
+    .plan-showcase-copy {
+      max-width: 42ch;
+    }
+
+    .plan-showcase-copy .section-h2 {
+      font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+      margin-bottom: 0.65rem;
+    }
+
+    .plan-showcase-copy p {
+      font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+      line-height: 1.65;
+      color: var(--gray);
+    }
+
+    .plan-showcase-doc {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .plan-showcase-doc { align-items: center; }
+    }
+
+    .doc-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      padding: 1rem;
+      position: relative;
+      width: 100%;
+      max-width: 360px;
+      transform: rotate(-1.25deg);
+    }
+
+    @media (max-width: 768px) {
+      .doc-card { transform: none; }
+    }
+
+    .doc-tab {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .doc-tab::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.75;
+      flex-shrink: 0;
+    }
+
+    .doc-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .price-chip {
+      position: absolute;
+      bottom: -0.75rem;
+      right: 1.25rem;
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      box-shadow: var(--shadow-md);
+      white-space: nowrap;
+    }
+
+    .price-chip .chip-sub {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* ======================================================
+       PROOF BAND
+    ====================================================== */
+    #proof {
+      background: var(--panel);
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .proof-intro {
+      text-align: center;
+      max-width: 62ch;
+      margin: 0 auto 3rem;
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--gray);
+    }
+    .proof-intro strong { color: var(--ink); font-weight: 600; }
+
+    .proof-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .proof-stats { grid-template-columns: 1fr; }
+    }
+
+    .proof-stat {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: clamp(1.5rem, 3vw, 2rem);
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      border-top: 3px solid var(--accent);
+    }
+
+    .proof-num {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--accent);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .proof-desc {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    .proof-closing {
+      text-align: center;
+      max-width: 62ch;
+      margin: 0 auto 1.25rem;
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--gray);
+    }
+    .proof-closing strong { color: var(--ink); font-weight: 600; }
+
+    .proof-note {
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.03em;
+      color: var(--faint);
+    }
+
+    /* ======================================================
+       SECTION BASE
+    ====================================================== */
+    .section {
+      padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+    }
+
+    .section-alt { background: var(--panel); }
+
+    /* ======================================================
+       §1 THE MONEY
+    ====================================================== */
+    .money-grid {
+      max-width: var(--max-prose);
+    }
+
+    .pull-quote {
+      border-left: 2px solid var(--accent);
+      padding: 0 0 0 1.25rem;
+      margin: 2rem 0;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    /* ======================================================
+       §2 FOUNDER
+    ====================================================== */
+    #founder {
+      scroll-margin-top: 100px;
+    }
+
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: clamp(3rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .founder-grid { grid-template-columns: 1fr; }
+      .founder-img-col { order: -1; }
+    }
+
+    .founder-img-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .founder-img-card img { width: 100%; }
+
+    .founder-caption {
+      padding: 0.75rem 1rem;
+      font-size: 0.775rem;
+      color: var(--faint);
+      text-align: center;
+      font-style: italic;
+    }
+
+    .founder-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    @media (max-width: 500px) {
+      .founder-stats { grid-template-columns: 1fr; }
+    }
+
+    .f-stat-num {
+      font-size: clamp(1.5rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+
+    .f-stat-label {
+      font-size: 0.8rem;
+      color: var(--faint);
+      line-height: 1.5;
+    }
+
+    .founder-quote {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hair);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-weight: 600;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .founder-quote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      font-style: normal;
+      font-weight: 500;
+      color: var(--faint);
+    }
+
+    /* ======================================================
+       §3 WHAT YOU'LL HOLD
+    ====================================================== */
+    #plan {
+      scroll-margin-top: 100px;
+    }
+
+    .flipthrough-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 2.5rem;
+    }
+
+    .flipthrough-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+
+    @media (max-width: 680px) {
+      .flipthrough-inner { grid-template-columns: 1fr; }
+    }
+
+    .flipthrough-img { width: 100%; }
+
+    .flipthrough-info {
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .flipthrough-info .tag-chip { margin-bottom: 1rem; }
+
+    .flipthrough-h {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .flipthrough-cap {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--gray);
+    }
+
+    /* plan specimen inline */
+    .plan-specimen {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: start;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    @media (max-width: 680px) {
+      .plan-specimen { grid-template-columns: 1fr; }
+    }
+
+    .plan-specimen img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--hair);
+    }
+
+    .plan-specimen-h {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .plan-specimen-desc {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .plan-specimen-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .plan-specimen-list li {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--gray);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .plan-specimen-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ======================================================
+       §4 METHOD
+    ====================================================== */
+    #method {
+      scroll-margin-top: 100px;
+    }
+
+    .method-lede {
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: var(--max-prose);
+      margin-bottom: 3rem;
+    }
+
+    .method-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: var(--max-prose);
+    }
+
+    .method-list li {
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    .method-list li::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .method-list li strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+
+    /* ======================================================
+       §6 SCENARIOS TABLE
+    ====================================================== */
+    .scenarios-lede {
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: var(--max-prose);
+      margin-bottom: 2.5rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+      border-radius: var(--radius-md);
+    }
+
+    .table-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 2.5rem;
+      background: linear-gradient(to right, transparent, rgba(252,252,251,0.95));
       pointer-events: none;
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      opacity: 0;
+      transition: opacity 0.2s;
     }
-  }
-  thead th { font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-align: left; color: var(--paper-on-night); background: var(--night); padding: 16px 20px; border-bottom: 2px solid var(--gold); }
-  thead th.num { text-align: right; }
-  tbody td { padding: 20px; font-size: 14.5px; color: var(--ink-soft); border-top: var(--rule); vertical-align: top; line-height: 1.55; }
-  tbody td:first-child { font-weight: 700; color: var(--ink); font-size: 15px; }
-  tbody td.val { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 500; color: var(--ink); white-space: nowrap; text-align: right; }
-  tbody tr:nth-child(even) { background: oklch(0.948 0.018 86 / 0.6); }
-  .table-foot { font-family: var(--mono); font-size: 10.5px; color: var(--ink-faint); margin-top: 16px; line-height: 1.7; max-width: 90ch; }
 
-  /* impact callout */
-  .impact-card { margin-top: 54px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 4vw, 56px); align-items: center; border: var(--rule); background: var(--paper); padding: clamp(28px, 4vw, 40px); }
-  @media (max-width: 760px) { .impact-card { grid-template-columns: 1fr; } }
-  .impact-fig small { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oxblood); }
-  .impact-fig .total { font-family: var(--display); font-size: clamp(40px, 6vw, 60px); line-height: 0.95; color: var(--ink); margin: 12px 0 18px; font-variant-numeric: tabular-nums; }
-  .impact-rows { display: grid; font-variant-numeric: tabular-nums; }
-  .impact-rows div { display: flex; justify-content: space-between; gap: 1.5em; padding: 11px 0; border-top: var(--rule); }
-  .impact-rows span:first-child { color: var(--ink-soft); font-size: 14px; }
-  .impact-rows span:last-child { color: var(--gold-text); font-weight: 700; font-size: 14px; font-family: var(--mono); }
-  .impact-copy h3 { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 12px; }
-  .impact-copy p { font-size: 15.5px; color: var(--ink-soft); line-height: 1.7; }
-  .impact-copy .cap { margin-top: 14px; font-family: var(--mono); font-size: 10px; color: var(--ink-faint); letter-spacing: 0.03em; }
+    .table-wrap.is-scrollable::after { opacity: 1; }
 
-  /* ---------- who it's for + fit ---------- */
-  .presents-grid { display: grid; grid-template-columns: 0.85fr 2fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
-  @media (max-width: 860px) {
-    .presents-grid { grid-template-columns: 1fr; gap: 32px; }
-    .presents-side { position: static; }
-    .fit-grid { margin-top: 48px; padding-top: 40px; }
-  }
-  .presents-side { position: sticky; top: 110px; align-self: start; }
-  .presents-side p { font-size: 16px; color: var(--ink-soft); line-height: 1.75; margin-top: 18px; }
-  .index-list { border-top: var(--rule); }
-  .index-item { padding: 28px 0; border-bottom: var(--rule); display: grid; grid-template-columns: 1fr 1.6fr; gap: 20px; }
-  @media (max-width: 600px) { .index-item { grid-template-columns: 1fr; gap: 8px; } }
-  .index-item h3 { font-family: var(--display); font-weight: 400; font-size: 21px; line-height: 1.25; }
-  .index-item p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; }
-  .index-item .terms-line { margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-text); }
-
-  .fit-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: clamp(40px, 6vw, 80px);
-    margin-top: 64px; padding-top: clamp(48px, 5vw, 64px);
-    border-top: var(--rule); position: relative;
-  }
-  @media (min-width: 721px) {
-    .fit-grid::after {
-      content: ""; position: absolute; left: 50%; top: clamp(48px, 5vw, 64px); bottom: 0;
-      width: 1px; background: var(--gold-faint); transform: translateX(-50%); pointer-events: none;
+    .section-alt .table-wrap::after {
+      background: linear-gradient(to right, transparent, rgba(244,245,243,0.95));
     }
-  }
-  @media (max-width: 720px) {
-    .fit-grid { grid-template-columns: 1fr; gap: 0; }
-    .fit-card.no { padding-top: 40px; margin-top: 40px; border-top: var(--rule-gold); }
-  }
-  .fit-card { background: none; padding: 0; border: none; }
-  .fit-label {
-    font-family: var(--mono); font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold-text);
-    margin-bottom: 14px;
-  }
-  .fit-card.no .fit-label { color: var(--ink-faint); letter-spacing: 0.18em; }
-  .fit-card h3 {
-    font-family: var(--display); font-weight: 400;
-    font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2;
-    margin-bottom: 28px; color: var(--ink);
-  }
-  .fit-card.no h3 { color: var(--ink-soft); }
-  .fit-card ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
-  .fit-card li {
-    display: grid; grid-template-columns: 16px 1fr; gap: 14px;
-    font-size: 15.5px; color: var(--ink-soft); line-height: 1.6; align-items: start;
-  }
-  .fit-card li .m {
-    display: block; font-size: 12px; line-height: 1.65; margin-top: 0;
-    background: none; border-radius: 0; width: auto; height: auto;
-  }
-  .fit-card.yes li .m { color: var(--oxblood); }
-  .fit-card.no li .m { color: var(--ink-faint); font-size: 13px; }
 
-  /* ---------- appraisal (pricing) ---------- */
-  .appraisal-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(44px, 7vw, 110px); align-items: start; }
-  @media (max-width: 860px) { .appraisal-grid { grid-template-columns: 1fr; } }
-  .appraisal-copy p { font-size: 17px; color: var(--ink-soft); line-height: 1.78; margin-bottom: 22px; }
-  .appraisal-copy p strong { color: var(--ink); }
-  .ledger-doc { border: var(--rule); padding: 36px 32px 32px; position: relative;
-    background: linear-gradient(90deg, var(--navy-text) 0 33.4%, var(--gold) 33.4% 66.7%, var(--oxblood) 66.7% 100%) top / 100% 3px no-repeat, var(--paper-deep); }
-  .ledger-doc .doc-title { text-align: center; margin-bottom: 28px; }
-  .leader-row { display: flex; align-items: baseline; gap: 10px; padding: 13px 0; }
-  .leader-row .name { font-size: 15px; }
-  .leader-row .name small { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.06em; color: var(--ink-faint); margin-top: 3px; text-transform: uppercase; }
-  .leader-row .dots { flex: 1; border-bottom: 1px dotted oklch(0.235 0.034 262 / 0.4); transform: translateY(-4px); min-width: 30px; }
-  .leader-row .amt { font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 17px; color: var(--ink-faint); }
-  .leader-row.struck .amt { text-decoration: line-through; text-decoration-color: var(--oxblood); }
-  .leader-row.final { border-top: var(--rule); margin-top: 14px; padding-top: 22px; }
-  .leader-row.final .name { font-weight: 700; font-size: 16px; }
-  .leader-row.final .amt { font-family: var(--display); font-size: 36px; color: var(--gold-text); text-decoration: none; }
-  .ledger-doc .btn { display: block; text-align: center; margin-top: 28px; }
+    .scenarios-table {
+      width: 100%;
+      min-width: 640px;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      background: var(--white);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
 
-  /* what's included */
-  .included-band { margin-top: clamp(54px, 6vw, 84px); border-top: 2px solid oklch(0.235 0.034 262 / 0.3); padding-top: 38px; }
-  .included-head { display: flex; align-items: baseline; gap: 22px; flex-wrap: wrap; margin-bottom: 30px; }
-  .included-head .smallcaps { color: var(--gold-text); }
-  .included-head h3 { font-family: var(--display); font-weight: 400; font-size: clamp(23px, 2.6vw, 31px); }
-  .incl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 56px; }
-  @media (max-width: 760px) { .incl { grid-template-columns: 1fr; gap: 18px; } }
-  .incl li { display: grid; grid-template-columns: 20px 1fr; gap: 14px; font-size: 16px; color: var(--ink-soft); line-height: 1.6; }
-  .incl li .m { color: var(--oxblood); font-size: 12px; line-height: 1.7; }
-  .incl li b { color: var(--ink); font-weight: 700; }
+    .scenarios-table thead {
+      background: var(--ink);
+      color: var(--white);
+    }
 
-  /* ---------- guarantees ---------- */
-  .guarantees { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(22px, 3vw, 36px); margin-top: 56px; }
-  @media (max-width: 760px) { .guarantees { grid-template-columns: 1fr; } }
-  .guar { border: var(--rule); padding: clamp(24px, 3vw, 36px); background: var(--paper); display: grid; grid-template-columns: 48px 1fr; gap: 20px; align-items: start; }
-  .guar .seal-badge { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--gold-faint); color: var(--gold-text); display: grid; place-items: center; font-family: var(--display); font-size: 20px; }
-  .guar h3 { font-family: var(--display); font-weight: 400; font-size: 23px; margin-bottom: 10px; }
-  .guar p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; }
-  .guar p strong { color: var(--ink); font-weight: 700; }
+    .scenarios-table th {
+      padding: 1rem 1.25rem;
+      text-align: left;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
 
-  /* ---------- attestation ---------- */
-  .attest { background: var(--paper-deep); border-top: var(--rule); border-bottom: var(--rule); text-align: center; }
-  .attest.flush-top { border-top: 0; }
-  .attest blockquote { font-family: var(--display); font-style: italic; font-size: clamp(24px, 3.2vw, 36px); line-height: 1.45; max-width: 26em; margin: 0 auto 30px; }
-  .attest blockquote .plain { color: var(--gold-text); }
-  .attest cite { font-style: normal; }
+    .scenarios-table td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--hair);
+      vertical-align: top;
+      line-height: 1.55;
+      color: var(--gray);
+    }
 
-  /* ---------- faq ---------- */
-  .faq-list { margin-top: 52px; border-top: var(--rule); }
-  details { border-bottom: var(--rule); }
-  summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 26px 4px; min-height: 76px; font-family: var(--display); font-size: clamp(19px, 2.2vw, 23px); transition: color .3s var(--ease-out), background-color .3s var(--ease-out), padding-inline .3s var(--ease-out); }
-  summary:hover, details[open] summary { color: var(--gold-text); }
-  summary:active { background: oklch(0.745 0.085 85 / 0.10); }
-  summary:focus-visible { background: oklch(0.745 0.085 85 / 0.08); padding-inline: 10px; }
-  summary::-webkit-details-marker { display: none; }
-  summary .q-no { font-family: var(--mono); font-size: 11px; color: var(--gold-text); letter-spacing: 0.2em; flex-shrink: 0; }
-  summary .q-mark { width: 32px; height: 32px; border: 1px solid var(--gold-faint); display: grid; place-items: center; font-family: var(--mono); font-size: 18px; color: var(--gold-text); flex-shrink: 0; transition: transform .35s var(--ease-out), background .35s var(--ease-out); }
-  details[open] summary .q-mark { transform: rotate(45deg); background: oklch(0.745 0.085 85 / 0.12); }
-  summary .q-text { flex: 1; }
-  details .faq-body { padding: 0 4px 30px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.75; max-width: 64ch; }
+    .scenarios-table tbody tr:last-child td { border-bottom: none; }
 
-  /* ---------- footer ---------- */
-  footer { background: var(--night); border-top: 1px solid oklch(0.745 0.085 85 / 0.22); padding: 52px 0 64px; }
-  @media (max-width: 760px) { footer { padding-bottom: calc(var(--mobile-nav-clearance) + 48px + env(safe-area-inset-bottom)); } }
-  footer .brand-line { text-align: center; font-family: var(--mono); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--faded-on-night); margin-bottom: 24px; }
-  footer .brand-line span { color: var(--gold); }
-  footer .disclaimer { font-family: var(--mono); font-size: 10.5px; color: oklch(0.58 0.02 262); line-height: 1.8; max-width: 880px; margin: 0 auto; text-align: center; }
+    .scenarios-table tbody tr:hover { background: var(--panel); }
 
-  /* ---------- generated imagery ---------- */
-  .attest-seal { display: block; width: clamp(88px, 11vw, 120px); height: auto; margin: 0 auto 22px; opacity: 0.85; }
-</style>
+    .scenarios-table .td-num {
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: 0.85rem;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .table-foot {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      color: var(--faint);
+      padding-top: 1rem;
+    }
+
+    /* ======================================================
+       §7 WHO IT'S FOR
+    ====================================================== */
+    .who-intro {
+      font-size: clamp(1rem, 1.8vw, 1.1rem);
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: var(--max-prose);
+      margin-bottom: 2.5rem;
+    }
+
+    .who-index {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-bottom: 3rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    @media (max-width: 640px) {
+      .who-index { grid-template-columns: 1fr; }
+    }
+
+    .who-item {
+      padding: clamp(1.25rem, 2.5vw, 1.75rem) 0;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    @media (min-width: 641px) {
+      .who-item:nth-child(odd) { padding-right: 1.5rem; border-right: 1px solid var(--hair); }
+      .who-item:nth-child(even) { padding-left: 1.5rem; }
+    }
+
+    .who-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .who-h3 {
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+
+    .who-body {
+      font-size: 0.85rem;
+      line-height: 1.65;
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 640px) {
+      .fit-grid { grid-template-columns: 1fr; }
+    }
+
+    .fit-card {
+      border-radius: var(--radius-md);
+      padding: clamp(1.5rem, 3vw, 2rem);
+    }
+
+    .fit-card.yes { background: transparent; border: 1px solid var(--hair); }
+    .fit-card.no  { background: transparent; border: 1px solid var(--hair); }
+
+    .fit-heading {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+    .fit-card.yes .fit-heading { color: var(--accent); }
+    .fit-card.no .fit-heading  { color: var(--faint); }
+
+    .fit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .fit-list li {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      color: var(--gray);
+      padding-left: 1.3rem;
+      position: relative;
+    }
+    .fit-card.yes .fit-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .fit-card.no  .fit-list li::before { content: '✗'; position: absolute; left: 0; color: var(--faint); }
+
+    /* ======================================================
+       §9 PRICING
+    ====================================================== */
+    .pricing-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: clamp(3rem, 5vw, 5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .pricing-layout { grid-template-columns: 1fr; }
+    }
+
+    .pricing-body .body-text {
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .pricing-card-head {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.5rem 2rem;
+    }
+
+    .pricing-card-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 0.25rem;
+    }
+
+    .pricing-card-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0;
+      color: var(--white);
+    }
+
+    .ledger {
+      padding: 1.5rem 2rem;
+    }
+
+    .ledger-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--hair);
+    }
+    .ledger-row:last-child { border-bottom: none; }
+
+    .ledger-row.final {
+      padding-top: 1rem;
+      border-top: 2px solid var(--ink);
+      border-bottom: none;
+      margin-top: 0.5rem;
+    }
+
+    .ledger-item { flex: 1; }
+
+    .ledger-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+    .ledger-row.final .ledger-name { font-size: 1rem; font-weight: 700; color: var(--accent); }
+
+    .ledger-sub {
+      font-size: 0.75rem;
+      color: var(--faint);
+      line-height: 1.4;
+    }
+
+    .ledger-val {
+      font-family: var(--mono);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .ledger-row.final .ledger-val {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .ledger-cta {
+      padding: 1.25rem 2rem 1.75rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    .what-you-get {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    .wyg-heading {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .wyg-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .wyg-list li {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--gray);
+      padding-left: 1.5rem;
+      position: relative;
+    }
+    .wyg-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .wyg-list li strong { color: var(--ink); }
+
+    /* ======================================================
+       §10 GUARANTEE
+    ====================================================== */
+    #guarantee {
+      scroll-margin-top: 100px;
+    }
+
+    .guarantee-prose {
+      max-width: var(--max-prose);
+      margin-top: 2rem;
+    }
+
+    .guarantee-item {
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--hair);
+    }
+
+    .guarantee-item:first-child { border-top: none; padding-top: 0; }
+
+    .g-title {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    .g-body {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--gray);
+    }
+    .g-body strong { color: var(--ink); }
+
+    /* ======================================================
+       §11 FAQ
+    ====================================================== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    .faq-list details {
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .faq-list details summary {
+      list-style: none;
+      padding: 1.25rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: clamp(0.9rem, 1.5vw, 1rem);
+      font-weight: 600;
+      color: var(--ink);
+      transition: color 0.2s;
+      user-select: none;
+    }
+    .faq-list details summary::-webkit-details-marker { display: none; }
+    .faq-list details summary:hover { color: var(--accent); }
+
+    .faq-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1.5px solid var(--hair-dark);
+      flex-shrink: 0;
+      font-size: 1rem;
+      line-height: 1;
+      color: var(--faint);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .faq-toggle::before { content: '+'; }
+
+    details[open] .faq-toggle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--white);
+    }
+    details[open] .faq-toggle::before { content: '−'; }
+
+    .faq-answer {
+      padding: 0 0 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--gray);
+      max-width: var(--max-prose);
+    }
+
+    /* ======================================================
+       §13 FINAL CLAIM
+    ====================================================== */
+    #claim {
+      scroll-margin-top: 100px;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .claim-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+      padding: clamp(4rem, 8vw, 7rem) 0;
+    }
+
+    .claim-kicker {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .claim-h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--white);
+      max-width: 22ch;
+    }
+
+    .claim-lede {
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.65);
+      max-width: 54ch;
+    }
+
+    .claim-price-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .claim-price {
+      font-family: var(--mono);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 500;
+      color: #6EE7B7;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .claim-price-sub {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .claim-btn {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      padding: clamp(0.9rem, 2vw, 1.1rem) clamp(2rem, 4vw, 2.75rem);
+      border-radius: var(--radius-md);
+      transition: background 0.2s var(--ease), box-shadow 0.2s;
+      display: inline-block;
+    }
+    .claim-btn:hover { background: var(--accent-h); box-shadow: 0 4px 24px rgba(24,101,74,0.45); }
+
+    .claim-note {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+    }
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
+    footer {
+      background: var(--panel);
+      border-top: 1px solid var(--hair);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer-brand {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .footer-disclaimer {
+      font-size: 0.78rem;
+      line-height: 1.75;
+      color: var(--faint);
+      max-width: 80ch;
+    }
+
+    .footer-disclaimer a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ======================================================
+       STICKY FLOATING CTA
+    ====================================================== */
+    #sticky-cta {
+      display: flex;
+      position: fixed;
+      bottom: max(1.5rem, env(safe-area-inset-bottom));
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      z-index: 700;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 100px;
+      padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+      align-items: center;
+      gap: 1rem;
+      box-shadow: 0 8px 32px rgba(22,24,29,0.28);
+      transition: transform 0.5s var(--ease), opacity 0.4s;
+      opacity: 0;
+      pointer-events: none;
+      white-space: nowrap;
+      max-width: calc(100vw - 2rem);
+    }
+
+    #sticky-cta.visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scta-price {
+      font-family: var(--mono);
+      font-size: 1rem;
+      font-weight: 500;
+      color: #6EE7B7;
+    }
+
+    .scta-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .scta-btn {
+      background: var(--accent);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .scta-btn:hover { background: var(--accent-h); }
+
+    main { padding-bottom: 5.5rem; }
+
+    footer { padding-bottom: calc(2.5rem + env(safe-area-inset-bottom)); }
+
+    /* ======================================================
+       MOBILE OPTIMIZATIONS
+    ====================================================== */
+    @media (max-width: 640px) {
+      .container { padding: 0 1.125rem; }
+
+      #promo-bar {
+        flex-direction: column;
+        gap: 0.35rem;
+        padding: 0.55rem 0.875rem;
+        padding-top: max(0.55rem, env(safe-area-inset-top));
+        font-size: 0.68rem;
+        line-height: 1.45;
+      }
+
+      #promo-bar .promo-text {
+        max-width: 36rem;
+      }
+
+      .nav-inner {
+        height: 52px;
+        gap: 0.75rem;
+      }
+
+      .nav-brand {
+        font-size: 0.8rem;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .btn-primary {
+        font-size: 0.75rem;
+        padding: 0.55rem 0.85rem;
+        min-height: 44px;
+      }
+
+      #hero {
+        padding: 2rem 0 2.5rem;
+      }
+
+      .hero-h1 {
+        font-size: clamp(1.75rem, 8vw, 2.25rem);
+        line-height: 1.15;
+      }
+
+      .hero-lede {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-cta-group {
+        width: 100%;
+        align-items: stretch;
+        margin-bottom: 2rem;
+      }
+
+      .btn-primary-lg {
+        width: 100%;
+        min-height: 48px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.3;
+      }
+
+      .hero-reassurance {
+        text-align: center;
+        width: 100%;
+      }
+
+      .cd-display {
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cd-digit {
+        font-size: 1.5rem;
+      }
+
+      .cd-colon {
+        font-size: 1.5rem;
+      }
+
+      .doc-card {
+        max-width: 280px;
+      }
+
+      .plan-showcase-doc {
+        margin-top: 0.5rem;
+      }
+
+      .vsl-play-text {
+        font-size: 0.85rem;
+      }
+
+      .section {
+        padding: 2.75rem 0;
+      }
+
+      .section-h2 {
+        font-size: clamp(1.45rem, 6vw, 1.85rem);
+      }
+
+      .pull-quote {
+        padding-left: 1rem;
+        font-size: 1rem;
+      }
+
+      /* Scenarios table → stacked cards */
+      .table-wrap::after { display: none; }
+
+      .scenarios-table,
+      .scenarios-table thead,
+      .scenarios-table tbody,
+      .scenarios-table tr,
+      .scenarios-table th,
+      .scenarios-table td {
+        display: block;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .scenarios-table thead { display: none; }
+
+      .scenarios-table tbody tr {
+        background: var(--white);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-sm);
+        margin-bottom: 1rem;
+        padding: 0.25rem 0;
+        overflow: hidden;
+      }
+
+      .scenarios-table tbody tr:hover { background: var(--white); }
+
+      .scenarios-table td {
+        padding: 0.65rem 1rem;
+        border-bottom: 1px solid var(--hair);
+        display: grid;
+        grid-template-columns: minmax(7rem, 38%) 1fr;
+        gap: 0.5rem 0.75rem;
+        align-items: baseline;
+      }
+
+      .scenarios-table td::before {
+        content: attr(data-label);
+        font-family: var(--mono);
+        font-size: 0.58rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--faint);
+      }
+
+      .scenarios-table td:first-child {
+        padding-top: 1rem;
+        font-weight: 600;
+        color: var(--ink);
+        font-size: 0.9rem;
+        grid-template-columns: 1fr;
+      }
+
+      .scenarios-table td:first-child::before { display: none; }
+
+      .scenarios-table td:last-child {
+        border-bottom: none;
+        padding-bottom: 1rem;
+      }
+
+      .scenarios-table .td-num { white-space: normal; }
+
+      .ledger-row {
+        flex-wrap: wrap;
+        gap: 0.35rem 1rem;
+      }
+
+      .ledger-val { margin-left: auto; }
+
+      .pricing-card-head,
+      .ledger,
+      .ledger-cta {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .ledger-cta .btn-primary-lg {
+        width: 100%;
+      }
+
+      .claim-inner {
+        padding: 3rem 0;
+        gap: 1.5rem;
+      }
+
+      .claim-price-card {
+        width: 100%;
+        padding: 1.5rem 1.25rem;
+      }
+
+      .claim-btn {
+        width: 100%;
+        text-align: center;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .claim-h2 { max-width: none; }
+
+      .faq-list details summary {
+        padding: 1rem 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #sticky-cta {
+        width: calc(100% - 1.5rem);
+        left: 50%;
+        bottom: max(0.75rem, env(safe-area-inset-bottom));
+        border-radius: var(--radius-md);
+        padding: 0.65rem 0.75rem;
+        gap: 0.65rem;
+        justify-content: space-between;
+      }
+
+      .scta-note { display: none; }
+
+      .scta-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+      }
+
+      .founder-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .f-stat-num { font-size: 1.25rem; }
+
+      .f-stat-label { font-size: 0.72rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #sticky-cta { transition: none; }
+    }
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="page-frame" aria-hidden="true"></div>
 
-<div class="promo-bar"><span class="pb-long">★ America's 250th · The Legacy Wealth Plan, standalone for the first time · </span><b>$2,500 → $1,776</b> · Ends July 5<span class="pb-long">, midnight ET</span></div>
+  <!-- SKIP LINK -->
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav class="liberty-nav" aria-label="Site">
-  <a class="nav-brand" href="#main"><span class="st">★</span> Legacy Investing Show</a>
-  <a class="nav-cta" href="#claim">Get the Plan · $1,776</a>
-</nav>
-
-<main id="main" tabindex="-1">
-
-<!-- ======= MASTHEAD ======= -->
-<header class="masthead">
-  <div class="col-wide">
-    <div class="offer-row">
-      <div class="offer-copy reveal in">
-        <div class="eyebrow">
-          <span class="brand"><span class="st">★</span> 1776–2026 · America's 250th</span>
-          <span class="occasion">A July 4th release — one week only</span>
-        </div>
-        <h1>You earn it.<br>Then watch it leave.<span class="line2">Here's how you keep more of it.</span></h1>
-        <p class="lede">The wealthy aren't smarter than you, and most don't out-earn you. Someone sat down with their numbers and built them a plan. <strong>This is that plan:</strong> the personalized wealth blueprint our $9,800 private clients start with. For one week, it's yours for $1,776.</p>
-        <a class="btn" href="#claim">Claim Your Wealth Plan · $1,776</a>
-        <span class="btn-note">One payment · Regular standalone price $2,500</span>
-        <div class="countdown" data-deadline="2026-07-06T03:59:00Z" role="timer" aria-label="Time remaining">
-          <span class="cd-num" data-cd="d">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="h">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="m">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="s">--</span>
-        </div>
-        <div class="cd-caption">Days · Hrs · Min · Sec until the $1,776 price ends</div>
-      </div>
-
-      <div class="hero-art reveal in" data-d="2">
-        <div class="hero-doc">
-          <span class="doc-tab">Confidential · Prepared For You</span>
-          <img src="assets/sample-cover.png" width="1408" height="1770" alt="Cover of a real Comprehensive Wealth Plan, shown as a specimen with the client's name redacted">
-        </div>
-        <div class="price-stamp" aria-hidden="true">
-          <span class="ps-was">$2,500</span>
-          <span class="ps-now">$1,776</span>
-          <span class="ps-terms">Yours forever</span>
-        </div>
-      </div>
-    </div>
+  <!-- ====================================================
+       PROMO BAR
+  ==================================================== -->
+  <div id="promo-bar" role="banner" aria-label="Promotional announcement">
+    <span class="promo-text">$1,776 Wealth Plan · Public release ends July 5, midnight ET</span>
+    <span
+      class="countdown"
+      data-deadline="2026-07-06T03:59:00Z"
+      role="timer"
+      aria-label="Time remaining until offer ends"
+    ><span data-cd="d">--</span><span class="cd-sep">:</span><span data-cd="h">--</span><span class="cd-sep">:</span><span data-cd="m">--</span><span class="cd-sep">:</span><span data-cd="s">--</span></span>
   </div>
-</header>
 
-<!-- ======= PROOF ======= -->
-<section class="proof-band" aria-label="Proof points">
-  <div class="col">
-    <p class="proof-copy reveal in">We've built <strong>more than 100 personalized wealth plans</strong> around real client situations: W-2 earners, business owners, dual-income households, people rebuilding from scratch. When we map someone's numbers and put the right moves in order, the <strong>median year-one value on the core plan is $79,114</strong>.* That's tax, retirement, entity, and cash-flow strategies working together, mostly from money the client was already earning, just never structured. When real estate, spouse income, or larger capital deployment enters the picture, <strong>the median climbs to $312,861</strong>. The <strong>highest single plan we've modeled to date came in at $939,433</strong>. For America's 250th birthday, that same document is available standalone for the first time: one week, <strong>$1,776</strong>, built on your numbers.</p>
-    <p class="proof-note">* Modeled planning estimates based on each client's profile. Not guarantees. Individual results vary.</p>
-  </div>
-</section>
-
-<!-- ======= PREAMBLE ======= -->
-<section class="preamble">
-  <div class="col">
-    <div class="sec-head reveal"><span class="no">§ 1</span><span class="smallcaps">Concerning the Money That Keeps Disappearing</span></div>
-    <h2 class="reveal">You did everything right. So why does it still feel like you're standing still?</h2>
-    <div class="reveal" data-d="1">
-      <p class="opener">You crossed six figures. You expected to feel ahead. Instead the raises get swallowed, April hurts a little more every year, and the wealth you're supposedly building never quite shows up where you can see it.</p>
-      <p>The reason is structural. When you earn $100K to $400K on a W-2 or 1099, you pay some of the highest effective tax rates in the country, while the tools that would lower them sit unused, because nobody's job is to set them up for you.</p>
-      <p>Your CPA won't catch it either. Most CPAs are hired to file last year, and by the time yours opens your return in March, every window that mattered closed in December.</p>
-      <p><strong>The people who keep more aren't smarter than you, and most don't earn more than you.</strong> They have the exact same tax code you do. The only difference is that someone sat down with their numbers and worked out the order: entity structure first or retirement accounts first, real estate this year or next, which debt to clear before which investment. People lose years pulling the right levers in the wrong order. What they're missing isn't effort. It's sequence, and that has a name. It's called a wealth plan, and almost nobody has one.</p>
+  <!-- ====================================================
+       NAV
+  ==================================================== -->
+  <header id="site-nav" role="navigation" aria-label="Site navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-brand" aria-label="Legacy Investing Show home">
+        <span class="star">★</span> Legacy Investing Show
+      </a>
+      <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary" aria-label="Claim your Wealth Plan for $1,776 — proceed to checkout">
+        Claim · $1,776
+      </a>
     </div>
-    <div class="pull-quote reveal" data-d="2">
-      <div class="ornament-rule"><span class="fleuron">★★★</span></div>
-      <p>Across 100+ of these plans, the median year-one value identified was $79,114, and most of it came from money the client was already earning.*</p>
-      <div class="ornament-rule below"><span class="fleuron">★★★</span></div>
-    </div>
-    <p class="reveal section-copy-soft" data-d="3">One client in El Paso had $60,448 in benefit sitting in his own numbers, including $37,448 in tax savings, from a single year of moves made in the right order. It had been available to him for years, and nobody had ever run it. That is the whole problem, and it is fixable.</p>
-  </div>
-</section>
+  </header>
 
-<!-- ======= FOUNDER / PRESTON ======= -->
-<section class="preamble" id="founder">
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 2</span><span class="smallcaps">Meet Preston Seo</span></div>
-    <h2 class="reveal section-heading-narrow">I built this plan because no one ever built one for me.</h2>
+  <!-- ====================================================
+       MAIN
+  ==================================================== -->
+  <main id="main">
 
-    <div class="founder-grid">
-      <div class="founder-copy reveal" data-d="1">
-        <p>I come from a middle-class, first-generation immigrant family. My parents came from Korea with almost nothing and worked 14-to-16-hour days running a restaurant and a t-shirt shop. No trust fund. No shortcuts. When I finished college, I had no real clue what to do with money.</p>
-        <p>So I did the "right" thing and took a corporate sales job, and I hated it. Living for the weekend, asking permission to take a day off, staring down 40 more years of the same. So I started learning everything I could about taxes, investing, and real estate.</p>
-        <p>The deeper I dug, the clearer it got: the system isn't broken. It's built this way on purpose. I just had to learn the rules the wealthy already use. <strong>By 28, my wife and I were financially free and walked away from our jobs.</strong> Since then we've built a $15M+ real estate portfolio from scratch.</p>
-        <p>Now we've got two sons, and life looks a whole lot different than being stuck in a 9-to-5. Every high earner I knew started asking me the same thing: <em>what do I actually do, and in what order?</em> <strong>This plan is my answer, written down,</strong> so you don't have to spend a decade figuring out what I did.</p>
-      </div>
-      <figure class="founder-photo reveal" data-d="2">
-        <img src="assets/preston-family.webp" width="1000" height="714" alt="Preston Seo with his wife and their two sons" loading="lazy">
-        <figcaption>Preston, his wife, and their two boys.</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
+    <!-- ====================================================
+         HERO
+    ==================================================== -->
+    <section id="hero" aria-labelledby="hero-h1">
+      <div class="container">
+        <div class="hero-grid">
 
-<!-- ======= THE PLAN (curiosity teaser) ======= -->
-<section class="preview" id="plan">
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 3</span><span class="smallcaps">What You'll Actually Hold</span></div>
-    <h2 class="reveal">We could walk you through every page. We'd rather tell you what it does.</h2>
-    <p class="preview-intro reveal" data-d="1">It's a real, personalized document: roughly 25 to 30 pages, built on your exact numbers, not a template pulled off a shelf. We hold back the specifics on purpose. What it gives you is simpler than any list of contents:</p>
+          <!-- LEFT: headline block -->
+          <div class="hero-intro">
+            <p class="hero-eyebrow-1">★ 1776–2026 · America's 250th</p>
+            <p class="hero-eyebrow-2"><em>A July 4th release — one week only</em></p>
 
-    <div class="preview-rows">
-      <div class="preview-row reveal">
-        <div class="plate-frame"><span class="plate-tag">Specimen · Client Redacted</span><img src="assets/sample-cover.png" width="1408" height="1770" alt="Cover of a real Comprehensive Wealth Plan, shown as a specimen with the client's name redacted"></div>
-        <div class="plate-copy">
-          <div class="pg-label">What it gives you</div>
-          <h3>It's closer to a decision than a document.</h3>
-          <p>Open it and you don't get theory or a reading list. You get a single, clear answer to the question you've never had time to work out: <em>given my exact situation, what should I actually do, and in what order?</em></p>
-          <ul class="plate-list">
-            <li>The one move worth more than all the others combined, named for <em>your</em> situation, not a generic tip</li>
-            <li>Every opportunity hiding in your numbers, put in order, so you know what to do first, this month, and this year</li>
-            <li>The exact questions to take to your CPA and attorney, so it starts moving the day you open it</li>
-          </ul>
-          <div class="plate-value">Personalized to you. <b>Never a template.</b></div>
+            <h1 class="hero-h1" id="hero-h1">
+              The wealthy aren't smarter than you.<br>
+              <em>They just got the blueprint before you did.</em>
+            </h1>
+          </div>
+
+          <!-- RIGHT: VSL placeholder (swap .vsl-frame inner for embed when ready) -->
+          <div class="hero-vsl">
+            <p class="hero-vsl-label">Watch before you claim</p>
+            <div class="vsl-frame" id="hero-vsl">
+              <!-- Replace button with iframe/script embed (Wistia, Vimeo, etc.) -->
+              <button type="button" class="vsl-play" aria-label="Play video — how the Wealth Plan works">
+                <span class="vsl-play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+                <span class="vsl-play-text">See how the Wealth Plan works</span>
+                <span class="vsl-duration">~12 min</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- LEFT: lede + CTA + countdown -->
+          <div class="hero-body">
+            <p class="hero-lede">
+              You earn it, then <strong>watch it leave</strong>. The raises get swallowed and April hurts a little more each year. The difference isn't IQ. It's a <strong>personalized blueprint</strong> that names which moves to make — tax, retirement, entity, real estate — and the order to make them in. Reserved for private clients until now. For America's 250th, yours is <strong>$1,776</strong>.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg" aria-label="Claim your Wealth Plan for $1,776 — proceed to checkout">
+                Claim My Wealth Plan · $1,776
+              </a>
+              <p class="hero-reassurance">One payment · Built on your exact numbers · Worth $1,776 in modeled value, or it's free</p>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
 
-    <p class="preview-intro reveal section-offset text-center-narrow" data-d="1">What's actually inside yours depends entirely on you. In 100+ plans we've built, no two have ever come back the same.</p>
-  </div>
-</section>
+    <!-- ====================================================
+         PLAN SHOWCASE — hero document preview
+    ==================================================== -->
+    <section id="plan-showcase" aria-labelledby="plan-showcase-heading">
+      <div class="container">
+        <div class="plan-showcase-inner">
+          <div class="plan-showcase-copy">
+            <p class="kicker">What you receive</p>
+            <h2 class="section-h2" id="plan-showcase-heading">Your personalized wealth blueprint</h2>
+            <p>A 25–30 page document built on your exact numbers — not a template. Tax, retirement, entity structure, and real estate, sequenced in the order that makes sense for your situation.</p>
+          </div>
 
-<!-- ======= METHOD ======= -->
-<section id="method">
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 4</span><span class="smallcaps">How Yours Gets Built</span></div>
-    <h2 class="reveal section-heading-narrow">It starts with your numbers and ends with your first 30 days.</h2>
-    <p class="reveal section-lede" data-d="1">You fill out a short financial intake. Our team maps your actual numbers against every strategy in our system. The plan comes back telling you which ones apply to you, in what order, with the first month already scheduled, so you're never left holding a list of ideas and no idea where to start.</p>
-    <div class="method-rows">
-      <div class="method-row reveal"><span class="rn">I.</span><h3>Map the numbers</h3><div class="m-body">Income, filing status, debt, retirement accounts, business activity, real estate goals, and available capital. Your full financial picture in one place.</div></div>
-      <div class="method-row reveal"><span class="rn">II.</span><h3>Find the levers</h3><div class="m-body">Tax, entity, retirement, cash flow, debt, investment, and property strategies that fit your actual situation, with the ones that don't fit left out.</div></div>
-      <div class="method-row reveal"><span class="rn">III.</span><h3>Sequence the moves</h3><div class="m-body">What to do first, what depends on timing, and what needs professional verification before you act. Order matters more than effort.</div></div>
-      <div class="method-row reveal"><span class="rn">IV.</span><h3>Start the first 30 days</h3><div class="m-body">A clear path for your CPA, attorney, advisor, and real estate conversations. You walk in with the map already drawn.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= POSSIBLE FINDINGS (curiosity) ======= -->
-<section class="articles">
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 5</span><span class="smallcaps">What It Might Find In Yours</span></div>
-    <h2 class="reveal">The value isn't knowing every tactic. It's knowing which one comes first.</h2>
-    <p class="articles-intro reveal" data-d="1">We won't know your answers until you fill out the intake, and that's the whole point. But after 100+ plans, the moment that changes things is almost always the same one: <em>"Oh — that's the move I've been missing."</em> Here's the kind of thing that tends to surface.</p>
-    <div class="article-list">
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your tax problem is really a structure problem.</h3><p>Sometimes the bill is high because the income is good. Sometimes it's high because your setup never caught up to your income. Either way, the gap is fixable.</p></div>
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your debt is quietly blocking your wealth strategy.</h3><p>The next move isn't always more investing. Sometimes the highest return on the table is clearing the drag that keeps everything else slow.</p></div>
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your spouse or side income changes the whole map.</h3><p>One overlooked household detail can shift what's available to you, what's urgent, and what needs a professional's eyes before year-end.</p></div>
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your real estate idea is early, late, or right on time.</h3><p>The plan weighs your capital, your tax profile, your risk, and your timing before it tells you whether property is your first move, or a later one.</p></div>
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your retirement accounts are underused because no one sequenced them.</h3><p>High earners often have several doors open at once. The real question is which account, which limit, and which window actually fits you this year.</p></div>
-      <div class="article reveal"><span class="a-label">It may find</span><h3>Your first move is smaller than you fear.</h3><p>Sometimes it's a single form, one question for your CPA, or a withholding change. Small moves like that work when they're the right ones, made in the right order.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= SCENARIOS ======= -->
-<section>
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 6</span><span class="smallcaps">What It Found For People Like You</span></div>
-    <h2 class="reveal section-heading-medium">Wherever you're starting from, there's a number sitting in your situation too.</h2>
-    <p class="reveal section-lede" data-d="1">These are real planning scenarios from client plans: people at different incomes, ages, and stages. The same $1,776 surfaced a very different number for each of them, because each plan is built on a different life. Core plan value covers tax, retirement, entity, and cash-flow moves; full plan value adds real estate and larger capital deployment when they apply.</p>
-    <div class="scen-table reveal" data-d="2" tabindex="0" aria-label="Planning scenario value ledger; scroll horizontally on small screens">
-      <table>
-        <thead>
-          <tr><th>Starting Situation</th><th class="num">Core Plan</th><th class="num">Full Plan</th><th>What Made the Plan Valuable</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>High-income household, age 60–63</td><td class="val">$113,379</td><td class="val">$939,433</td><td>Super catch-up planning, STR strategy, cost segregation, larger capital deployment</td></tr>
-          <tr><td>High-liquidity household with spouse business opportunity</td><td class="val">$119,036</td><td class="val">$489,424</td><td>Spouse consulting-business angle, investment positioning, real estate acquisition path</td></tr>
-          <tr><td>Dual-income household with real estate and retirement needs</td><td class="val">$155,264</td><td class="val">$459,973</td><td>Retirement, Roth conversion, cost segregation, household coordination</td></tr>
-          <tr><td>Household with tax, entity, investment, and real estate opportunities</td><td class="val">$73,363</td><td class="val">$445,650</td><td>Real estate, retirement, entity, and investment planning working together</td></tr>
-          <tr><td>Business owner with real estate expansion interest</td><td class="val">$103,587</td><td class="val">$436,215</td><td>Single-member LLC, retirement planning, real estate expansion, cash flow planning</td></tr>
-          <tr><td>Rebuilding from scratch with income and capital formation goals</td><td class="val">$11,653</td><td class="val">$166,205</td><td>LLC, income ramp, dependent credits, debt order, capital formation</td></tr>
-          <tr><td>Early-stage wealth building with lower immediate capacity</td><td class="val">$36,726</td><td class="val">$41,970</td><td>Tax optimization, investment positioning, realistic sequencing</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="table-foot reveal" data-d="3">Figures are educational modeled estimates from individual client plans, not guarantees and not individualized advice. Actual results vary based on income, filing status, debt, business activity, property timing, market conditions, and execution.</p>
-
-    <!-- impact callout -->
-    <div class="impact-card reveal" data-d="1">
-      <div class="impact-fig">
-        <small>One anonymized plan · complete first-year impact</small>
-        <div class="total">$112,900<br>to $389,950</div>
-        <div class="impact-rows">
-          <div><span>Tax savings</span><span>$103,600–$379,750</span></div>
-          <div><span>Investment returns</span><span>$9,300–$10,200</span></div>
-          <div><span>Monthly cash-flow lift</span><span>$9,583–$11,158</span></div>
+          <div class="plan-showcase-doc">
+            <div class="doc-card">
+              <p class="doc-tab">Confidential · Prepared For You</p>
+              <img
+                src="assets/sample-cover.png"
+                width="1408"
+                height="1770"
+                alt="Cover of a real Comprehensive Wealth Plan, shown as a specimen with the client's name redacted"
+                loading="lazy"
+              >
+              <div class="price-chip">
+                $1,776 <span class="chip-sub">Limited release</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="impact-copy">
-        <h3>Numbers that force a decision.</h3>
-        <p>One real, anonymized plan models six-figure first-year value across tax savings, returns, and cash flow, shown in conservative and ambitious scenarios side by side. Your plan shows you the size of your own opportunity before you ever commit to the full program.</p>
-        <div class="cap">Modeled and illustrative. Implementation-dependent. Not a guarantee.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ======= WHO IT'S FOR ======= -->
-<section class="section-tight">
-  <div class="col-wide">
-    <div class="presents-grid">
-      <div class="presents-side">
-        <div class="sec-head reveal"><span class="no">§ 7</span><span class="smallcaps">Know All Persons</span></div>
-        <h2 class="reveal section-heading-compact">A strong plan doesn't assume one answer for everyone.</h2>
-        <p class="reveal" data-d="1">It looks for the highest-impact moves for the person in front of it. Across 100+ plans, these six situations have produced the largest findings.</p>
-      </div>
-      <div class="index-list reveal" data-d="2">
-        <div class="index-item"><h3>W-2 earner paying too much tax</h3><div><p>Good income, limited structure, and missed opportunities around retirement, HSA, withholding, spouse planning, or side-business setup.</p><div class="terms-line">401(k) · HSA · Backdoor Roth · Withholding</div></div></div>
-        <div class="index-item"><h3>Self-employed or 1099</h3><div><p>Income that may support Solo 401(k), entity planning, accountable plans, deductions, S-Corp evaluation, and QBI conversations.</p><div class="terms-line">Solo 401(k) · S-Corp · QBI · Home office</div></div></div>
-        <div class="index-item"><h3>Real estate interested</h3><div><p>STR, rentals, co-hosting, arbitrage, or acquisition goals where timing and tax structure matter more than enthusiasm.</p><div class="terms-line">STR · Cost segregation · REPS · Material participation</div></div></div>
-        <div class="index-item"><h3>Debt and cash-flow pressure</h3><div><p>Sequencing around debt cleanup, W-4 changes, cash flow improvements, and rebuilding capital in the right order.</p><div class="terms-line">Debt order · Cash flow · Credit · First 30 days</div></div></div>
-        <div class="index-item"><h3>Dual-income household</h3><div><p>Spouse income, business ownership, family employment, retirement limits, and filing status can change the entire plan.</p><div class="terms-line">Spouse planning · Filing status · Family entity · College</div></div></div>
-        <div class="index-item"><h3>Older high earners</h3><div><p>Age 50+ and 60–63 cases can open catch-up planning, Roth conversion windows, and more important tax timing decisions.</p><div class="terms-line">Catch-up · Super catch-up · Roth conversion · Timing</div></div></div>
-      </div>
-    </div>
+    <!-- ====================================================
+         PROOF BAND
+    ==================================================== -->
+    <section id="proof" aria-labelledby="proof-heading">
+      <div class="container">
+        <p class="proof-intro" id="proof-heading">
+          We've built <strong>hundreds of wealth plans</strong> — for W-2 earners, business owners, two-income families, and people starting over. We map your real numbers and put the right moves in order.
+        </p>
 
-    <!-- fit check -->
-    <div class="fit-grid reveal" data-d="1">
-      <div class="fit-card yes">
-        <div class="fit-label">Fit check</div>
-        <h3>This is for you if</h3>
-        <ul>
-          <li><span class="m">★</span><span>You earn $100K+ from a W-2, a business, or both</span></li>
-          <li><span class="m">★</span><span>You feel your taxes are far too high and unstructured</span></li>
-          <li><span class="m">★</span><span>You want tax, real estate, retirement, and investing on one map</span></li>
-          <li><span class="m">★</span><span>You're ready to act, and want the blueprint before the full program</span></li>
-        </ul>
-      </div>
-      <div class="fit-card no">
-        <div class="fit-label">Not a fit</div>
-        <h3>This isn't for you if</h3>
-        <ul>
-          <li><span class="m">—</span><span>You just want someone to file your taxes for you</span></li>
-          <li><span class="m">—</span><span>You're looking for a get-rich-quick scheme or guaranteed returns</span></li>
-          <li><span class="m">—</span><span>You won't implement, even with the checklist in hand</span></li>
-          <li><span class="m">—</span><span>Your income is modest enough that structure won't move the needle yet</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="proof-stats">
+          <div class="proof-stat">
+            <div class="proof-num">$79,114</div>
+            <p class="proof-desc">Median first-year value on the core plan — tax, retirement, entity, and cash-flow moves working as one</p>
+          </div>
+          <div class="proof-stat">
+            <div class="proof-num">$312,861</div>
+            <p class="proof-desc">Median once real estate, a spouse's income, or more capital comes into play</p>
+          </div>
+          <div class="proof-stat">
+            <div class="proof-num">$939,433</div>
+            <p class="proof-desc">The single highest plan we've modeled so far</p>
+          </div>
+        </div>
 
-<!-- ======= APPRAISAL / WHY $1,776 ======= -->
-<section class="articles" id="why">
-  <div class="col-wide">
-    <div class="appraisal-grid">
-      <div class="appraisal-copy">
-        <div class="sec-head reveal"><span class="no">§ 8</span><span class="smallcaps">Concerning the Price</span></div>
-        <h2 class="reveal">America turns 250 this July 4th. So we priced it like it's 1776.</h2>
-        <div class="reveal" data-d="1">
-          <p>This plan has never been sold on its own. It's the centerpiece of the Legacy Wealth Blueprint, our $9,800 flagship program, and the document our private clients build their entire year around.</p>
-          <p>On its own, the fair price is $2,500. That's what it will cost if we ever release it standalone again.</p>
-          <p>For the 250th anniversary of American independence, the price is <strong>$1,776</strong>: one payment for a plan built on your numbers that you keep forever.</p>
-          <p>The price holds through Sunday, July 5 at midnight ET. After that, the plan goes back behind the program.</p>
+        <p class="proof-closing">
+          Most of it comes from money the client <strong>already earned</strong> — just never set up the right way.
+        </p>
+        <p class="proof-note">Figures are educational modeled estimates from individual client plans — not guarantees and not individualized advice.</p>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         §1 THE MONEY THAT KEEPS DISAPPEARING
+    ==================================================== -->
+    <section class="section" aria-labelledby="money-h2">
+      <div class="container">
+        <div class="money-grid">
+
+          <!-- Left: body -->
+          <div>
+            <span class="kicker">Concerning the Money That Keeps Disappearing</span>
+            <h2 class="section-h2" id="money-h2">You did everything right. So why does it still feel like you're standing still?</h2>
+
+            <div class="body-text">
+              <p>You <strong>crossed six figures</strong>. You expected to feel ahead. Instead, the raises get swallowed. April hurts a little more every year. And the wealth you're building never quite shows up where you can see it.</p>
+              <p>The reason is built in. When you earn $100K to $400K on a W-2 or 1099, you pay some of the highest tax rates in the country. The tools that would lower them sit unused. Nobody's job is to set them up for you.</p>
+              <p>Your CPA won't catch it either. Most CPAs are paid to file last year, not to plan the next one. By the time yours opens your return in March, every window that mattered closed in December.</p>
+              <p><strong>The people who keep more aren't smarter than you, and most don't earn more than you.</strong> They have the exact same tax code you do. The only difference is simple. Someone sat down with their numbers and worked out the order. Entity first or retirement accounts first. Real estate this year or next. Which debt to clear before which investment. People lose years pulling the right levers in the wrong order. What they're missing isn't effort. It's the order you do them in, and that has a name. It's called a wealth plan, and <strong>almost nobody has one</strong>.</p>
+              <p>One client in El Paso had <strong>$60,448 sitting in his own numbers</strong>, waiting to be found — including <strong>$37,448 in tax savings</strong> from one year of moves made in the right order. It had been there for years. Nobody had ever run it. That's the whole problem, and it's fixable.</p>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="ledger-doc reveal" data-d="2">
-        <div class="doc-title">
-          <div class="smallcaps gold-label">Schedule of Value</div>
+    </section>
+
+    <!-- ====================================================
+         §2 MEET PRESTON SEO
+    ==================================================== -->
+    <section class="section section-alt" id="founder" aria-labelledby="founder-h2">
+      <div class="container">
+        <div class="founder-grid">
+
+          <!-- Left: copy -->
+          <div>
+            <span class="kicker">Meet Preston Seo</span>
+            <h2 class="section-h2" id="founder-h2">I built this plan because <strong>no one ever built one for me</strong>.</h2>
+
+            <div class="body-text">
+              <p>I come from a middle-class, first-generation immigrant family. My parents <strong>came from Korea</strong> with almost nothing. They worked 14-to-16-hour days running a restaurant and a t-shirt shop. No trust fund. No shortcuts. When I finished college, I had no real clue what to do with money.</p>
+              <p>So I did the "right" thing and took a corporate sales job, and I hated it. Living for the weekend, asking permission to take a day off, staring down 40 more years of the same. So I started learning everything I could about taxes, investing, and real estate.</p>
+              <p>The deeper I dug, the clearer it got: the system isn't broken. It's built this way on purpose. I just had to learn the rules the wealthy already use. <strong>By 28, my wife and I were financially free and walked away from our jobs.</strong> Since then we've built a $15M+ real estate portfolio from scratch.</p>
+              <p>Now we've got two sons, and life looks a whole lot different than being stuck in a 9-to-5. Every high earner I knew started asking me the same thing: <em>what do I actually do, and in what order?</em> <strong>This plan is my answer, written down,</strong> so you don't have to spend a decade figuring out what I did.</p>
+            </div>
+
+            <div class="founder-stats">
+              <div>
+                <div class="f-stat-num">Age 28</div>
+                <div class="f-stat-label">Reached financial freedom</div>
+              </div>
+              <div>
+                <div class="f-stat-num">$15M+</div>
+                <div class="f-stat-label">Real estate portfolio, from scratch</div>
+              </div>
+              <div>
+                <div class="f-stat-num">Hundreds</div>
+                <div class="f-stat-label">Wealth plans built for clients</div>
+              </div>
+            </div>
+
+            <blockquote class="founder-quote">
+              "I learned this order the slow, expensive way. The plan is me handing it to you, so you don't have to."
+              <cite>Preston Seo · Founder, Legacy Investing Show</cite>
+            </blockquote>
+          </div>
+
+          <!-- Right: photo -->
+          <div class="founder-img-col">
+            <figure class="founder-img-card">
+              <img
+                src="assets/preston-family.webp"
+                width="1000"
+                height="714"
+                loading="lazy"
+                alt="Preston Seo with his wife and their two sons"
+              >
+              <figcaption class="founder-caption">Preston, his wife, and their two boys.</figcaption>
+            </figure>
+          </div>
+
         </div>
-        <div class="leader-row struck"><span class="name">Legacy Wealth Blueprint<small>Where the plan normally lives · 12-month program</small></span><span class="dots"></span><span class="amt">$9,800</span></div>
-        <div class="leader-row struck"><span class="name">Standalone Wealth Plan<small>Regular price if released again</small></span><span class="dots"></span><span class="amt">$2,500</span></div>
-        <div class="leader-row final"><span class="name">July 4th Release<small>Through Sunday, July 5 · Midnight ET</small></span><span class="dots"></span><span class="amt">$1,776</span></div>
-        <a class="btn" href="#claim">Get the Plan for $1,776</a>
       </div>
-    </div>
+    </section>
 
-    <div class="included-band reveal" data-d="1">
-      <div class="included-head"><span class="smallcaps">What You Get</span><h3>What lands in your hands.</h3></div>
-      <ul class="incl">
-        <li><span class="m">★</span><span><b>Your own Comprehensive Wealth Plan</b>, built on your exact numbers and goals, yours to keep forever.</span></li>
-        <li><span class="m">★</span><span><b>A year-one tax-savings summary priced to your situation</b>, so the size of the opportunity is in plain numbers.</span></li>
-        <li><span class="m">★</span><span><b>Your highest-impact moves, put in order</b>: what to do first, what to do this month, and what to do this year.</span></li>
-        <li><span class="m">★</span><span><b>A first-30-days action plan</b> with the exact questions to take to your CPA and attorney, so it starts moving day one.</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+    <!-- ====================================================
+         §3 WHAT YOU'LL ACTUALLY HOLD
+    ==================================================== -->
+    <section class="section" id="plan" aria-labelledby="plan-h2">
+      <div class="container">
+        <span class="kicker">What You'll Actually Hold</span>
+        <h2 class="section-h2" id="plan-h2">We could walk you through every page. We'd rather tell you what it does.</h2>
+        <p class="body-text" style="max-width:var(--max-prose); margin-bottom:2.5rem;">
+          It's a real, personalized document. Roughly 25 to 30 pages, built on your exact numbers. Not a template pulled off a shelf. We hold back the details on purpose. What it gives you is simpler than any table of contents:
+        </p>
 
-<!-- ======= GUARANTEES ======= -->
-<section id="guarantee">
-  <div class="col-wide">
-    <div class="sec-head reveal"><span class="no">§ 9</span><span class="smallcaps">Our Word On It</span></div>
-    <h2 class="reveal section-heading-narrow">Two ways the downside is taken off the table.</h2>
-    <div class="guarantees">
-      <div class="guar reveal">
-        <div class="seal-badge" aria-hidden="true">★</div>
-        <div>
-          <h3>Worth your $1,776, or it's on us.</h3>
-          <p>Every plan opens with a modeled value range, a conservative figure and an ambitious one if you implement what we recommend. <strong>If your finished plan doesn't identify at least $1,776 in modeled, legitimate opportunity, we revise it free until it does, or refund you in full.</strong> Given what these plans surface, that's a low bar to clear.</p>
+        <!-- Flip-through -->
+        <div class="flipthrough-card">
+          <div class="flipthrough-inner">
+            <img
+              class="flipthrough-img"
+              src="assets/plan-flipthrough.gif"
+              width="600"
+              height="512"
+              loading="lazy"
+              alt="Animated flip-through of a real Legacy Wealth Plan, showing pages cover to calendar with client details removed"
+            >
+            <div class="flipthrough-info">
+              <span class="tag-chip">Specimen · Real Plan · Redacted</span>
+              <h3 class="flipthrough-h">Twenty-six pages, in a few seconds.</h3>
+              <p class="flipthrough-cap">One real plan, cover to calendar. Name removed · detail blurred on purpose — enough to see the craft, not enough to skip building your own.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- One specimen detail -->
+        <div class="plan-specimen">
+          <img
+            src="assets/specimen-timeline.png"
+            width="1200"
+            height="931"
+            loading="lazy"
+            alt="Specimen first-30-days timeline from a real plan, showing week-by-week action items"
+          >
+          <div>
+            <h3 class="plan-specimen-h">It ends with a calendar, not a cliffhanger.</h3>
+            <p class="plan-specimen-desc">The last pages turn strategy into dates: what's urgent now, what fits this month, what waits for a professional's sign-off. You close the plan already knowing your first move.</p>
+            <ul class="plan-specimen-list">
+              <li>Urgent items flagged before the windows close</li>
+              <li>A week-by-week map of your first 30 days</li>
+              <li>The exact questions to bring your CPA and attorney</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="body-text" style="max-width:var(--max-prose); margin-top:2rem; text-align:center; margin-left:auto; margin-right:auto;">What's actually inside yours depends entirely on you. In hundreds of plans we've built, no two have ever come back the same.</p>
+
+      </div>
+    </section>
+
+    <!-- ====================================================
+         §4 HOW YOURS GETS BUILT
+    ==================================================== -->
+    <section class="section section-alt" id="method" aria-labelledby="method-h2">
+      <div class="container">
+        <span class="kicker">How Yours Gets Built</span>
+        <h2 class="section-h2" id="method-h2">It starts with your numbers and ends with your first 30 days.</h2>
+        <p class="method-lede">
+          You fill out a short financial intake. Our team maps your real numbers against every strategy we use. The plan comes back and tells you which ones fit you, and in what order. Your first month is already scheduled. You're never left holding a list of ideas with no idea where to start.
+        </p>
+
+        <ol class="method-list">
+          <li data-step="I."><strong>Map the numbers</strong> Income, filing status, debt, retirement accounts, business activity, real estate goals, and available capital. Your full financial picture in one place.</li>
+          <li data-step="II."><strong>Find the levers</strong> Tax, entity, retirement, cash flow, debt, investment, and property strategies that fit your situation. The ones that don't fit are left out.</li>
+          <li data-step="III."><strong>Sequence the moves</strong> What to do first. What depends on timing. What needs a pro's sign-off before you act. Order matters more than effort.</li>
+          <li data-step="IV."><strong>Start the first 30 days</strong> A clear path for your CPA, attorney, advisor, and real estate conversations. You walk in with the map already drawn.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         §5 CASE RESULTS / SCENARIOS
+    ==================================================== -->
+    <section class="section" aria-labelledby="scenarios-h2">
+      <div class="container">
+        <span class="kicker">What It Found For People Like You</span>
+        <h2 class="section-h2" id="scenarios-h2">Wherever you're starting from, there's a number sitting in your situation too.</h2>
+        <p class="scenarios-lede">
+          These are real planning scenarios from client plans: people at different incomes, ages, and stages. The same $1,776 turned up a very different number for each one. Each plan is built on a different life. Core plan value covers tax, retirement, entity, and cash-flow moves. Full plan value adds real estate and bigger cash moves when they apply.
+        </p>
+
+        <div class="table-wrap">
+          <table class="scenarios-table" aria-label="Client scenario results table">
+            <thead>
+              <tr>
+                <th scope="col">Starting Situation</th>
+                <th scope="col">Core Plan</th>
+                <th scope="col">Full Plan</th>
+                <th scope="col">What Made the Plan Valuable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Starting Situation">High-income household, age 60–63</td>
+                <td class="td-num" data-label="Core Plan">$113,379</td>
+                <td class="td-num" data-label="Full Plan">$939,433</td>
+                <td data-label="What Made It Valuable">Super catch-up planning, STR strategy, cost segregation, larger capital deployment</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">High-liquidity household with spouse business opportunity</td>
+                <td class="td-num" data-label="Core Plan">$119,036</td>
+                <td class="td-num" data-label="Full Plan">$489,424</td>
+                <td data-label="What Made It Valuable">Spouse consulting-business angle, investment positioning, real estate acquisition path</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">Dual-income household with real estate and retirement needs</td>
+                <td class="td-num" data-label="Core Plan">$155,264</td>
+                <td class="td-num" data-label="Full Plan">$459,973</td>
+                <td data-label="What Made It Valuable">Retirement, Roth conversion, cost segregation, household coordination</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">Household with tax, entity, investment, and real estate opportunities</td>
+                <td class="td-num" data-label="Core Plan">$73,363</td>
+                <td class="td-num" data-label="Full Plan">$445,650</td>
+                <td data-label="What Made It Valuable">Real estate, retirement, entity, and investment planning working together</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">Business owner with real estate expansion interest</td>
+                <td class="td-num" data-label="Core Plan">$103,587</td>
+                <td class="td-num" data-label="Full Plan">$436,215</td>
+                <td data-label="What Made It Valuable">Single-member LLC, retirement planning, real estate expansion, cash flow planning</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">Rebuilding from scratch with income and capital formation goals</td>
+                <td class="td-num" data-label="Core Plan">$11,653</td>
+                <td class="td-num" data-label="Full Plan">$166,205</td>
+                <td data-label="What Made It Valuable">LLC, income ramp, dependent credits, debt order, capital formation</td>
+              </tr>
+              <tr>
+                <td data-label="Starting Situation">Early-stage wealth building with lower immediate capacity</td>
+                <td class="td-num" data-label="Core Plan">$36,726</td>
+                <td class="td-num" data-label="Full Plan">$41,970</td>
+                <td data-label="What Made It Valuable">Tax optimization, investment positioning, realistic sequencing</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="table-foot">Figures are educational modeled estimates from individual client plans, not guarantees and not individualized advice. Actual results vary based on income, filing status, debt, business activity, property timing, market conditions, and execution.</p>
+
+      </div>
+    </section>
+
+    <!-- ====================================================
+         §6 WHO IT'S FOR
+    ==================================================== -->
+    <section class="section section-alt" aria-labelledby="who-h2">
+      <div class="container">
+        <span class="kicker">Who It's For</span>
+        <h2 class="section-h2" id="who-h2">A strong plan doesn't assume one answer for everyone.</h2>
+        <p class="who-intro">
+          It looks for the highest-impact moves for the person in front of it. Across hundreds of plans, these four situations show up most often.
+        </p>
+
+        <div class="who-index">
+          <div class="who-item">
+            <p class="who-num">01</p>
+            <h3 class="who-h3">W-2 earner paying too much tax</h3>
+            <p class="who-body">Good income, limited structure, and missed opportunities around retirement, HSA, withholding, spouse planning, or side-business setup.</p>
+          </div>
+          <div class="who-item">
+            <p class="who-num">02</p>
+            <h3 class="who-h3">Self-employed or 1099</h3>
+            <p class="who-body">Income that may support Solo 401(k), entity planning, accountable plans, deductions, S-Corp evaluation, and QBI conversations.</p>
+          </div>
+          <div class="who-item">
+            <p class="who-num">03</p>
+            <h3 class="who-h3">Real estate interested</h3>
+            <p class="who-body">STR, rentals, co-hosting, arbitrage, or buying. Here, timing and tax setup matter more than excitement.</p>
+          </div>
+          <div class="who-item">
+            <p class="who-num">04</p>
+            <h3 class="who-h3">Dual-income household</h3>
+            <p class="who-body">Spouse income, business ownership, family jobs, retirement limits, and filing status can all change the plan.</p>
+          </div>
+        </div>
+
+        <div class="fit-grid">
+          <div class="fit-card yes">
+            <p class="fit-heading">This is for you if</p>
+            <ul class="fit-list">
+              <li>You earn $100K+ from a W-2, a business, or both</li>
+              <li>You feel your taxes are far too high and unstructured</li>
+              <li>You want tax, real estate, retirement, and investing on one map</li>
+              <li>You're ready to act, and want the blueprint before the full program</li>
+            </ul>
+          </div>
+          <div class="fit-card no">
+            <p class="fit-heading">This isn't for you if</p>
+            <ul class="fit-list">
+              <li>You just want someone to file your taxes for you</li>
+              <li>You're looking for a get-rich-quick scheme or guaranteed returns</li>
+              <li>You won't implement, even with the checklist in hand</li>
+              <li>Your income is modest enough that structure won't move the needle yet</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================================================
+         §9 CONCERNING THE PRICE
+    ==================================================== -->
+    <section class="section" aria-labelledby="price-h2">
+      <div class="container">
+        <div class="pricing-layout">
+
+          <!-- Left: body -->
+          <div class="pricing-body">
+            <span class="kicker">Concerning the Price</span>
+            <h2 class="section-h2" id="price-h2">America turns 250 this July 4th. So we priced it like it's 1776.</h2>
+
+            <div class="body-text">
+              <p>This plan has never been sold on its own. It's been reserved for our private clients — the document they build their whole year around.</p>
+              <p>For America's 250th birthday, we're opening it to the public for the first time. You don't have to be a private client to get it.</p>
+              <p>The price is <strong>$1,776</strong> for this limited release. One payment, for a plan built on your numbers that you keep forever.</p>
+              <p><strong>Why so little for something this thorough?</strong> Because the plan is meant to pay for itself many times over in year one — and we put that in writing. If yours doesn't model at least <strong>$1,776</strong> in opportunity, you don't pay. The price is meant to be the smallest thing about it.</p>
+              <p>The price holds through Sunday, July 5 at midnight ET. After that, this public offer closes.</p>
+            </div>
+
+            <div class="what-you-get">
+              <h3 class="wyg-heading">What lands in your hands.</h3>
+              <ul class="wyg-list">
+                <li><strong>Your own Comprehensive Wealth Plan</strong>, built on your exact numbers — yours to keep forever.</li>
+                <li><strong>A first-30-days action plan</strong> with the exact questions to take to your CPA and attorney.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: pricing card -->
+          <div>
+            <div class="pricing-card">
+              <div class="pricing-card-head">
+                <p class="pricing-card-title">Schedule of Value</p>
+                <p class="pricing-card-name">Legacy Wealth Plan</p>
+              </div>
+              <div class="ledger">
+                <div class="ledger-row">
+                  <div class="ledger-item">
+                    <p class="ledger-name">Median first-year value modeled</p>
+                    <p class="ledger-sub">Across hundreds of plans · educational, not a guarantee</p>
+                  </div>
+                  <div class="ledger-val">$79,114</div>
+                </div>
+                <div class="ledger-row">
+                  <div class="ledger-item">
+                    <p class="ledger-name">Personalized Wealth Plan</p>
+                    <p class="ledger-sub">Reserved for private clients — until now</p>
+                  </div>
+                  <div class="ledger-val">Private only</div>
+                </div>
+                <div class="ledger-row final">
+                  <div class="ledger-item">
+                    <p class="ledger-name">July 4th Public Release</p>
+                    <p class="ledger-sub">Through Sunday, July 5 · Midnight ET</p>
+                  </div>
+                  <div class="ledger-val">$1,776</div>
+                </div>
+              </div>
+              <div class="ledger-cta">
+                <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="btn btn-primary-lg" style="width:100%; justify-content:center;" aria-label="Claim your Wealth Plan for $1,776 — proceed to checkout">
+                  Claim My Wealth Plan · $1,776
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="guar reveal" data-d="1">
-        <div class="seal-badge" aria-hidden="true">★</div>
-        <div>
-          <h3>100% credited toward the Blueprint.</h3>
-          <p>Decide the full Legacy Wealth Blueprint is right for you within 90 days, and <strong>every dollar of your $1,776 is applied to it.</strong> Start with the plan, and you lose nothing by starting here instead of jumping to the $9,800 program.</p>
+    </section>
+
+    <!-- ====================================================
+         §10 GUARANTEE
+    ==================================================== -->
+    <section class="section section-alt" id="guarantee" aria-labelledby="guarantee-h2">
+      <div class="container">
+        <span class="kicker">Our Word On It</span>
+        <h2 class="section-h2" id="guarantee-h2">Two ways the downside is taken off the table.</h2>
+
+        <div class="guarantee-prose">
+          <div class="guarantee-item">
+            <h3 class="g-title">Worth your $1,776, or it's on us.</h3>
+            <p class="g-body">Every plan opens with a modeled value range: a low figure and a high one if you do what we recommend. <strong>If your finished plan doesn't identify at least $1,776 in modeled, legitimate opportunity, we revise it free until it does, or refund you in full.</strong></p>
+          </div>
+          <div class="guarantee-item">
+            <h3 class="g-title">100% credited toward the Blueprint.</h3>
+            <p class="g-body">Decide the full Legacy Wealth Blueprint is right for you within 90 days, and <strong>every dollar of your $1,776 is applied to it.</strong> So you lose nothing by starting with the plan first.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ======= ATTESTATION ======= -->
-<section class="attest flush-top">
-  <div class="col">
-    <img class="attest-seal reveal" src="assets/eagle-seal.jpg" width="150" height="150" alt="Legacy Investing Show engraved eagle seal" loading="lazy">
-    <blockquote class="reveal">I learned this order the slow, expensive way. <span class="plain">The plan is me handing it to you</span>, so you don't have to.</blockquote>
-    <cite class="smallcaps reveal" data-d="1">Preston Seo · Founder, Legacy Investing Show</cite>
-  </div>
-</section>
+    <!-- ====================================================
+         §10 FAQ
+    ==================================================== -->
+    <section class="section" aria-labelledby="faq-h2">
+      <div class="container">
+        <span class="kicker">Frequently Asked</span>
+        <h2 class="section-h2" id="faq-h2" style="max-width:var(--max-prose)">Common questions, answered.</h2>
 
-<!-- ======= FAQ ======= -->
-<section>
-  <div class="col">
-    <div class="sec-head reveal"><span class="no">§ 10</span><span class="smallcaps">Questions, Answered Straight</span></div>
-    <h2 class="reveal">What people want to know before they buy.</h2>
-    <div class="faq-list reveal" data-d="1">
-      <details>
-        <summary><span class="q-text">Is the plan actually personalized, or a template?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">Personalized. After you order, you complete a short intake covering your income, filing status, state, age, debt, retirement accounts, business activity, property interest, and available capital. We build the plan around your specific numbers. The sample pages above are real client plans with details redacted, and no two are the same.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">Can't my CPA just do this?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">A great CPA is important, and the plan makes yours more valuable. Most CPAs are paid to file what already happened, not to plan what comes next. The plan lets you walk into that conversation with a strategy map, sharper questions, and the sequence already laid out. We even include the exact items to bring to your CPA.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">Is this just tax advice?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">No. The plan looks across tax, retirement, entity structure, cash flow, debt, investing, and real estate so the pieces work together. The biggest value usually comes from coordination, not from any single strategy.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">What if I don't want to buy real estate?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">Real estate can create a lot of upside, but the plan still identifies non-real-estate moves: retirement contributions, HSA, Roth strategy, entity setup, deductions, withholding, and cash flow fixes. If property doesn't fit your situation yet, your plan says so and sequences around it.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">How does the guarantee work?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">Two ways. First, if your finished plan doesn't identify at least $1,776 in modeled, legitimate opportunity, we revise it free until it does, or refund you. Second, if you upgrade to the full Legacy Wealth Blueprint within 90 days, your full $1,776 is credited toward it. The numbers in the plan are modeled estimates, not guaranteed outcomes, so the guarantee covers the modeled value identified in your plan, not your filed return.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">Are the results guaranteed?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">No. The numbers are planning estimates based on each client's profile. The useful part is seeing where the upside could come from and what has to happen for it to become real. You should verify implementation with qualified CPAs, attorneys, and licensed professionals.</div>
-      </details>
-      <details>
-        <summary><span class="q-text">What happens after July 5?</span><span class="q-mark">+</span></summary>
-        <div class="faq-body">The $1,776 price ends Sunday, July 5 at midnight ET. After that, the plan returns to the Legacy Wealth Blueprint at $9,800, and any future standalone release will be $2,500. We've never sold it on its own before, and there's no date set for doing it again.</div>
-      </details>
-    </div>
-  </div>
-</section>
+        <div class="faq-list" style="max-width:var(--max-prose);">
 
-<!-- ======= CLAIM ======= -->
-<section class="claim" id="claim">
-  <div class="col">
-    <div class="sec-head reveal"><span class="no">§ 11</span><span class="smallcaps">Get the Plan</span></div>
-    <h2 class="reveal">Claim your personalized wealth plan before the price goes back up.</h2>
-    <p class="reveal section-lede" data-d="1">One payment for a plan built on your exact numbers, yours to keep forever. It arrives with your highest-impact moves sequenced, your first 30 days scheduled, and the questions for your CPA already written.</p>
+          <details>
+            <summary>
+              Is the plan actually personalized, or a template?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Personalized. After you order, you fill out a short intake. It covers your income, filing status, state, age, debt, retirement accounts, business activity, property interest, and available capital. We build the plan around your own numbers. The sample pages above are real client plans with details removed, and no two are the same.
+            </div>
+          </details>
 
-    <div class="claim-card reveal" data-d="2">
-      <div class="claim-price">
-        <div class="claim-was">Regular standalone · <s>$2,500</s></div>
-        <div class="claim-now">$1,776</div>
-        <div class="claim-terms">July 4th release · Through Sunday, July 5 at midnight ET</div>
+          <details>
+            <summary>
+              Can't my CPA just do this?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              A great CPA matters, and the plan makes yours more useful. Most CPAs are paid to file what already happened, not to plan what comes next. The plan lets you walk into that meeting with a clear map and sharper questions. The order is already laid out. We even include the exact items to bring to your CPA.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Is this just tax advice?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              No. The plan looks across tax, retirement, entity structure, cash flow, debt, investing, and real estate. The goal is to make the pieces work together. The biggest value usually comes from that fit, not from any single move.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              What if I don't want to buy real estate?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Real estate can create a lot of upside. But the plan still finds non-real-estate moves: retirement contributions, HSA, Roth strategy, entity setup, deductions, withholding, and cash flow fixes. If property doesn't fit you yet, your plan says so and works around it.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              How does the guarantee work?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Two ways. First, if your finished plan doesn't identify at least $1,776 in modeled, legitimate opportunity, we revise it free until it does, or refund you. Second, if you upgrade to the full Legacy Wealth Blueprint within 90 days, your full $1,776 is credited toward it. The numbers in the plan are modeled estimates, not guaranteed outcomes, so the guarantee covers the modeled value identified in your plan, not your filed return.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Are the results guaranteed?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              No. The numbers are planning estimates based on each client's profile. The useful part is seeing where the upside could come from, and what has to happen to make it real. You should check the steps with qualified CPAs, attorneys, and licensed professionals.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              What happens after July 5?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              The $1,776 price ends Sunday, July 5 at midnight ET. After that, the plan goes back to being reserved for private clients only. We've never sold it on its own before, and there's no date set to offer it publicly again.
+            </div>
+          </details>
+
+        </div>
       </div>
-      <a class="btn" href="mailto:support@legacyinvestingshow.com?subject=Legacy%20Wealth%20Plan%20July%204%20Release" aria-label="Email Legacy Investing Show to claim your Wealth Plan for $1,776">Claim Your Wealth Plan · $1,776</a>
-      <p class="claim-note">Worth $1,776 in modeled opportunity or we revise free / refund in full · 100% credited toward the Legacy Wealth Blueprint within 90 days</p>
-      <div class="countdown" data-deadline="2026-07-06T03:59:00Z" role="timer" aria-label="Time remaining">
-        <span class="cd-num" data-cd="d">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="h">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="m">--</span><span class="cd-sep">:</span><span class="cd-num" data-cd="s">--</span>
+    </section>
+
+    <!-- ====================================================
+         §13 FINAL CLAIM / CTA
+    ==================================================== -->
+    <section id="claim" aria-labelledby="claim-h2">
+      <div class="container">
+        <div class="claim-inner">
+          <p class="claim-kicker">Get the Plan</p>
+          <h2 class="claim-h2" id="claim-h2">Claim your personalized wealth plan before this public offer closes.</h2>
+          <p class="claim-lede">
+            One payment for a plan built on your exact numbers, yours to keep forever. Your highest-impact moves come in order. Your first 30 days are scheduled. The questions for your CPA are already written.
+          </p>
+
+          <div class="claim-price-card">
+            <div class="claim-price">$1,776</div>
+            <div class="claim-price-sub">July 4th public release · Through Sunday, July 5 at midnight ET</div>
+          </div>
+
+          <a
+            href="https://checkout.legacyinvestingshow.com/wealth-plan-1776"
+            class="claim-btn"
+            aria-label="Claim your Wealth Plan for $1,776 — proceed to checkout"
+          >Claim My Wealth Plan · $1,776</a>
+
+          <p class="claim-note">Secure checkout · One payment · Built on your exact numbers · Worth $1,776 in modeled value, or it's free</p>
+        </div>
       </div>
-      <div class="cd-caption">Days · Hrs · Min · Sec until this price ends</div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================
+       FOOTER
+  ==================================================== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-brand">Legacy Investing Show ★ 1776 – 2026 ★ Est. for the next 250</p>
+        <hr class="hairline">
+        <p class="footer-disclaimer">
+          The information provided is for <strong>educational purposes only</strong> and should not be construed as tax, legal, or investment advice. All dollar figures shown are educational modeled estimates based on individual client profiles, not guarantees and not individualized tax, legal, investment, or financial advice. Individual results will vary based on income, filing status, debt, business activity, property timing, market conditions, and execution. Always consult with qualified professionals, including a CPA, attorney, and licensed financial advisor, before making financial decisions. Questions: <a href="mailto:support@legacyinvestingshow.com">support@legacyinvestingshow.com</a>
+        </p>
+      </div>
     </div>
+  </footer>
+
+  <!-- ====================================================
+       STICKY FLOATING CTA
+  ==================================================== -->
+  <div id="sticky-cta" aria-label="Floating purchase prompt" aria-hidden="true">
+    <span class="scta-price">$1,776</span>
+    <span class="scta-note">Ends July 5 · Midnight ET</span>
+    <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="scta-btn" aria-label="Claim your Wealth Plan for $1,776 — proceed to checkout">
+      Claim my plan
+    </a>
   </div>
-</section>
 
-</main>
+  <!-- ====================================================
+       SCRIPTS
+  ==================================================== -->
+  <script>
+    /* ======================================================
+       COUNTDOWN — exact spec tick()
+    ====================================================== */
+    function tick(){
+      document.querySelectorAll('.countdown').forEach(cd=>{
+        const end=new Date(cd.dataset.deadline).getTime();
+        let diff=Math.max(0,end-Date.now());
+        const d=Math.floor(diff/864e5), h=Math.floor(diff%864e5/36e5), m=Math.floor(diff%36e5/6e4), s=Math.floor(diff%6e4/1e3);
+        const set=(k,v)=>{const el=cd.querySelector(`[data-cd="${k}"]`); if(el) el.textContent=String(v).padStart(2,'0');};
+        set('d',d);set('h',h);set('m',m);set('s',s);
+      });
+    }
+    tick(); setInterval(tick,1000);
 
-<!-- ======= FOOTER ======= -->
-<footer>
-  <div class="col-wide">
-    <div class="brand-line">Legacy Investing Show <span>★</span> 1776 – 2026 <span>★</span> Est. for the next 250</div>
-    <p class="disclaimer">
-      The information provided is for educational purposes only and should not be construed as tax, legal, or investment advice. All dollar figures shown are educational modeled estimates based on individual client profiles, not guarantees and not individualized tax, legal, investment, or financial advice. Individual results will vary based on income, filing status, debt, business activity, property timing, market conditions, and execution. Always consult with qualified professionals, including a CPA, attorney, and licensed financial advisor, before making financial decisions. Questions: support@legacyinvestingshow.com
-    </p>
-  </div>
-</footer>
+    /* ======================================================
+       STICKY PROMO BAR HEIGHT → scroll-padding
+    ====================================================== */
+    (function(){
+      const bar = document.getElementById('promo-bar');
+      const nav = document.getElementById('site-nav');
+      function setOffsets(){
+        const bh = bar ? bar.offsetHeight : 0;
+        const nh = nav ? nav.offsetHeight : 0;
+        document.documentElement.style.scrollPaddingTop = (bh + nh + 12) + 'px';
+        if(nav) nav.style.setProperty('--promo-h', bh + 'px');
+      }
+      setOffsets();
+      window.addEventListener('resize', setOffsets, {passive:true});
+    })();
 
-<script>
-  // Scroll reveals
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
-  document.querySelectorAll('.reveal:not(.in)').forEach(el => io.observe(el));
+    /* ======================================================
+       STICKY FLOATING CTA — show after hero, hide over #claim
+    ====================================================== */
+    (function(){
+      const cta = document.getElementById('sticky-cta');
+      const hero = document.getElementById('hero');
+      const claim = document.getElementById('claim');
+      if(!cta || !hero) return;
 
-  // Countdown to the real deadline (July 5, 2026, 11:59pm ET)
-  function tick() {
-    document.querySelectorAll('.countdown').forEach(cd => {
-      const end = new Date(cd.dataset.deadline).getTime();
-      let diff = Math.max(0, end - Date.now());
-      const d = Math.floor(diff / 864e5);
-      const h = Math.floor(diff % 864e5 / 36e5);
-      const m = Math.floor(diff % 36e5 / 6e4);
-      const s = Math.floor(diff % 6e4 / 1e3);
-      const set = (k, v) => { const el = cd.querySelector(`[data-cd="${k}"]`); if (el) el.textContent = String(v).padStart(2, '0'); };
-      set('d', d); set('h', h); set('m', m); set('s', s);
+      let heroOut = false;
+      let claimIn = false;
+
+      function update(){
+        if(heroOut && !claimIn){
+          cta.classList.add('visible');
+          cta.setAttribute('aria-hidden','false');
+        } else {
+          cta.classList.remove('visible');
+          cta.setAttribute('aria-hidden','true');
+        }
+      }
+
+      const heroObs = new IntersectionObserver(es=>{
+        es.forEach(e=>{ heroOut = !e.isIntersecting; update(); });
+      },{threshold:0.05});
+      heroObs.observe(hero);
+
+      if(claim){
+        const claimObs = new IntersectionObserver(es=>{
+          es.forEach(e=>{ claimIn = e.isIntersecting; update(); });
+        },{threshold:0.1});
+        claimObs.observe(claim);
+      }
+    })();
+
+    /* ======================================================
+       FAQ +/− (native details, handled via CSS, but ensure
+       keyboard accessibility via click on details)
+    ====================================================== */
+    document.querySelectorAll('.faq-list details summary').forEach(s=>{
+      s.addEventListener('keydown', e=>{
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          s.parentElement.toggleAttribute('open');
+        }
+      });
     });
-  }
-  tick();
-  setInterval(tick, 1000);
-</script>
+
+    /* ======================================================
+       TABLE SCROLL HINT (desktop horizontal scroll)
+    ====================================================== */
+    (function(){
+      const wrap = document.querySelector('.table-wrap');
+      if(!wrap) return;
+      function check(){
+        wrap.classList.toggle('is-scrollable', wrap.scrollWidth > wrap.clientWidth + 2);
+      }
+      check();
+      window.addEventListener('resize', check, {passive:true});
+      wrap.addEventListener('scroll', ()=>{
+        wrap.classList.toggle('is-scrollable', wrap.scrollLeft + wrap.clientWidth < wrap.scrollWidth - 2);
+      }, {passive:true});
+    })();
+  </script>
+
 </body>
 </html>
