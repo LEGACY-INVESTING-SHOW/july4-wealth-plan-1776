@@ -5,7 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legacy Wealth Plan · $1,776 for America's 250th</title>
   <meta name="description" content="A personalized 25 to 30 page wealth plan built on your real numbers. Taxes, retirement, business, and real estate, in the right order. Private clients only, until now. $1,776 through July 5 at midnight ET.">
-  <link rel="icon" href="data:,">
+
+  <!-- Favicon: emerald star mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2318654A'/%3E%3Cpath d='M12 4l2.1 4.6 5 .4-3.8 3.3 1.2 4.9L12 14.9 7.3 17.2l1.2-4.9L4.7 9l5-.4z' fill='%23ffffff'/%3E%3C/svg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://july4-wealth-plan-1776.vercel.app/">
+  <meta property="og:title" content="Your $1,776 Legacy Wealth Plan · America's 250th">
+  <meta property="og:description" content="A personalized 25–30 page wealth plan built on your real numbers. Taxes, retirement, business, and real estate — in the right order. $1,776 through July 5.">
+  <meta property="og:image" content="https://july4-wealth-plan-1776.vercel.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Your $1,776 Legacy Wealth Plan · America's 250th">
+  <meta name="twitter:description" content="Built on your real numbers. Taxes, retirement, business, real estate — in the right order. $1,776 through July 5.">
+  <meta name="twitter:image" content="https://july4-wealth-plan-1776.vercel.app/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -259,7 +273,7 @@
       grid-template-areas:
         "intro vsl"
         "body  vsl";
-      gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 5rem);
+      gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 4vw, 4rem);
       align-items: start;
     }
 
@@ -299,10 +313,10 @@
     }
 
     .hero-h1 {
-      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-size: clamp(1.9rem, 4.4vw, 3rem);
       font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.12;
+      letter-spacing: -0.025em;
+      line-height: 1.14;
       margin-bottom: 1.5rem;
       color: var(--ink);
     }
@@ -401,17 +415,6 @@
       color: var(--hair-dark);
       line-height: 1;
       padding-bottom: 0.3rem;
-    }
-
-    /* Hero VSL placeholder */
-    .hero-vsl-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--faint);
-      margin-bottom: 0.65rem;
-      text-align: center;
     }
 
     .vsl-frame {
@@ -621,88 +624,98 @@
 
     .proof-stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      grid-template-columns: 1fr 1fr;
       margin-bottom: 2.5rem;
-      align-items: stretch;
-    }
-
-    @media (max-width: 640px) {
-      .proof-stats {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
+      background: var(--white);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
     }
 
     .proof-stat {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1.375rem 1.375rem 1.375rem 1.5rem;
-      box-shadow: var(--shadow-sm);
+      padding: clamp(1.6rem, 3vw, 2.25rem) clamp(1.4rem, 2.5vw, 2rem);
       text-align: left;
-      border: 1px solid var(--hair);
-      border-left: 4px solid var(--accent);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .proof-stat:nth-child(1) { border-right: 1px solid var(--hair); }
+    .proof-stat:nth-child(1),
+    .proof-stat:nth-child(2) { border-bottom: 1px solid var(--hair); }
+
+    .proof-stat--peak {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: clamp(1.25rem, 4vw, 3rem);
+      background: radial-gradient(ellipse 90% 150% at 0% 50%, rgba(24,101,74,0.07) 0%, transparent 62%);
+    }
+
+    .peak-figure {
       display: flex;
       flex-direction: column;
       gap: 0.35rem;
+      border-left: 2px solid var(--accent);
+      padding-left: clamp(1rem, 2vw, 1.5rem);
     }
 
-    .proof-stat--peak {
-      border-left-color: var(--accent-h);
-      background: linear-gradient(160deg, rgba(24,101,74,0.06) 0%, var(--white) 55%);
-      box-shadow: var(--shadow-md);
+    @media (max-width: 640px) {
+      .proof-stats { grid-template-columns: 1fr; }
+      .proof-stat:nth-child(1) { border-right: none; }
+      .proof-stat--peak {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+      }
     }
 
     .proof-label {
       font-family: var(--mono);
       font-size: 0.62rem;
       font-weight: 500;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--faint);
       line-height: 1.3;
     }
 
     .proof-num {
       font-family: var(--mono);
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+      font-size: clamp(1.85rem, 3.5vw, 2.6rem);
       font-weight: 500;
       letter-spacing: -0.02em;
-      color: var(--accent);
+      color: var(--ink);
       line-height: 1;
-      margin: 0.15rem 0 0.35rem;
+      margin: 0.15rem 0 0.3rem;
+      font-variant-numeric: tabular-nums;
     }
 
     .proof-stat--peak .proof-num {
-      font-size: clamp(1.85rem, 3.5vw, 2.65rem);
-      font-weight: 600;
-      color: var(--accent-h);
+      color: var(--accent);
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
     }
 
     .proof-desc {
       font-size: 0.8125rem;
-      line-height: 1.65;
+      line-height: 1.6;
       color: var(--gray);
       margin: 0;
+      max-width: 34ch;
     }
 
     .proof-closing {
       text-align: center;
       max-width: 62ch;
-      margin: 0 auto 1.25rem;
+      margin: 0 auto;
       font-size: clamp(1rem, 1.8vw, 1.125rem);
       line-height: 1.75;
       color: var(--gray);
     }
     .proof-closing strong { color: var(--ink); font-weight: 600; }
-
-    .proof-note {
-      text-align: center;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.03em;
-      color: var(--faint);
-    }
 
     /* ======================================================
        SECTION BASE
@@ -1054,12 +1067,47 @@
       white-space: nowrap;
     }
 
-    .table-foot {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.04em;
+    /* Mobile row expand — chevron only; hidden on desktop */
+    .scenario-row-label { display: block; flex: 1; min-width: 0; }
+
+    .scenario-chevron {
+      display: none;
+      flex-shrink: 0;
+      align-self: center;
+      width: 28px;
+      height: 28px;
+      margin: -2px -4px -2px 0;
+      padding: 0;
+      border: none;
+      border-radius: 6px;
+      background: transparent;
       color: var(--faint);
-      padding-top: 1rem;
+      cursor: pointer;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .scenario-chevron:hover {
+      color: var(--accent);
+      background: rgba(24, 101, 74, 0.06);
+    }
+
+    .scenario-chevron:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    .scenario-chevron svg {
+      display: block;
+      margin: 0 auto;
+      transition: transform 0.25s var(--ease);
+    }
+
+    .scenarios-table tbody tr.is-open .scenario-chevron {
+      color: var(--accent);
+    }
+
+    .scenarios-table tbody tr.is-open .scenario-chevron svg {
+      transform: rotate(180deg);
     }
 
     /* ======================================================
@@ -1384,25 +1432,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 1.5px solid var(--hair-dark);
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 6px;
       flex-shrink: 0;
-      font-size: 1rem;
-      line-height: 1;
       color: var(--faint);
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      background: transparent;
+      transition: color 0.2s, background 0.2s;
     }
 
-    .faq-toggle::before { content: '+'; }
+    .faq-toggle::before {
+      content: '';
+      display: block;
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+      margin-top: -2px;
+      transition: transform 0.25s var(--ease), margin 0.25s var(--ease);
+    }
+
+    .faq-list details summary:hover .faq-toggle {
+      color: var(--accent);
+      background: rgba(24, 101, 74, 0.06);
+    }
 
     details[open] .faq-toggle {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--white);
+      color: var(--accent);
+      background: rgba(24, 101, 74, 0.06);
     }
-    details[open] .faq-toggle::before { content: '−'; }
+
+    details[open] .faq-toggle::before {
+      transform: rotate(225deg);
+      margin-top: 2px;
+    }
 
     .faq-answer {
       padding: 0 0 1.5rem;
@@ -1428,14 +1493,6 @@
       text-align: center;
       gap: 2rem;
       padding: clamp(4rem, 8vw, 7rem) 0;
-    }
-
-    .claim-kicker {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
     }
 
     .claim-h2 {
@@ -1539,13 +1596,9 @@
       left: 50%;
       transform: translateX(-50%) translateY(120px);
       z-index: 700;
-      background: var(--ink);
-      color: var(--white);
-      border-radius: 100px;
-      padding: 0.75rem 0.75rem 0.75rem 1.25rem;
+      padding: 0;
       align-items: center;
-      gap: 1rem;
-      box-shadow: 0 8px 32px rgba(22,24,29,0.28);
+      justify-content: center;
       transition: transform 0.5s var(--ease), opacity 0.4s;
       opacity: 0;
       pointer-events: none;
@@ -1559,30 +1612,19 @@
       pointer-events: auto;
     }
 
-    .scta-price {
-      font-family: var(--mono);
-      font-size: 1rem;
-      font-weight: 500;
-      color: #6EE7B7;
-    }
-
-    .scta-note {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.55);
-    }
-
     .scta-btn {
       background: var(--accent);
       color: var(--white);
       font-weight: 700;
       font-size: 0.85rem;
-      padding: 0.55rem 1.1rem;
+      padding: 0.65rem 1.25rem;
       border-radius: 100px;
       white-space: nowrap;
       transition: background 0.2s;
       display: inline-flex;
       align-items: center;
       text-decoration: none;
+      box-shadow: 0 8px 32px rgba(22,24,29,0.22);
     }
 
     .scta-btn:hover { background: var(--accent-h); }
@@ -1665,12 +1707,8 @@
         width: 100%;
       }
 
-      .proof-stat {
-        padding: 1.125rem 1.125rem 1.125rem 1.25rem;
-      }
-
-      .proof-num {
-        margin: 0.1rem 0 0.25rem;
+      .proof-desc {
+        max-width: 36ch;
       }
 
       .cd-display {
@@ -1760,16 +1798,38 @@
 
       .scenarios-table td:first-child {
         padding-top: 1rem;
+        padding-bottom: 1rem;
         font-weight: 600;
         color: var(--ink);
         font-size: 0.9rem;
-        grid-template-columns: 1fr;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+        border-bottom: none;
+        cursor: pointer;
       }
 
       .scenarios-table td:first-child::before { display: none; }
 
-      .scenarios-table td:last-child {
+      .scenario-chevron { display: flex; align-items: center; justify-content: center; }
+
+      .scenarios-table tbody tr:not(.is-open) td:not(:first-child) {
+        display: none;
+      }
+
+      .scenarios-table tbody tr.is-open td:first-child {
+        padding-bottom: 0.65rem;
+        border-bottom: 1px solid var(--hair);
+        cursor: default;
+      }
+
+      .scenarios-table tbody tr.is-open td:last-child {
         border-bottom: none;
+        padding-bottom: 1rem;
+      }
+
+      .scenarios-table tbody tr:not(.is-open) td:first-child {
         padding-bottom: 1rem;
       }
 
@@ -1820,18 +1880,10 @@
       }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       #sticky-cta {
-        width: calc(100% - 1.5rem);
-        left: 50%;
         bottom: max(0.75rem, env(safe-area-inset-bottom));
-        border-radius: 100px;
-        padding: 0.65rem 0.75rem;
-        gap: 0.65rem;
-        justify-content: space-between;
       }
-
-      .scta-note { display: none; }
 
       .scta-btn {
         min-height: 44px;
@@ -1910,12 +1962,223 @@
         margin-right: auto;
       }
     }
+
+    /* ======================================================
+       TASTE PASS — motion, depth & materiality refinements
+       (motion ~6 / variance ~8 / density ~4, on-brand)
+    ====================================================== */
+
+    /* --- Premium grain texture (fixed, GPU-cheap, no repaint on scroll) --- */
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      opacity: 0.5;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+    }
+
+    /* --- Kicker hairline accent --- */
+    .kicker::before {
+      content: '';
+      display: inline-block;
+      width: 1.6rem;
+      height: 1px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 0.6rem;
+      opacity: 0.55;
+    }
+
+    /* --- Editorial section index (01 → 09) --- */
+    body { counter-reset: sec; }
+    .section { counter-increment: sec; }
+    .section .kicker::before {
+      content: counter(sec, decimal-leading-zero);
+      width: auto;
+      height: auto;
+      background: none;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--faint);
+      opacity: 1;
+      letter-spacing: 0.04em;
+      vertical-align: baseline;
+      margin-right: 0.55rem;
+    }
+
+    /* --- Scroll-reveal (only when motion is welcome) --- */
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+        transition-delay: calc(var(--ri, 0) * 75ms);
+        will-change: opacity, transform;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* --- Tactile depth: elevate surfaces on hover (transform/​shadow only) --- */
+    .doc-card,
+    .founder-img-card,
+    .flipthrough-card,
+    .pricing-card,
+    .fit-card {
+      transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+    }
+    @media (hover: hover) {
+      .founder-img-card:hover,
+      .flipthrough-card:hover,
+      .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+      }
+      .fit-card:hover {
+        transform: translateY(-3px);
+        border-color: var(--hair-dark);
+        box-shadow: var(--shadow-sm);
+      }
+    }
+
+    /* --- Doc card tilt base (JS feeds the angles) --- */
+    .doc-card {
+      transform-style: preserve-3d;
+      transform: perspective(900px) rotate(-1.25deg);
+    }
+    @media (max-width: 768px) {
+      .doc-card { transform: perspective(900px); }
+    }
+
+    /* --- "Who it's for" rows respond to attention --- */
+    .who-item {
+      transition: background 0.3s var(--ease);
+    }
+    @media (hover: hover) {
+      .who-item:hover { background: rgba(24,101,74,0.035); }
+    }
+
+    /* --- Price chip living shimmer --- */
+    .price-chip { overflow: hidden; }
+    .price-chip::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255,255,255,0.45) 50%, transparent 65%);
+      transform: translateX(-120%);
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .price-chip::after {
+        animation: chip-sheen 4.5s var(--ease) infinite;
+        animation-delay: 1.2s;
+      }
+    }
+    @keyframes chip-sheen {
+      0%, 18% { transform: translateX(-120%); }
+      36%, 100% { transform: translateX(120%); }
+    }
+
+    /* --- Proof numbers: tabular figures so count-up doesn't jitter --- */
+    .proof-num { font-variant-numeric: tabular-nums; }
+
+    /* --- VSL play: gentle breathing ring (paused for reduced motion) --- */
+    @media (prefers-reduced-motion: no-preference) {
+      .vsl-play-icon::after {
+        content: '';
+        position: absolute;
+        inset: -10px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.25);
+        animation: vsl-pulse 3.2s var(--ease) infinite;
+      }
+    }
+    .vsl-play-icon { position: relative; }
+    @keyframes vsl-pulse {
+      0%   { transform: scale(0.9); opacity: 0.7; }
+      70%  { transform: scale(1.25); opacity: 0; }
+      100% { transform: scale(1.25); opacity: 0; }
+    }
+
+    /* --- Magnetic CTA base (JS nudges via --mx/--my) --- */
+    .btn-primary-lg,
+    .claim-btn {
+      transform: translate(var(--mx, 0), var(--my, 0));
+      transition: transform 0.3s var(--ease), background 0.2s var(--ease), box-shadow 0.2s var(--ease);
+    }
+
+    /* --- Countdown digit tick --- */
+    @media (prefers-reduced-motion: no-preference) {
+      .cd-digit.flip { animation: cd-tick 0.4s var(--ease); }
+    }
+    @keyframes cd-tick {
+      0%   { transform: translateY(-3px); opacity: 0.5; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .grain { display: none; }
+      .price-chip::after { display: none; }
+    }
+
+    /* --- Scenarios: value bars + return multiple (injected by JS) --- */
+    .val-cell { display: flex; flex-direction: column; gap: 0.45rem; }
+    .val-top { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
+    .val-mult {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--accent);
+      background: rgba(24,101,74,0.09);
+      padding: 0.16em 0.55em;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .val-bar {
+      height: 3px;
+      width: 100%;
+      max-width: 150px;
+      background: var(--hair);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .val-bar > i {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+    .val-bar.is-peak > i { background: var(--accent-h); opacity: 1; }
+    @media (max-width: 640px) {
+      .val-bar { max-width: none; }
+    }
+
+    /* --- 1776 seal --- */
+    .claim-seal {
+      color: #6EE7B7;
+      line-height: 0;
+      margin-bottom: 0.25rem;
+    }
+    .claim-seal svg {
+      width: clamp(78px, 11vw, 102px);
+      height: auto;
+      opacity: 0.92;
+    }
   </style>
 </head>
 <body>
 
   <!-- SKIP LINK -->
   <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- GRAIN TEXTURE -->
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- ====================================================
        PROMO BAR
@@ -1948,14 +2211,13 @@
             <p class="hero-eyebrow-2"><em>A July 4th release. One week only.</em></p>
 
             <h1 class="hero-h1" id="hero-h1">
-              You make good money. Knowing what to do with it first is the hard part.<br>
-              <em>Your personalized Wealth Plan, built on your numbers for America's 250th.</em>
+              You make good money. The plan is the hard part.<br>
+              <em>Your Wealth Plan, built on your real numbers.</em>
             </h1>
           </div>
 
           <!-- RIGHT: VSL placeholder (swap .vsl-frame inner for embed when ready) -->
           <div class="hero-vsl">
-            <p class="hero-vsl-label">Watch before you claim</p>
             <div class="vsl-frame" id="hero-vsl">
               <!-- Replace button with iframe/script embed (Wistia, Vimeo, etc.) -->
               <button type="button" class="vsl-play">
@@ -1997,8 +2259,8 @@
         <div class="plan-showcase-inner">
           <div class="plan-showcase-copy">
             <p class="kicker">What you receive</p>
-            <h2 class="section-h2" id="plan-showcase-heading">Your own wealth plan, built around your numbers</h2>
-            <p>A 25 to 30 page document built on your real numbers. Not a template off a shelf. It covers your taxes, retirement, business setup, and real estate, laid out in the order that fits your life.</p>
+            <h2 class="section-h2" id="plan-showcase-heading">Not a template off a shelf. A plan with your name on it.</h2>
+            <p>A document built on your real numbers. Not a template off a shelf. It covers your taxes, retirement, business setup, and real estate, laid out in the order that fits your life.</p>
           </div>
 
           <div class="plan-showcase-doc">
@@ -2035,7 +2297,7 @@
     <section id="proof" aria-labelledby="proof-heading">
       <div class="container">
         <p class="proof-intro" id="proof-heading">
-          We've built <strong>hundreds of these plans</strong>. For W-2 earners. Business owners. Two-income families. People starting over after a hard year. We take your real numbers and put the right moves in the right order. The figures below are modeled: the value a plan shows you could keep or earn in year one by making those moves.
+          We've built <strong>hundreds of these plans</strong>. For W-2 earners. Business owners. Two-income families. People starting over after a hard year. We take your real numbers and put the right moves in the right order.
         </p>
 
         <div class="proof-stats">
@@ -2050,16 +2312,17 @@
             <p class="proof-desc">The typical value once real estate, a spouse's income, or more cash come into the picture</p>
           </div>
           <div class="proof-stat proof-stat--peak">
-            <span class="proof-label">All-time record</span>
-            <div class="proof-num">$939,433</div>
-            <p class="proof-desc">The biggest single plan we have ever mapped</p>
+            <div class="peak-figure">
+              <span class="proof-label">All-time record</span>
+              <div class="proof-num">$939,433</div>
+            </div>
+            <p class="proof-desc">The biggest single plan we have ever mapped — one family's real numbers, in the right order.</p>
           </div>
         </div>
 
         <p class="proof-closing">
           Most of it comes from money you <strong>already earn</strong>. It was just never set up the right way.
         </p>
-        <p class="proof-note">Figures are educational modeled estimates from individual client plans, not guarantees and not individualized advice.</p>
       </div>
     </section>
 
@@ -2076,7 +2339,7 @@
             <h2 class="section-h2" id="money-h2">You did everything right. You still don't feel ahead.</h2>
 
             <div class="body-text">
-              <p>You <strong>crossed six figures</strong>. You thought you'd feel ahead by now. Instead the raises get eaten. April hurts more each year. And the wealth you're building never shows up where you can see it.</p>
+              <p>You <strong>crossed six figures</strong>. You thought you'd feel ahead by now. Instead your income keeps getting absorbed before it lands. April hurts more each year. And the wealth you're building never shows up where you can see it.</p>
               <p>This is built into the system. When you earn $100K to $400K on a W-2 or 1099, you pay some of the highest tax rates in the country. The tools that would lower them sit there unused. Nobody's job is to set them up for you.</p>
               <p>Your CPA won't catch it either. Most CPAs are paid to file last year, not to plan next year. By the time yours opens your return in March, every window that mattered closed back in December.</p>
               <p><strong>The people who keep more aren't smarter than you. Most don't even earn more than you.</strong> They use the same tax code you have. The one real difference is this. Someone sat down with their numbers and worked out the order. Entity first, or retirement first. Real estate this year, or next. Which debt to clear before which investment. People lose years pulling the right levers in the wrong order. They aren't missing effort. They're missing a plan, and <strong>almost nobody has one</strong>.</p>
@@ -2155,7 +2418,7 @@
         <span class="kicker">What you'll actually hold</span>
         <h2 class="section-h2" id="plan-h2">Forget the page count. Here's what it changes for you.</h2>
         <p class="body-text" style="max-width:var(--max-prose); margin-bottom:2.5rem;">
-          It's a real document, made for you. Around 25 to 30 pages, built on your own numbers. Not a template off a shelf. We blur the sample below on purpose. What you walk away with is simple:
+          It's a real document, made for you. Around 25 to 30 pages, built on your own numbers. We blur the sample below on purpose. What you walk away with is simple:
         </p>
 
         <!-- Flip-through -->
@@ -2207,6 +2470,10 @@
 
         <p class="body-text" style="max-width:var(--max-prose); margin-top:2rem; text-align:center; margin-left:auto; margin-right:auto;">What's actually inside yours depends entirely on you. In hundreds of plans we've built, no two have ever come back the same.</p>
 
+        <blockquote class="pull-quote" style="max-width:var(--max-prose); margin-left:auto; margin-right:auto;">
+          The order matters more than the effort.
+        </blockquote>
+
       </div>
     </section>
 
@@ -2224,7 +2491,7 @@
         <ol class="method-list">
           <li data-step="I."><strong>Map the numbers</strong> Your income, filing status, debt, retirement accounts, business, real estate goals, and the cash you have to work with. Your whole money picture in one place.</li>
           <li data-step="II."><strong>Find the moves</strong> The tax, business, retirement, cash flow, debt, investing, and property strategies that fit you. The ones that don't fit get left out.</li>
-          <li data-step="III."><strong>Put them in order</strong> What to do first. What waits on timing. What needs a pro to sign off before you act. The order matters more than the effort.</li>
+          <li data-step="III."><strong>Put them in order</strong> What to do first. What waits on timing. What needs a pro to sign off before you act. The order is the whole point.</li>
           <li data-step="IV."><strong>Start the first 30 days</strong> A clear path for your talks with your CPA, attorney, advisor, and real estate contacts. You walk in with the map already drawn.</li>
         </ol>
       </div>
@@ -2236,7 +2503,7 @@
     <section class="section" id="scenarios" aria-labelledby="scenarios-h2">
       <div class="container">
         <span class="kicker">What it found for people like you</span>
-        <h2 class="section-h2" id="scenarios-h2">Seven people. Seven starting points. Seven very different numbers.</h2>
+        <h2 class="section-h2" id="scenarios-h2">They all paid $1,776. None of them got the same number.</h2>
         <p class="scenarios-lede">
           These are real planning scenarios from past clients. Different incomes, ages, and stages of life. The same $1,776 plan turned up a very different number for each one, because each one is built on a different life. The first number is what we found from tax, retirement, business, and cash-flow moves. The second is what it grew to once real estate and bigger cash moves fit in. Even the smallest one found far more than the $1,776 it cost.
         </p>
@@ -2253,52 +2520,50 @@
             </thead>
             <tbody>
               <tr>
-                <td data-label="Starting Point">High-income household, age 60–63</td>
+                <td data-label="Starting Point">Married couple, 61 &amp; 63, both still working</td>
                 <td class="td-num" data-label="Value In Year One">$113,379</td>
                 <td class="td-num" data-label="With Real Estate Added">$939,433</td>
-                <td data-label="What Drove The Number">Super catch-up planning, short-term rentals, cost segregation, putting more cash to work</td>
+                <td data-label="What Drove The Number">Extra retirement catch-up at 60+, short-term rental tax breaks, and putting idle cash to work</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">High-liquidity household with spouse business opportunity</td>
+                <td data-label="Starting Point">Couple with cash in the bank, spouse starting a side business</td>
                 <td class="td-num" data-label="Value In Year One">$119,036</td>
                 <td class="td-num" data-label="With Real Estate Added">$489,424</td>
-                <td data-label="What Drove The Number">Spouse consulting-business angle, investment positioning, real estate acquisition path</td>
+                <td data-label="What Drove The Number">Turning the spouse's side business into a tax angle, smarter investing, and a path to a first rental</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">Dual-income household with real estate and retirement needs</td>
+                <td data-label="Starting Point">Two-income couple juggling retirement and a rental</td>
                 <td class="td-num" data-label="Value In Year One">$155,264</td>
                 <td class="td-num" data-label="With Real Estate Added">$459,973</td>
-                <td data-label="What Drove The Number">Retirement, Roth conversion, cost segregation, household coordination</td>
+                <td data-label="What Drove The Number">Retirement funding, a Roth conversion plan, rental tax breaks, and getting both spouses on the same map</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">Household with tax, entity, investment, and real estate opportunities</td>
+                <td data-label="Starting Point">Family with a business, investments, and real estate all in play</td>
                 <td class="td-num" data-label="Value In Year One">$73,363</td>
                 <td class="td-num" data-label="With Real Estate Added">$445,650</td>
-                <td data-label="What Drove The Number">Real estate, retirement, entity, and investment planning working together</td>
+                <td data-label="What Drove The Number">Real estate, retirement, the right business setup, and investments all working together instead of apart</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">Business owner with real estate expansion interest</td>
+                <td data-label="Starting Point">Business owner eyeing a second property</td>
                 <td class="td-num" data-label="Value In Year One">$103,587</td>
                 <td class="td-num" data-label="With Real Estate Added">$436,215</td>
-                <td data-label="What Drove The Number">Single-member LLC, retirement planning, real estate expansion, cash flow planning</td>
+                <td data-label="What Drove The Number">A clean LLC setup, retirement through the business, the next rental, and cash flow fixed first</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">Rebuilding from scratch with income and capital formation goals</td>
+                <td data-label="Starting Point">Starting over, building income and savings back up</td>
                 <td class="td-num" data-label="Value In Year One">$11,653</td>
                 <td class="td-num" data-label="With Real Estate Added">$166,205</td>
-                <td data-label="What Drove The Number">LLC, income ramp, dependent credits, debt order, capital formation</td>
+                <td data-label="What Drove The Number">A simple LLC, growing income, dependent credits, the right debt order, and saving ahead of investing</td>
               </tr>
               <tr>
-                <td data-label="Starting Point">Early-stage wealth building with lower immediate capacity</td>
+                <td data-label="Starting Point">Early in the journey, income still ramping</td>
                 <td class="td-num" data-label="Value In Year One">$36,726</td>
                 <td class="td-num" data-label="With Real Estate Added">$41,970</td>
-                <td data-label="What Drove The Number">Tax optimization, investment positioning, realistic sequencing</td>
+                <td data-label="What Drove The Number">Tax cleanup, smarter investing, and a realistic order that fits where they are right now</td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <p class="table-foot">Figures are educational modeled estimates from individual client plans, not guarantees and not individualized advice. Actual results vary based on income, filing status, debt, business activity, property timing, market conditions, and execution.</p>
 
       </div>
     </section>
@@ -2377,7 +2642,7 @@
               <p>This plan has never been sold on its own. Our private clients build their whole year around it.</p>
               <p>For America's 250th birthday, we're opening it to everyone for the first time. You don't have to be a private client to get one.</p>
               <p>The price is <strong>$1,776</strong> for this limited release. One payment, for a plan built on your numbers that you keep forever.</p>
-              <p>Here's the part that fits the year. The money you keep tends to come straight out of what Uncle Sam was set to take. So in a real way, this July 4th, he helps fund your own independence.</p>
+              <p>Here's the part that fits the year. Most of what the plan finds comes straight out of what you were set to hand the IRS. So this July 4th, you're buying back a little independence — with your own money.</p>
               <p>You might wonder why it's this cheap for something this deep. Simple. The plan is built to pay for itself many times over in year one, and we put that in writing. If yours doesn't find at least <strong>$1,776</strong> in opportunity, we refund you in full. The price should be the smallest thing about it.</p>
               <p>The price holds through Sunday, July 5 at midnight ET. After that, it goes back behind the private-client door, with no date set to open it again.</p>
             </div>
@@ -2385,8 +2650,10 @@
             <div class="what-you-get">
               <h3 class="wyg-heading">What lands in your hands.</h3>
               <ul class="wyg-list">
-                <li><strong>Your own wealth plan</strong>, built on your real numbers, yours to keep forever.</li>
-                <li><strong>A first-30-days action plan</strong> with the exact questions to take to your CPA and attorney.</li>
+                <li><strong>Your own wealth plan</strong>, 25 to 30 pages, built on your real numbers. Yours to keep forever.</li>
+                <li><strong>A first-30-days action plan</strong> with week-by-week dates, so you know your first move the moment you close it.</li>
+                <li><strong>The exact questions to bring your CPA and attorney</strong>, so those meetings start in the right place.</li>
+                <li><strong>An opened value range</strong> — the low number, and the higher one if you do what we suggest.</li>
               </ul>
             </div>
           </div>
@@ -2564,7 +2831,20 @@
     <section id="claim" aria-labelledby="claim-h2">
       <div class="container">
         <div class="claim-inner">
-          <p class="claim-kicker">Claim yours</p>
+          <div class="claim-seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <defs>
+                <path id="seal-arc" d="M60 60 m 0 -47 a 47 47 0 1 1 0 94 a 47 47 0 1 1 0 -94"/>
+              </defs>
+              <circle cx="60" cy="60" r="57" stroke="currentColor" stroke-width="1" opacity="0.42"/>
+              <circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1" opacity="0.2"/>
+              <text fill="currentColor" font-family="'JetBrains Mono', monospace" font-size="8.2" letter-spacing="2.4">
+                <textPath href="#seal-arc" startOffset="3%">AMERICA'S 250TH &#9733; 1776 — 2026 &#9733; </textPath>
+              </text>
+              <text x="60" y="57" text-anchor="middle" fill="currentColor" font-family="'JetBrains Mono', monospace" font-size="23" font-weight="500" letter-spacing="1">1776</text>
+              <path d="M60 65 l2 4.3 4.7.4 -3.6 3.1 1.1 4.6 -4.2-2.5 -4.2 2.5 1.1-4.6 -3.6-3.1 4.7-.4z" fill="currentColor" opacity="0.85"/>
+            </svg>
+          </div>
           <h2 class="claim-h2" id="claim-h2">This July 4th, make it your independence day too.</h2>
           <p class="claim-lede">
             Another April is coming either way. You can walk into it with a plan, or walk into it like you did last year. One payment gets you a plan built on your real numbers, yours to keep for good. Your best moves, in order. Your first 30 days, already mapped. The questions for your CPA, already written.
@@ -2604,8 +2884,6 @@
        STICKY FLOATING CTA
   ==================================================== -->
   <div id="sticky-cta" aria-label="Floating purchase prompt" aria-hidden="true" inert>
-    <span class="scta-price">$1,776</span>
-    <span class="scta-note">Ends July 5 · Midnight ET</span>
     <a href="https://checkout.legacyinvestingshow.com/wealth-plan-1776" class="scta-btn">
       Claim my plan
     </a>
@@ -2696,6 +2974,70 @@
     });
 
     /* ======================================================
+       SCENARIOS TABLE — mobile row expand
+    ====================================================== */
+    (function(){
+      const table = document.querySelector('.scenarios-table');
+      if(!table) return;
+
+      const chevronSvg = '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+      const mq = window.matchMedia('(max-width: 640px)');
+
+      function setExpanded(tr, open){
+        tr.classList.toggle('is-open', open);
+        const btn = tr.querySelector('.scenario-chevron');
+        if(btn){
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          btn.setAttribute('aria-label', open ? 'Hide scenario details' : 'Show scenario details');
+        }
+      }
+
+      function enhanceRows(){
+        table.querySelectorAll('tbody tr').forEach(tr => {
+          const firstTd = tr.querySelector('td:first-child');
+          if(!firstTd) return;
+
+          let btn = tr.querySelector('.scenario-chevron');
+          if(!btn){
+            const label = firstTd.textContent.trim();
+            firstTd.textContent = '';
+            const span = document.createElement('span');
+            span.className = 'scenario-row-label';
+            span.textContent = label;
+            btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'scenario-chevron';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.setAttribute('aria-label', 'Show scenario details');
+            btn.innerHTML = chevronSvg;
+            firstTd.appendChild(span);
+            firstTd.appendChild(btn);
+
+            btn.addEventListener('click', e => {
+              e.stopPropagation();
+              if(!mq.matches) return;
+              setExpanded(tr, !tr.classList.contains('is-open'));
+            });
+
+            firstTd.addEventListener('click', e => {
+              if(!mq.matches || e.target.closest('.scenario-chevron')) return;
+              setExpanded(tr, !tr.classList.contains('is-open'));
+            });
+          }
+
+          if(mq.matches){
+            setExpanded(tr, tr.classList.contains('is-open'));
+          } else {
+            setExpanded(tr, true);
+          }
+        });
+      }
+
+      enhanceRows();
+      mq.addEventListener('change', enhanceRows);
+    })();
+
+    /* ======================================================
        TABLE SCROLL HINT (desktop horizontal scroll)
     ====================================================== */
     (function(){
@@ -2718,6 +3060,179 @@
       }
       window.addEventListener('resize', scheduleCheck, {passive:true});
       wrap.addEventListener('scroll', scheduleCheck, {passive:true});
+    })();
+
+    /* ======================================================
+       SCENARIOS — value bars + return-multiple (static)
+    ====================================================== */
+    (function(){
+      const table = document.querySelector('.scenarios-table');
+      if(!table) return;
+      const PRICE = 1776;
+      const rows = Array.from(table.querySelectorAll('tbody tr'));
+      const columns = [
+        { label: 'Value In Year One', showMult: true },
+        { label: 'With Real Estate Added', showMult: false }
+      ];
+
+      columns.forEach(col => {
+        const cells = rows
+          .map(r => r.querySelector('td[data-label="' + col.label + '"]'))
+          .filter(Boolean);
+        const values = cells.map(c => parseInt(c.textContent.replace(/[^0-9]/g, ''), 10) || 0);
+        const max = Math.max.apply(null, values.concat(1));
+
+        cells.forEach((cell, i) => {
+          const value = values[i];
+          if(!value) return;
+          const numText = cell.textContent.trim();
+          const isPeak = value === max;
+          const mult = Math.round(value / PRICE);
+
+          cell.textContent = '';
+          const wrap = document.createElement('div');
+          wrap.className = 'val-cell';
+
+          const top = document.createElement('div');
+          top.className = 'val-top';
+          const numEl = document.createElement('span');
+          numEl.textContent = numText;
+          top.appendChild(numEl);
+
+          if(col.showMult && mult >= 2){
+            const chip = document.createElement('span');
+            chip.className = 'val-mult';
+            chip.textContent = mult + '× the price';
+            top.appendChild(chip);
+          }
+
+          const bar = document.createElement('div');
+          bar.className = 'val-bar' + (isPeak ? ' is-peak' : '');
+          const fill = document.createElement('i');
+          fill.style.width = Math.max(6, Math.round(value / max * 100)) + '%';
+          bar.appendChild(fill);
+
+          wrap.appendChild(top);
+          wrap.appendChild(bar);
+          cell.appendChild(wrap);
+        });
+      });
+    })();
+
+    /* ======================================================
+       TASTE PASS — scroll reveal, count-up, magnetic CTA, tilt
+    ====================================================== */
+    (function(){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if(reduce.matches) return;
+
+      /* --- Scroll reveal with staggered groups --- */
+      const singles = [
+        '.proof-intro', '.proof-closing',
+        '.money-grid', '.founder-grid > div', '.founder-img-card', '.founder-quote',
+        '#plan .section-h2', '#plan > .container > .body-text',
+        '.flipthrough-card', '.plan-specimen', '.pull-quote',
+        '#method .section-h2', '.method-lede',
+        '#scenarios .section-h2', '.scenarios-lede', '.table-wrap',
+        '#who .section-h2', '.who-intro',
+        '.pricing-body', '.pricing-card',
+        '.guarantee-item',
+        '#faq .section-h2', '.faq-list',
+        '.claim-inner > *'
+      ];
+      const groups = [
+        '.proof-stats', '.who-index', '.method-list',
+        '.founder-stats', '.wyg-list', '.fit-grid'
+      ];
+
+      const revealEls = new Set();
+
+      singles.forEach(sel => {
+        document.querySelectorAll(sel).forEach(el => {
+          el.classList.add('reveal');
+          revealEls.add(el);
+        });
+      });
+
+      groups.forEach(sel => {
+        document.querySelectorAll(sel).forEach(group => {
+          Array.from(group.children).forEach((child, i) => {
+            child.classList.add('reveal');
+            child.style.setProperty('--ri', i);
+            revealEls.add(child);
+          });
+        });
+      });
+
+      const revObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('is-visible');
+            revObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      revealEls.forEach(el => revObs.observe(el));
+
+      /* --- Count-up for proof numbers --- */
+      const fmt = new Intl.NumberFormat('en-US');
+      function countUp(el){
+        const raw = el.textContent.trim();
+        const target = parseInt(raw.replace(/[^0-9]/g, ''), 10);
+        if(!target) return;
+        const prefix = raw.startsWith('$') ? '$' : '';
+        const dur = 1400;
+        const start = performance.now();
+        function frame(now){
+          const p = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + fmt.format(Math.round(target * eased));
+          if(p < 1) requestAnimationFrame(frame);
+          else el.textContent = raw;
+        }
+        requestAnimationFrame(frame);
+      }
+      const numObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            countUp(e.target);
+            numObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.6 });
+      document.querySelectorAll('.proof-num').forEach(el => numObs.observe(el));
+
+      /* --- Magnetic primary CTAs (transform-only, pointer-fine) --- */
+      if(window.matchMedia('(hover: hover) and (pointer: fine)').matches){
+        document.querySelectorAll('.btn-primary-lg, .claim-btn').forEach(btn => {
+          const strength = 0.28;
+          btn.addEventListener('pointermove', e => {
+            const r = btn.getBoundingClientRect();
+            const mx = (e.clientX - (r.left + r.width / 2)) * strength;
+            const my = (e.clientY - (r.top + r.height / 2)) * strength;
+            btn.style.setProperty('--mx', mx.toFixed(1) + 'px');
+            btn.style.setProperty('--my', my.toFixed(1) + 'px');
+          });
+          btn.addEventListener('pointerleave', () => {
+            btn.style.setProperty('--mx', '0px');
+            btn.style.setProperty('--my', '0px');
+          });
+        });
+
+        /* --- Parallax tilt on the plan document card --- */
+        const doc = document.querySelector('.doc-card');
+        if(doc){
+          const base = 'perspective(900px) rotate(-1.25deg)';
+          doc.addEventListener('pointermove', e => {
+            const r = doc.getBoundingClientRect();
+            const rx = (((e.clientY - r.top) / r.height) - 0.5) * -7;
+            const ry = (((e.clientX - r.left) / r.width) - 0.5) * 7;
+            doc.style.transform = `perspective(900px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) rotate(-1.25deg)`;
+          });
+          doc.addEventListener('pointerleave', () => { doc.style.transform = base; });
+        }
+      }
     })();
   </script>
 
