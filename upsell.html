@@ -1654,6 +1654,15 @@
         }
       }
 
+      function getPaymentIdFromUrl(url) {
+        var keys = ['payment_id', 'paymentId', 'payment', 'id'];
+        for (var i = 0; i < keys.length; i += 1) {
+          var value = getParamFromUrl(url, keys[i]);
+          if (value && value.indexOf('pay_') === 0) return value;
+        }
+        return '';
+      }
+
       function getCookie(name) {
         return document.cookie
           .split(';')
@@ -1670,13 +1679,13 @@
       }
 
       function findPaymentId() {
-        var fromUrl = getParamFromUrl(window.location.href, 'payment_id');
+        var fromUrl = getPaymentIdFromUrl(window.location.href);
         if (fromUrl) {
           savePaymentId(fromUrl);
           return fromUrl;
         }
 
-        var fromReferrer = document.referrer ? getParamFromUrl(document.referrer, 'payment_id') : '';
+        var fromReferrer = document.referrer ? getPaymentIdFromUrl(document.referrer) : '';
         if (fromReferrer) {
           savePaymentId(fromReferrer);
           return fromReferrer;
@@ -1706,7 +1715,7 @@
 
       if (!paymentId) {
         button.disabled = true;
-        setMessage('No payment_id found. Please return from the initial checkout before using this upgrade.', 'error');
+        setMessage('No payment_id found. This page only unlocks after returning from the initial paid checkout.', 'error');
         return;
       }
 
