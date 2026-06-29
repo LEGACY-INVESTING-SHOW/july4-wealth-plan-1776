@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/checkout.html",
+      "destination": "/checkout",
+      "permanent": true
+    },
+    {
+      "source": "/upsell.html",
+      "destination": "/lwb1776",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/checkout",
+      "destination": "/checkout.html"
+    },
+    {
+      "source": "/lwb1776",
+      "destination": "/upsell.html"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
