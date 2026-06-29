@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmed · Legacy Wealth Plan</title>
+  <meta name="description" content="Your Legacy Wealth Plan order is confirmed. Check your inbox for your receipt and next steps.">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2318654A'/%3E%3Cpath d='M12 4l2.1 4.6 5 .4-3.8 3.3 1.2 4.9L12 14.9 7.3 17.2l1.2-4.9L4.7 9l5-.4z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+      --bg: #fcfcfb;
+      --panel: #f4f5f3;
+      --white: #ffffff;
+      --ink: #16181d;
+      --gray: #585e66;
+      --faint: #8b919a;
+      --accent: #18654a;
+      --accent-h: #1f8a63;
+      --accent-soft: #eaf4ee;
+      --hair: #e7e8e5;
+      --radius-sm: 10px;
+      --radius-md: 14px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 12px rgba(22,24,29,0.06);
+      --shadow-md: 0 4px 28px rgba(22,24,29,0.08);
+      --ease: cubic-bezier(0.22,1,0.36,1);
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --max: 840px;
+    }
+
+    * , *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      -webkit-text-size-adjust: 100%;
+    }
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background:
+        radial-gradient(ellipse 80% 55% at 50% -15%, rgba(24,101,74,0.06) 0%, transparent 70%),
+        var(--bg);
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    strong { font-weight: 700; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      background: var(--accent);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-sm);
+      z-index: 1000;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 clamp(1.125rem, 4vw, 1.5rem);
+    }
+
+    #promo-bar {
+      background: var(--ink);
+      color: var(--white);
+      text-align: center;
+      padding: 0.7rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    #promo-bar .check {
+      color: #6ee7b7;
+      font-weight: 700;
+    }
+
+    header {
+      border-bottom: 1px solid var(--hair);
+      background: rgba(252,252,251,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .nav-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.125rem;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      font-size: 0.92rem;
+    }
+    .brand .star { color: var(--accent); }
+    .nav-chip {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.4rem 0.7rem;
+      border-radius: 100px;
+    }
+
+    main {
+      padding: clamp(2rem, 5vw, 3rem) 0 clamp(3rem, 7vw, 4.5rem);
+    }
+
+    .hero-card,
+    .section-card,
+    .stat-card,
+    .quote-card,
+    .support-card {
+      background: var(--white);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-card {
+      padding: clamp(1.5rem, 4vw, 2.25rem);
+      box-shadow: var(--shadow-md);
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      padding: 0.42rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-card h1 {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-card p {
+      color: var(--gray);
+      font-size: clamp(1rem, 1.8vw, 1.08rem);
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--hair);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    .hero-note-item {
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--gray);
+    }
+    .hero-note-item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+
+    .section-card {
+      padding: clamp(1.35rem, 3vw, 1.6rem);
+      margin-top: 1rem;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--faint);
+      margin-bottom: 1rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 0.85rem;
+    }
+    .step {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .step-n {
+      width: 24px;
+      height: 24px;
+      margin-top: 0.05rem;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-body {
+      color: var(--gray);
+      line-height: 1.65;
+      font-size: 0.98rem;
+    }
+    .step-body strong { color: var(--ink); }
+
+    .proof-intro {
+      margin-top: 1.1rem;
+      color: var(--gray);
+      font-size: 0.98rem;
+      line-height: 1.75;
+    }
+    .proof-intro strong { color: var(--ink); }
+
+    .stats {
+      display: grid;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .stat-card {
+      padding: 1.1rem 1rem;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfa 100%);
+    }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: clamp(1.6rem, 5vw, 2rem);
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.45rem;
+    }
+    .stat-lab {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .quotes {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 0.9rem;
+    }
+    .quote-card {
+      padding: 1rem 1rem 0.95rem;
+    }
+    .stars {
+      color: var(--accent);
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      margin-bottom: 0.65rem;
+    }
+    .quote {
+      color: var(--gray);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 0.85rem;
+    }
+    .quote-meta {
+      padding-top: 0.7rem;
+      border-top: 1px solid var(--hair);
+      color: var(--faint);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .quote-meta strong {
+      display: block;
+      color: var(--ink);
+      font-size: 0.86rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .support-card {
+      margin-top: 1rem;
+      padding: 1rem 1rem 1.05rem;
+      background: var(--panel);
+    }
+    .support-card p {
+      color: var(--gray);
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+    .support-card strong { color: var(--ink); }
+    .support-card a {
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .btn-row {
+      margin-top: 1.1rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.8rem 1.1rem;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--accent-h); }
+    .btn-secondary {
+      background: var(--white);
+      color: var(--ink);
+      border: 1px solid var(--hair);
+    }
+    .btn-secondary:hover { border-color: #cfd2ce; }
+
+    footer {
+      padding: 0 0 2rem;
+    }
+    .footer-copy {
+      color: var(--faint);
+      font-size: 0.76rem;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        min-height: 52px;
+        padding: 0 1rem;
+      }
+      .brand { font-size: 0.82rem; }
+      .nav-chip {
+        font-size: 0.56rem;
+        padding: 0.36rem 0.55rem;
+      }
+      .hero-note {
+        grid-template-columns: 1fr;
+      }
+      .btn-row {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <div id="promo-bar">
+    <span class="check">✓ Order confirmed</span> Your Legacy Wealth Plan is secured
+  </div>
+
+  <header>
+    <div class="nav-inner">
+      <div class="brand"><span class="star">★</span> Legacy Investing Show</div>
+      <div class="nav-chip">Post-Purchase</div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container">
+      <section class="hero-card" aria-labelledby="hero-h1">
+        <div class="eyebrow">Order Confirmed</div>
+        <h1 id="hero-h1">Thank you. Your Legacy Wealth Plan order is in.</h1>
+        <p>
+          You’re officially on the board. Your confirmation email is on its way, and the next step is simple:
+          check your inbox, complete your questionnaire, and our team will build your plan around your real numbers.
+        </p>
+
+        <div class="hero-note" aria-label="Important order notes">
+          <div class="hero-note-item">
+            <strong>Check your email</strong>
+            Your receipt and confirmation should land in your inbox right away.
+          </div>
+          <div class="hero-note-item">
+            <strong>Complete your questionnaire</strong>
+            Income, state, debt, accounts, goals, and the details we need to build your plan.
+          </div>
+          <div class="hero-note-item">
+            <strong>Need help?</strong>
+            Email <a href="mailto:support@legacyinvestingshow.com">support@legacyinvestingshow.com</a> and we’ll help.
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" aria-labelledby="next-h2">
+        <div class="section-label">What happens next</div>
+        <div class="steps" id="next-h2">
+          <div class="step">
+            <div class="step-n">1</div>
+            <div class="step-body"><strong>Instant confirmation email</strong> lands in your inbox.</div>
+          </div>
+          <div class="step">
+            <div class="step-n">2</div>
+            <div class="step-body">You get a <strong>detailed questionnaire</strong> covering income, state, debt, accounts, goals, and more.</div>
+          </div>
+          <div class="step">
+            <div class="step-n">3</div>
+            <div class="step-body">Our team builds your <strong>personalized Legacy Wealth Plan</strong> and maps out the first 30 days so you know exactly what to do first.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-card" aria-labelledby="proof-h2">
+        <div class="section-label">Why people buy this</div>
+        <div class="proof-intro" id="proof-h2">
+          We’ve built <strong>hundreds of these plans</strong> for W-2 earners, business owners, and two-income families. The value a typical plan finds in year one:
+        </div>
+
+        <div class="stats" aria-label="Typical plan value">
+          <div class="stat-card">
+            <div class="stat-num">$79,114</div>
+            <div class="stat-lab">Typical value found in year one</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$312,861</div>
+            <div class="stat-lab">Once real estate and spouse income come in</div>
+          </div>
+        </div>
+
+        <div class="quotes" aria-label="Client feedback">
+          <article class="quote-card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">"The first 30 days alone paid for the plan ten times over in tax moves I would’ve missed."</div>
+            <div class="quote-meta">
+              <strong>Wealth Plan client</strong>
+              W-2 earner
+            </div>
+          </article>
+          <article class="quote-card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">"Walked into my CPA with the exact questions already written. First time I felt like we were planning, not just filing."</div>
+            <div class="quote-meta">
+              <strong>Wealth Plan client</strong>
+              Business owner
+            </div>
+          </article>
+          <article class="quote-card">
+            <div class="stars">★★★★★</div>
+            <div class="quote">"Not a generic PDF. It had my income, my state, my debt, and told me what to do first."</div>
+            <div class="quote-meta">
+              <strong>Wealth Plan client</strong>
+              Dual-income household
+            </div>
+          </article>
+        </div>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="/">Return to the main page</a>
+          <a class="btn btn-secondary" href="mailto:support@legacyinvestingshow.com">Email support</a>
+        </div>
+      </section>
+
+      <section class="support-card">
+        <p>
+          <strong>Quick note:</strong> if you don’t see your confirmation email within a few minutes, check spam or promotions first.
+          If it still isn’t there, email <a href="mailto:support@legacyinvestingshow.com">support@legacyinvestingshow.com</a> and we’ll get you sorted.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-copy">
+        The information provided is for educational purposes only and should not be construed as tax, legal, or investment advice.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -9,6 +9,11 @@
       "source": "/upsell.html",
       "destination": "/lwb1776",
       "permanent": true
+    },
+    {
+      "source": "/orderconfirmation.html",
+      "destination": "/orderconfirmation",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -19,6 +24,10 @@
     {
       "source": "/lwb1776",
       "destination": "/upsell.html"
+    },
+    {
+      "source": "/orderconfirmation",
+      "destination": "/orderconfirmation.html"
     }
   ],
   "headers": [
