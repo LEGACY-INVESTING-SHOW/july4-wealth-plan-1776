@@ -577,20 +577,80 @@
 
     .btn-primary .price-was { font-size: 0.78em; }
 
-    .whop-embed-shell {
+    .one-click-upsell {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       width: 100%;
-      max-width: 560px;
+      max-width: 520px;
       margin: 0 auto;
     }
 
-    .whop-embed-note {
-      font-size: 0.75rem;
-      line-height: 1.65;
-      color: var(--faint);
+    .one-click-upsell__button {
+      width: 100%;
+      min-height: 56px;
+      border: 0;
+      border-radius: var(--radius-md);
+      padding: 0.95rem 1.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background: var(--accent);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      cursor: pointer;
+      transition: background 0.2s var(--ease), opacity 0.2s var(--ease), transform 0.15s var(--ease), box-shadow 0.2s;
+    }
+
+    .one-click-upsell__button:hover:not(:disabled) {
+      background: var(--accent-h);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .one-click-upsell__button:disabled {
+      cursor: not-allowed;
+      opacity: 0.68;
+    }
+
+    .one-click-upsell__spinner {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.35);
+      border-top-color: var(--white);
+      display: none;
+      animation: one-click-spin 700ms linear infinite;
+      flex-shrink: 0;
+    }
+
+    .one-click-upsell.is-loading .one-click-upsell__spinner {
+      display: inline-block;
+    }
+
+    .one-click-upsell__message {
+      min-height: 1.4em;
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.55;
       text-align: center;
+    }
+
+    .one-click-upsell__message.is-error {
+      color: #B42318;
+    }
+
+    .one-click-upsell__message.is-success {
+      color: var(--accent);
+    }
+
+    @keyframes one-click-spin {
+      to { transform: rotate(360deg); }
     }
 
     .uc-terms {
@@ -1455,18 +1515,14 @@
             <div class="decision-terms">One-time payment · Instant access</div>
           </div>
           <div class="decision-body">
-            <div class="whop-embed-shell" id="upsell-checkout">
-              <div
-                data-whop-checkout-plan-id="plan_0NEU5cMLFnWAP"
-                data-whop-checkout-theme-background-color="#0b0b12"
-                data-whop-checkout-theme-accent-color="#7c5cff"
-                data-whop-checkout-theme-border-radius="14"
-                data-whop-checkout-style-container-padding-x="20"
-                data-whop-checkout-style-container-padding-y="28"
-              ></div>
-              <p class="whop-embed-note">Secure Whop checkout for the Legacy Wealth Blueprint + Legacy Wealth AI upgrade.</p>
-            </div>
-            <p class="decision-note">One-time payment · Instant access after checkout · No subscription</p>
+            <section class="one-click-upsell" id="upsell-checkout" data-worker-url="https://myupsellworker.preston-648.workers.dev/" aria-label="One-click upsell checkout">
+              <button class="one-click-upsell__button" type="button" id="one-click-upsell-button">
+                <span class="one-click-upsell__spinner" aria-hidden="true"></span>
+                <span class="one-click-upsell__button-text">Yes, Add the Blueprint + AI to My Order</span>
+              </button>
+              <p class="one-click-upsell__message" id="one-click-upsell-message" role="status"></p>
+            </section>
+            <p class="decision-note">One-time payment · Uses the card from your Wealth Plan checkout · No subscription</p>
             <div class="decision-decline-wrap">
               <a class="decline-link"
                  id="declineOffer"
@@ -1573,8 +1629,120 @@
     <a class="scta-btn" href="#upsell-checkout">Add to my order</a>
   </div>
 
-  <script async src="https://js.whop.com/static/checkout/loader.js"></script>
   <script>
+    (function () {
+      var THANK_YOU_URL = 'https://wealth.managemoney101.com/orderconfirmation';
+      var storageKey = 'whop_initial_payment_id';
+      var cookieName = 'whop_initial_payment_id';
+      var root = document.querySelector('.one-click-upsell');
+      var button = document.getElementById('one-click-upsell-button');
+      var message = document.getElementById('one-click-upsell-message');
+
+      if (!root || !button || !message) return;
+
+      function setMessage(text, type) {
+        message.textContent = text || '';
+        message.classList.toggle('is-error', type === 'error');
+        message.classList.toggle('is-success', type === 'success');
+      }
+
+      function getParamFromUrl(url, key) {
+        try {
+          return new URL(url).searchParams.get(key) || '';
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function getCookie(name) {
+        return document.cookie
+          .split(';')
+          .map(function (item) { return item.trim(); })
+          .filter(function (item) { return item.indexOf(name + '=') === 0; })
+          .map(function (item) { return decodeURIComponent(item.slice(name.length + 1)); })[0] || '';
+      }
+
+      function savePaymentId(paymentId) {
+        if (!paymentId) return;
+        try { sessionStorage.setItem(storageKey, paymentId); } catch (error) {}
+        try { localStorage.setItem(storageKey, paymentId); } catch (error) {}
+        document.cookie = cookieName + '=' + encodeURIComponent(paymentId) + '; path=/; max-age=86400; SameSite=Lax';
+      }
+
+      function findPaymentId() {
+        var fromUrl = getParamFromUrl(window.location.href, 'payment_id');
+        if (fromUrl) {
+          savePaymentId(fromUrl);
+          return fromUrl;
+        }
+
+        var fromReferrer = document.referrer ? getParamFromUrl(document.referrer, 'payment_id') : '';
+        if (fromReferrer) {
+          savePaymentId(fromReferrer);
+          return fromReferrer;
+        }
+
+        try {
+          var fromSession = sessionStorage.getItem(storageKey);
+          if (fromSession) return fromSession;
+        } catch (error) {}
+
+        try {
+          var fromLocal = localStorage.getItem(storageKey);
+          if (fromLocal) return fromLocal;
+        } catch (error) {}
+
+        return getCookie(cookieName);
+      }
+
+      var paymentId = findPaymentId();
+      var workerUrl = root.getAttribute('data-worker-url');
+
+      if (!workerUrl) {
+        button.disabled = true;
+        setMessage('Payment server is not configured yet.', 'error');
+        return;
+      }
+
+      if (!paymentId) {
+        button.disabled = true;
+        setMessage('No payment_id found. Please return from the initial checkout before using this upgrade.', 'error');
+        return;
+      }
+
+      button.addEventListener('click', async function () {
+        button.disabled = true;
+        root.classList.add('is-loading');
+        setMessage('Processing your upgrade...', '');
+
+        try {
+          var response = await fetch(workerUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ payment_id: paymentId }),
+          });
+
+          var data = await response.json().catch(function () {
+            return { success: false, error: 'Invalid response from payment server.' };
+          });
+
+          if (!response.ok || !data.success) {
+            throw new Error(data.error || 'Payment failed. Please try again.');
+          }
+
+          setMessage('Payment successful! Redirecting...', 'success');
+          var redirect = new URL(THANK_YOU_URL);
+          redirect.searchParams.set('payment_id', paymentId);
+          if (data.charge_id) redirect.searchParams.set('charge_id', data.charge_id);
+          window.location.href = redirect.toString();
+        } catch (error) {
+          button.disabled = false;
+          root.classList.remove('is-loading');
+          setMessage(error.message || 'Payment failed. Please try again.', 'error');
+        }
+      });
+    })();
+
     /* Sticky header offset from promo bar height */
     (function(){
       var bar = document.getElementById('promo-bar');

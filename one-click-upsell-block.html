@@ -1,8 +1,8 @@
 <!--
-  Replace YOUR_WORKER_URL_HERE with your deployed Cloudflare Worker URL.
-  Example: https://whop-upsell.your-account.workers.dev
+  Cloudflare Worker URL:
+  https://myupsellworker.preston-648.workers.dev/
 -->
-<section class="one-click-upsell" data-worker-url="YOUR_WORKER_URL_HERE">
+<section class="one-click-upsell" data-worker-url="https://myupsellworker.preston-648.workers.dev/">
   <button class="one-click-upsell__button" type="button" id="one-click-upsell-button">
     <span class="one-click-upsell__spinner" aria-hidden="true"></span>
     <span class="one-click-upsell__button-text">Yes, Add the Blueprint + AI to My Order</span>
@@ -157,7 +157,7 @@
     var paymentId = findPaymentId();
     var workerUrl = root.getAttribute("data-worker-url");
 
-    if (!workerUrl || workerUrl === "YOUR_WORKER_URL_HERE") {
+    if (!workerUrl) {
       button.disabled = true;
       setMessage("Worker URL is not configured yet.", "error");
       return;
