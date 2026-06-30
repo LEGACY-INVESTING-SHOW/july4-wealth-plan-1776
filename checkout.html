@@ -330,7 +330,6 @@
     }
     .wd-addon-section { padding: 24px 24px 12px; order: 1; }
     .wd-addon-below { order: 3; padding: 12px 24px 24px; }
-    .wd-addon-above { order: 1; padding: 24px 24px 12px; }
     .wd-addon-title {
       font-size: 18px;
       font-weight: 600;
@@ -388,7 +387,7 @@
       font-weight: 600;
       color: #30a46c;
     }
-    #whop-checkout-wrapper { padding: 0 24px 24px; order: 2; }
+    #whop-checkout-wrapper { padding: 0 24px 8px; order: 2; }
     .pay-icons {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem;
     }
@@ -657,7 +656,9 @@
                     <script src="https://js.whop.com/static/checkout/loader.js" async defer></script>
                     <div class="wd-overlay">
                       <div class="wd-modal" role="dialog" aria-label="Checkout with addon options">
-                        <div class="wd-addon-section wd-addon-above">
+                        <div id="whop-checkout-wrapper"></div>
+
+                        <div class="wd-addon-section wd-addon-below">
                           <h4 class="wd-addon-title">Add Extra Features</h4>
                           <label class="wd-addon-card">
                             <input type="checkbox" id="addon-toggle" class="wd-addon-checkbox" />
@@ -667,8 +668,6 @@
                             </div>
                           </label>
                         </div>
-
-                        <div id="whop-checkout-wrapper"></div>
                       </div>
                     </div>
 
