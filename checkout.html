@@ -311,6 +311,83 @@
       flex-direction: column;
       gap: 1rem;
     }
+    .wd-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
+      background: transparent;
+      color: #111827;
+      min-height: 100%;
+    }
+    .wd-modal {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+    }
+    .wd-addon-section { padding: 24px 24px 12px; order: 1; }
+    .wd-addon-below { order: 3; padding: 12px 24px 24px; }
+    .wd-addon-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #111827;
+    }
+    .wd-addon-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 12px;
+      align-items: center;
+      padding: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .wd-addon-card:hover { border-color: #30a46c; }
+    .wd-addon-checkbox {
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid #e5e7eb;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+    .wd-addon-checkbox:checked {
+      border-color: #30a46c;
+      background: #30a46c;
+    }
+    .wd-addon-checkbox:checked::after {
+      content: "\2713";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    .wd-addon-card:has(.wd-addon-checkbox:checked) {
+      border-color: #30a46c;
+      background: rgba(48,164,108,0.1);
+    }
+    .wd-addon-label {
+      font-weight: 600;
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: #111827;
+    }
+    .wd-addon-price {
+      font-size: 14px;
+      font-weight: 600;
+      color: #30a46c;
+    }
+    #whop-checkout-wrapper { padding: 0 24px 8px; order: 2; }
     .pay-icons {
       display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.4rem;
     }
@@ -575,16 +652,106 @@
                 -->
                 <div id="checkout-embed">
                   <div class="whop-embed-shell">
-                    <div
-                      data-whop-checkout-plan-id="plan_9IPguYGjKiey1"
-                      data-whop-checkout-theme-background-color="#ffffff"
-                      data-whop-checkout-theme-accent-color="#1f7557"
-                      data-whop-checkout-theme-border-radius="14"
-                      data-whop-checkout-style-container-padding-x="20"
-                      data-whop-checkout-style-container-padding-y="28"
-                      data-whop-checkout-setup-future-usage="off_session"
-                      data-whop-checkout-return-url="https://wealth.managemoney101.com/lwb1776"
-                    ></div>
+                    <!-- Single Plan with Addon Embed -->
+                    <script src="https://js.whop.com/static/checkout/loader.js" async defer></script>
+                    <div class="wd-overlay">
+                      <div class="wd-modal" role="dialog" aria-label="Checkout with addon options">
+                        <div id="whop-checkout-wrapper"></div>
+
+                        <div class="wd-addon-section wd-addon-below">
+                          <h4 class="wd-addon-title">Add Extra Features</h4>
+                          <label class="wd-addon-card">
+                            <input type="checkbox" id="addon-toggle" class="wd-addon-checkbox" />
+                            <div class="wd-addon-body">
+                              <div class="wd-addon-label">One on One Call With Coach Jeff</div>
+                              <div class="wd-addon-price">+$300</div>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <script>
+                      (() => {
+                        const LIVE_HOST = location.hostname;
+                        const wrapper = document.getElementById('whop-checkout-wrapper');
+                        const addon = document.getElementById('addon-toggle');
+
+                        const basePlanId = 'plan_9IPguYGjKiey1';
+                        const bundledPlanId = 'plan_NAPx4DHSXMds6';
+                        const returnUrl = 'https://wealth.managemoney101.com/lwb1776';
+
+                        function ensureLoader(callback) {
+                          if (window.whopCheckoutLoader?.scan) {
+                            callback();
+                            return;
+                          }
+
+                          const existing = document.querySelector('script[src*="js.whop.com/static/checkout/loader.js"]');
+                          if (existing) {
+                            existing.addEventListener('load', callback, { once: true });
+                            return;
+                          }
+
+                          const script = document.createElement('script');
+                          script.src = 'https://js.whop.com/static/checkout/loader.js';
+                          script.async = true;
+                          script.defer = true;
+                          script.onload = callback;
+                          script.onerror = () => callback();
+                          document.head.appendChild(script);
+                        }
+
+                        function getPlanId() {
+                          return (addon?.checked && bundledPlanId) ? bundledPlanId : basePlanId;
+                        }
+
+                        function updateDisplayedTotal() {
+                          const total = addon?.checked ? '$2,076' : '$1,776';
+                          document.getElementById('total-val')?.replaceChildren(document.createTextNode(total));
+                          document.getElementById('mtb-price')?.replaceChildren(document.createTextNode(total));
+                        }
+
+                        function mountCheckout(planId) {
+                          const old = wrapper.querySelector('.whop-checkout-embed');
+                          if (old) old.remove();
+
+                          const mount = document.createElement('div');
+                          mount.className = 'whop-checkout-embed';
+                          mount.setAttribute('data-whop-checkout-plan-id', planId);
+                          mount.setAttribute('data-whop-checkout-theme', 'light');
+                          mount.setAttribute('data-whop-checkout-theme-background-color', '#ffffff');
+                          mount.setAttribute('data-whop-checkout-theme-accent-color', '#1f7557');
+                          mount.setAttribute('data-whop-checkout-theme-border-radius', '14');
+                          mount.setAttribute('data-whop-checkout-style-container-padding-x', '20');
+                          mount.setAttribute('data-whop-checkout-style-container-padding-y', '28');
+                          mount.setAttribute('data-whop-checkout-host', LIVE_HOST);
+                          mount.setAttribute('data-whop-checkout-setup-future-usage', 'off_session');
+                          mount.setAttribute('data-whop-checkout-return-url', returnUrl);
+
+                          wrapper.appendChild(mount);
+
+                          if (window.whopCheckoutLoader?.scan) {
+                            window.whopCheckoutLoader.scan();
+                          }
+                        }
+
+                        function render() {
+                          updateDisplayedTotal();
+                          mountCheckout(getPlanId());
+                        }
+
+                        function init() {
+                          if (!wrapper) return;
+                          render();
+                          ensureLoader(() => window.whopCheckoutLoader?.scan?.());
+                          addon?.addEventListener('change', render);
+                        }
+
+                        if (document.readyState !== 'loading') init();
+                        else document.addEventListener('DOMContentLoaded', init);
+                      })();
+                    </script>
                     <div class="trust-row" style="margin-top:0;padding-top:0.9rem;">
                       <span class="trust-chip">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -752,7 +919,6 @@
 
   </main>
 
-  <script async defer src="https://js.whop.com/static/checkout/loader.js"></script>
   <script>
     (function(){
       // Sticky offsets
