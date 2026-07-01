@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>One Last Step · Legacy Wealth Blueprint + Legacy Wealth AI · $1,776</title>
+  <title>One Last Step · Legacy Wealth Blueprint video course + Legacy Wealth AI · $1,776</title>
   <meta name="description" content="Your Wealth Plan is secured. Add the full Legacy Wealth Blueprint video course and your private Legacy Wealth AI to today's order. One time, $1,776.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="data:,">
@@ -269,9 +269,7 @@
     /* HERO */
     #hero {
       padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 6vw, 5rem);
-      background:
-        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(24,101,74,0.05) 0%, transparent 70%),
-        var(--bg);
+      background: var(--bg);
     }
 
     .hero-grid {
@@ -407,8 +405,15 @@
         margin-top: 1.5rem;
       }
 
-      .unlock-card {
-        padding: 1.5rem 1.25rem;
+      .unlock-card .uc-item,
+      .unlock-card .uc-foot {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .uc-tag {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
       }
 
       .uc-foot {
@@ -457,37 +462,33 @@
     .unlock-card {
       background: var(--white);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-lg);
-      overflow: visible;
-      position: relative;
-      padding: clamp(2rem, 3.5vw, 2.5rem) clamp(1.75rem, 3.5vw, 2.5rem) clamp(1.75rem, 3.5vw, 2.5rem);
-      border-top: 4px solid var(--accent);
+      border: 1px solid var(--hair);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
     }
 
     .uc-tag {
-      position: absolute;
-      top: -0.75rem;
-      left: 1.5rem;
-      background: var(--accent);
-      color: var(--white);
+      display: block;
+      background: var(--panel);
+      color: var(--gray);
       font-family: var(--mono);
       font-size: 0.62rem;
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.25rem 0.75rem;
-      border-radius: 100px;
+      padding: 0.65rem clamp(1.75rem, 3.5vw, 2.5rem);
+      border-bottom: 1px solid var(--hair);
     }
 
     .uc-item {
       display: flex;
       gap: 1rem;
-      padding: 1rem 0;
+      padding: 1rem clamp(1.75rem, 3.5vw, 2.5rem);
       border-top: 1px solid var(--hair);
       align-items: flex-start;
     }
 
-    .uc-item:first-of-type { border-top: none; padding-top: 0; }
+    .uc-item:first-of-type { border-top: none; padding-top: 1.35rem; }
 
     .uc-no {
       font-family: var(--mono);
@@ -514,8 +515,8 @@
     }
 
     .uc-foot {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
+      margin-top: 0;
+      padding: 1.25rem clamp(1.75rem, 3.5vw, 2.5rem) clamp(1.75rem, 3.5vw, 2.5rem);
       border-top: 1px solid var(--hair);
       display: flex;
       align-items: baseline;
@@ -532,50 +533,6 @@
       letter-spacing: -0.02em;
       line-height: 1;
     }
-
-    .price-promo {
-      display: inline-flex;
-      align-items: baseline;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .price-was {
-      font-family: var(--mono);
-      font-size: 0.62em;
-      font-weight: 400;
-      color: var(--faint);
-      text-decoration: line-through;
-      letter-spacing: 0;
-    }
-
-    .price-now { color: inherit; }
-
-    .decision-price .price-was {
-      font-size: 0.45em;
-      color: rgba(255,255,255,0.35);
-    }
-
-    .hero-lede .price-promo {
-      gap: 0.35rem;
-    }
-
-    .hero-lede .price-was {
-      font-size: 0.88em;
-      color: var(--faint);
-    }
-
-    .btn-price-promo .price-was,
-    .btn-primary .price-was,
-    .btn-primary-lg .price-was {
-      font-size: 0.82em;
-      font-weight: 400;
-      text-decoration: line-through;
-      opacity: 0.65;
-      color: rgba(255,255,255,0.7);
-    }
-
-    .btn-primary .price-was { font-size: 0.78em; }
 
     .one-click-upsell {
       display: flex;
@@ -1156,83 +1113,6 @@
       }
     }
 
-    /* ======================================================
-       PROOF BAND + TESTIMONIALS (placeholder)
-       Mirrors main page .proof-stat styling.
-    ====================================================== */
-    .proof-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 2.5rem 0;
-      align-items: stretch;
-    }
-
-    @media (max-width: 640px) {
-      .proof-stats { grid-template-columns: 1fr; gap: 0.75rem; }
-    }
-
-    .proof-stat {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 1.375rem 1.375rem 1.375rem 1.5rem;
-      box-shadow: var(--shadow-sm);
-      text-align: left;
-      border: 1px solid var(--hair);
-      border-left: 4px solid var(--accent);
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-
-    .proof-stat--peak {
-      border-left-color: var(--accent-h);
-      background: linear-gradient(160deg, rgba(24,101,74,0.06) 0%, var(--white) 55%);
-      box-shadow: var(--shadow-md);
-    }
-
-    .proof-label {
-      font-family: var(--mono);
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--accent);
-      line-height: 1.3;
-    }
-
-    .proof-num {
-      font-family: var(--mono);
-      font-size: clamp(1.65rem, 3.2vw, 2.35rem);
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--accent);
-      line-height: 1;
-      margin: 0.15rem 0 0.35rem;
-    }
-
-    .proof-stat--peak .proof-num {
-      font-size: clamp(1.85rem, 3.5vw, 2.65rem);
-      font-weight: 600;
-      color: var(--accent-h);
-    }
-
-    .proof-desc {
-      font-size: 0.8125rem;
-      line-height: 1.65;
-      color: var(--gray);
-      margin: 0;
-    }
-
-    .proof-note {
-      text-align: center;
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      letter-spacing: 0.03em;
-      color: var(--faint);
-      margin-top: 0.5rem;
-    }
-
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1299,7 +1179,7 @@
       </span>
       <a href="#upsell-checkout"
          class="btn-primary">
-        Add · <span class="price-was">$5,000</span> $1,776
+        Add $1,776
       </a>
     </div>
   </header>
@@ -1314,24 +1194,23 @@
 
           <div class="hero-copy">
             <span class="hero-eyebrow-1">&#9733; Members-Only Upgrade &middot; Step 2 of 2</span>
-            <span class="hero-eyebrow-2">This upgrade only exists on this page. Leave it, and it's gone for good.</span>
+            <span class="hero-eyebrow-2">This price only exists on this page.</span>
 
             <h1 class="hero-h1" id="hero-h1">
-              Your plan tells you the moves.<br>
-              This is how you actually make them.
+              Your plan tells you what to do — and when.<br>
+              The Legacy Wealth Blueprint video course + Legacy Wealth AI tell you how — and answer every question as you implement it.
             </h1>
 
             <p class="hero-lede">
-              Smart move — your Wealth Plan is secured and on its way. Here's the honest part: you'll open it, feel the spark, then hit the first <em>"wait, how do I actually do this?"</em> That gap is where most people stall. The <strong>Legacy Wealth Blueprint</strong> closes it move by move — and your private <strong>Legacy Wealth AI</strong>, trained on your plan, comes with it. <strong class="price-promo"><span class="price-was">$5,000</span> <span class="price-now">$1,776</span></strong>.
+              Your Wealth Plan is secured and on its way. The <strong>Legacy Wealth Blueprint video course</strong> teaches every move on video — and <strong>Legacy Wealth AI</strong> answers your questions as you implement them. <strong>$1,776</strong>.
             </p>
 
             <div class="hero-cta-group">
-              <a class="btn-primary-lg btn-price-promo"
+              <a class="btn-primary-lg"
                  id="acceptOffer"
                  href="#upsell-checkout">
-                Yes, Add the Blueprint + AI &middot; <span class="price-was">$5,000</span> $1,776
+                Yes, Add the Legacy Wealth Blueprint video course + Legacy Wealth AI &middot; $1,776
               </a>
-              <p class="hero-reassurance">One-time payment &middot; Secure checkout below &middot; Instant lifetime access</p>
             </div>
 
             <a class="decline-link"
@@ -1347,20 +1226,19 @@
               <div class="uc-item">
                 <span class="uc-no">1</span>
                 <div>
-                  <div class="uc-h">Legacy Wealth Blueprint</div>
+                  <div class="uc-h">Legacy Wealth Blueprint video course</div>
                   <div class="uc-d">All 5 pillars and 100+ lessons, every move taught step by step.</div>
                 </div>
               </div>
               <div class="uc-item">
                 <span class="uc-no">2</span>
                 <div>
-                  <div class="uc-h">Legacy Wealth AI &middot; <span style="color:var(--accent);">included free</span></div>
+                  <div class="uc-h">Legacy Wealth AI</div>
                   <div class="uc-d">Trained on the system and your plan. Step-by-step answers for your exact situation, any hour.</div>
                 </div>
               </div>
               <div class="uc-foot">
-                <span class="uc-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></span>
-                <span class="uc-terms">Added to today's order</span>
+                <span class="uc-price">$1,776</span>
               </div>
             </div>
           </div>
@@ -1373,32 +1251,14 @@
     <section class="section section-alt" id="unlocks" aria-labelledby="unlocks-h2">
       <div class="container">
         <span class="kicker">What You're Adding</span>
-        <h2 class="section-h2" id="unlocks-h2">The course and the coach that turn your plan into action.</h2>
+        <h2 class="section-h2" id="unlocks-h2">The Legacy Wealth Blueprint video course + Legacy Wealth AI turn your plan into action.</h2>
         <p class="body-text prose-wrap">
-          Three layers, one system. <strong>Your Wealth Plan</strong> is the prescription — the exact moves for your situation, in order. <strong>The Blueprint</strong> is the education — every one of those moves, taught on video, so you know how to make it. And <strong>Legacy Wealth AI</strong> is your on-call expert — trained on the whole system and on your plan, so the moment you think "how do I actually do this, in my situation?" it walks you through it, step by step.
+          Three layers, one system. <strong>Your Wealth Plan</strong> is the prescription — the exact moves for your situation, in order. <strong>The Legacy Wealth Blueprint video course</strong> is the education — every one of those moves, taught on video, so you know how to make it. And <strong>Legacy Wealth AI</strong> is your on-call expert — trained on the whole system and on your plan, so the moment you think "how do I actually do this, in my situation?" it walks you through it, step by step.
         </p>
-
-        <div class="proof-stats" aria-label="Member and course proof">
-          <div class="proof-stat">
-            <span class="proof-label">Members added it</span>
-            <div class="proof-num">2,400+</div>
-            <p class="proof-desc">Members who added the Blueprint to their plan and started running it</p>
-          </div>
-          <div class="proof-stat">
-            <span class="proof-label">Inside the course</span>
-            <div class="proof-num">100+</div>
-            <p class="proof-desc">Lessons across the five pillars, taught move by move on video</p>
-          </div>
-          <div class="proof-stat proof-stat--peak">
-            <span class="proof-label">The system</span>
-            <div class="proof-num">5</div>
-            <p class="proof-desc">Connected pillars, each one setting up the next</p>
-          </div>
-        </div>
 
         <div class="testimonial-grid">
           <figure class="testimonial-card">
-            <blockquote class="testimonial-quote">"The plan told me what to do. The course showed me how to actually do it. I stopped stalling on the first move."</blockquote>
+            <blockquote class="testimonial-quote">"The plan told me what to do. The Legacy Wealth Blueprint video course showed me how to actually do it. I stopped stalling on the first move."</blockquote>
             <figcaption class="testimonial-attrib">
               <strong>Marcus D.</strong>
               W-2 software engineer &middot; Austin, TX
@@ -1412,20 +1272,19 @@
             </figcaption>
           </figure>
           <figure class="testimonial-card">
-            <blockquote class="testimonial-quote">"Same system Preston used. Now I have it on call whenever a 'how do I do this' comes up — answered against my own numbers."</blockquote>
+            <blockquote class="testimonial-quote">"Same system Preston used. Now I have it on call whenever a 'how do I do this' comes up, answered against my own numbers."</blockquote>
             <figcaption class="testimonial-attrib">
               <strong>The Hales</strong>
               Dual-income family &middot; Tampa, FL
             </figcaption>
           </figure>
         </div>
-        <p class="proof-note">Placeholder names and figures — to be replaced with real member results before launch.</p>
 
         <div class="unlock-details">
 
           <article class="unlock-block">
-            <span class="kicker">Legacy Wealth Blueprint</span>
-            <h3>The full video course. 5 pillars, 100+ lessons, lifetime access.</h3>
+            <span class="kicker">Legacy Wealth Blueprint video course</span>
+            <h3>5 pillars, 100+ lessons, lifetime access.</h3>
             <p>A clear path through tax, debt, income, investing, and protection. Taught move by move, not the surface-level stuff you find free online.</p>
             <ul class="unlock-list">
               <li>Tax strategy that <strong>plans next year</strong>, not just files last year</li>
@@ -1437,7 +1296,7 @@
           <article class="unlock-block">
             <span class="kicker">Legacy Wealth AI &middot; included free</span>
             <h3>A private AI guide trained on Preston's system — and on your plan. Any hour, no limit on questions.</h3>
-            <p>Trained on the Blueprint and your own Wealth Plan, not random internet finance. Give it your situation and goals and it gives you step-by-step recommendations — no appointment, no waiting — for the real questions that come up as you act, like:</p>
+            <p>Trained on the Legacy Wealth Blueprint video course and your own Wealth Plan, not random internet finance. Give it your situation and goals and it gives you step-by-step recommendations — no appointment, no waiting — for the real questions that come up as you act, like:</p>
             <ul class="unlock-list">
               <li><strong>"Should I clear this debt or invest first?"</strong></li>
               <li><strong>"Does an S-Corp make sense at my income?"</strong></li>
@@ -1452,10 +1311,10 @@
     <!-- FIVE PILLARS -->
     <section class="section" id="pillars" aria-labelledby="pillars-h2">
       <div class="container">
-        <span class="kicker">Inside the Course</span>
+        <span class="kicker">Inside the Legacy Wealth Blueprint video course</span>
         <h2 class="section-h2" id="pillars-h2">Five pillars. Taught in the order that compounds.</h2>
         <p class="body-text prose-wrap" style="margin-bottom:0;">
-          Your plan points to the moves. These five pillars teach you how to make each one. Every pillar is a system you can act on, and each one sets up the next.
+          Your plan points to the moves. The Legacy Wealth Blueprint video course walks you through five pillars — each one a system you can act on, and each one setting up the next.
         </p>
 
         <ol class="method-list">
@@ -1472,7 +1331,7 @@
     <section class="section section-alt" id="choice" aria-labelledby="choice-h2">
       <div class="container">
         <span class="kicker">Two Ways To Leave This Page</span>
-        <h2 class="section-h2" id="choice-h2">Your next 12 months split right here.</h2>
+        <h2 class="section-h2" id="choice-h2">Your next 12 months fork right here.</h2>
 
         <div class="fit-grid">
           <div class="fit-card yes">
@@ -1480,9 +1339,9 @@
             <h3>Walks out with the plan <em>and</em> the way to run it.</h3>
             <ul class="fit-list">
               <li>Becomes the person who acts while the plan is fresh, with a video for every move.</li>
-              <li>Has the AI on call the first time a "how do I actually do this" question shows up — answered against their own numbers.</li>
+              <li>Has Legacy Wealth AI on call the first time a "how do I actually do this" question shows up — answered against their own numbers.</li>
               <li>Pays once, today, at the lowest price this will ever be offered.</li>
-              <li>Never has to hunt for the course or wonder what the next step was.</li>
+              <li>Never has to hunt for the Legacy Wealth Blueprint video course or wonder what the next step was.</li>
             </ul>
           </div>
           <div class="fit-card no">
@@ -1503,22 +1362,22 @@
       <div class="container">
         <div class="prose-wrap">
         <span class="kicker">The Upgrade</span>
-        <h2 class="section-h2" id="decision-h2">Add both to today's order.</h2>
-        <p class="body-text">You just secured the plan that tells you what to do. This is everything that helps you actually do it: lifetime access to all 5 pillars and 100+ lessons — and your private Wealth AI, trained on your plan, included free. It normally goes for $5,000. On this page, with today's order, it's $1,776. One payment, no subscription.</p>
+        <h2 class="section-h2" id="decision-h2">Add the Legacy Wealth Blueprint video course + Legacy Wealth AI to today's order.</h2>
+        <p class="body-text">Your plan tells you what to do. The <strong>Legacy Wealth Blueprint video course</strong> and <strong>Legacy Wealth AI</strong> handle the how — on video and on demand.</p>
 
-        <p class="body-text">Two reasons it's $1,776 and not $5,000. First, the plan only pays off if you run it — and the running is where most people stall. We'd rather you actually make the moves than admire the list. Second, America turns 250 this week, so we priced it like it's 1776 — the same number you just paid for the plan. Either way, this price lives on this page only. Leave, and it's $5,000 for good.</p>
+        <p class="body-text"><strong>$1,776</strong> on this order. One payment, lifetime access. This price only exists on this page.</p>
 
         <div class="decision-card">
           <div class="decision-card-head">
-            <div class="decision-bundle"><b>Legacy Wealth Blueprint</b> + <b>Legacy Wealth AI</b></div>
-            <div class="decision-price price-promo"><span class="price-was">$5,000</span><span class="price-now">$1,776</span></div>
+            <div class="decision-bundle"><b>Legacy Wealth Blueprint video course</b> + <b>Legacy Wealth AI</b></div>
+            <div class="decision-price">$1,776</div>
             <div class="decision-terms">One-time payment · Instant access</div>
           </div>
           <div class="decision-body">
             <section class="one-click-upsell" id="upsell-checkout" data-worker-url="https://myupsellworker.preston-648.workers.dev/" aria-label="One-click upsell checkout">
               <button class="one-click-upsell__button" type="button" id="one-click-upsell-button">
                 <span class="one-click-upsell__spinner" aria-hidden="true"></span>
-                <span class="one-click-upsell__button-text">Yes, Add the Blueprint + AI to My Order</span>
+                <span class="one-click-upsell__button-text">Yes, Add the Legacy Wealth Blueprint video course + Legacy Wealth AI to My Order</span>
               </button>
               <p class="one-click-upsell__message" id="one-click-upsell-message" role="status"></p>
             </section>
@@ -1533,16 +1392,6 @@
           </div>
         </div>
 
-        <div class="guarantee-prose">
-          <div class="guarantee-item">
-            <h3 class="g-title">Yours for life</h3>
-            <p class="g-body">The course is <strong>yours to keep and revisit forever</strong>. The Wealth AI is ready the moment your order completes, using the same email you just checked out with.</p>
-          </div>
-          <div class="guarantee-item">
-            <h3 class="g-title">14-day promise</h3>
-            <p class="g-body">Go through the first pillar. If it isn't for you, email <strong>support@legacyinvestingshow.com</strong> within 14 days and we'll refund this upgrade. Your Wealth Plan stays yours.</p>
-          </div>
-        </div>
         </div>
       </div>
     </section>
@@ -1557,10 +1406,17 @@
         <div class="faq-list">
           <details>
             <summary>
+              <span>Is this the full Legacy Wealth Blueprint program?</span>
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">No — this is the self-study video course + AI. The full program includes [advisors/implementation]. Your $1,776 plan credit applies to the full program.</div>
+          </details>
+          <details>
+            <summary>
               <span>Is this the same as my Wealth Plan?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
-            <div class="faq-answer">No. Your Wealth Plan is your personalized document — what to do, in order. This is the video course that teaches how to make each move, plus the AI that answers your questions as you run it.</div>
+            <div class="faq-answer">No. Your Wealth Plan is your personalized document — what to do, in order. This is the Legacy Wealth Blueprint video course that teaches how to make each move, plus Legacy Wealth AI to answer your questions as you run it.</div>
           </details>
           <details>
             <summary>
@@ -1574,7 +1430,7 @@
               <span>What if I'm brand new to this?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
-            <div class="faq-answer">The course starts at the foundations of each pillar and builds from there. The AI is on call for anything you're unsure about — trained on the course and your own plan, so the answers fit your situation.</div>
+            <div class="faq-answer">The Legacy Wealth Blueprint video course starts at the foundations of each pillar and builds from there. Legacy Wealth AI is on call for anything you're unsure about — trained on the Legacy Wealth Blueprint video course and your own plan, so the answers fit your situation.</div>
           </details>
           <details>
             <summary>
@@ -1592,7 +1448,7 @@
           </details>
           <details>
             <summary>
-              <span>Why $1,776 when it's normally $5,000?</span>
+              <span>Why $1,776?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">Two reasons. The plan only pays off if you run it, which is where most people stall — we'd rather you make the moves than admire the list. And America turns 250 this week, so we priced it like it's 1776, the same number you just paid for the plan. This price lives on this page only.</div>
@@ -1602,7 +1458,7 @@
               <span>Do I need this to use my Wealth Plan?</span>
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
-            <div class="faq-answer">No. Your plan stands on its own. But the plan tells you what to do, and most people stall on the how. The Blueprint and AI are for the doing — the part between knowing the move and making it.</div>
+            <div class="faq-answer">No. Your plan stands on its own. But the plan tells you what to do, and most people stall on the how. The Legacy Wealth Blueprint video course and Legacy Wealth AI are for the doing — the part between knowing the move and making it.</div>
           </details>
         </div>
         </div>
@@ -1611,22 +1467,9 @@
 
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <p class="footer-brand">Legacy Investing Show &#9733; 1776 – 2026 &#9733; Est. for the next 250</p>
-        <hr class="hairline">
-        <p class="footer-disclaimer">
-          The information provided is for educational purposes only and should not be construed as tax, legal, or investment advice. The Legacy Wealth Blueprint is an educational program; results depend on individual circumstances, effort, and execution, and are not guaranteed. Always consult with qualified professionals, including a CPA, attorney, and licensed financial advisor, before making financial decisions. Questions: support@legacyinvestingshow.com
-        </p>
-      </div>
-    </div>
-  </footer>
-
   <!-- STICKY CTA -->
   <div id="sticky-cta" aria-hidden="true" inert>
-    <a class="scta-btn" href="#upsell-checkout">Add to my order</a>
+    <a class="scta-btn" href="#upsell-checkout">Add the Legacy Wealth Blueprint video course + Legacy Wealth AI</a>
   </div>
 
   <script>

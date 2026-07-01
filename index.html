@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Legacy Wealth Plan · $1,776 for America's 250th</title>
-  <meta name="description" content="A 25–30 page wealth plan built from your actual numbers. Taxes, retirement, business, and real estate — sequenced for your life. Private clients only until now. $1,776 through July 5 at midnight ET.">
+  <meta name="description" content="A wealth plan built from your actual numbers. Taxes, retirement, business, and real estate, sequenced for your life. Private clients only until now. $1,776 through July 5 at midnight ET.">
 
   <!-- Favicon: emerald star mark -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2318654A'/%3E%3Cpath d='M12 4l2.1 4.6 5 .4-3.8 3.3 1.2 4.9L12 14.9 7.3 17.2l1.2-4.9L4.7 9l5-.4z' fill='%23ffffff'/%3E%3C/svg%3E">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://july4-wealth-plan-1776.vercel.app/">
+  <meta property="og:url" content="https://wealth.managemoney101.com/">
   <meta property="og:title" content="Your $1,776 Legacy Wealth Plan · America's 250th">
-  <meta property="og:description" content="A 25–30 page wealth plan from your actual numbers. Taxes, retirement, business, and real estate — sequenced for your life. $1,776 through July 5.">
-  <meta property="og:image" content="https://july4-wealth-plan-1776.vercel.app/assets/og-image.png">
+  <meta property="og:description" content="A wealth plan from your actual numbers. Taxes, retirement, business, and real estate, sequenced for your life. $1,776 through July 5.">
+  <meta property="og:image" content="https://wealth.managemoney101.com/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Your $1,776 Legacy Wealth Plan · America's 250th">
-  <meta name="twitter:description" content="Your actual numbers. Taxes, retirement, business, real estate — sequenced for your life. $1,776 through July 5.">
-  <meta name="twitter:image" content="https://july4-wealth-plan-1776.vercel.app/assets/og-image.png">
+  <meta name="twitter:description" content="Your actual numbers. Taxes, retirement, business, real estate, sequenced for your life. $1,776 through July 5.">
+  <meta name="twitter:image" content="https://wealth.managemoney101.com/assets/og-image.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -219,6 +219,56 @@
     }
 
     #promo-bar .cd-sep { opacity: 0.5; }
+
+    #promo-bar .spots-meter {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-width: 13rem;
+      font-family: var(--mono);
+      color: rgba(255,255,255,0.78);
+      letter-spacing: 0.03em;
+    }
+
+    #promo-bar .spots-copy {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      white-space: nowrap;
+    }
+
+    #promo-bar .spots-count {
+      min-width: 2ch;
+      color: #6EE7B7;
+      font-size: 0.95rem;
+      font-weight: 500;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+
+    #promo-bar .spots-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+    }
+
+    #promo-bar .spots-track {
+      position: relative;
+      width: clamp(4.5rem, 9vw, 7rem);
+      height: 3px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+    }
+
+    #promo-bar .spots-fill {
+      display: block;
+      width: var(--spots-fill, 100%);
+      height: 100%;
+      border-radius: inherit;
+      background: #6EE7B7;
+      transition: width 0.45s var(--ease);
+    }
 
     .btn {
       display: inline-flex;
@@ -1077,6 +1127,112 @@
       white-space: nowrap;
     }
 
+    .testimonial-feature {
+      position: relative;
+      max-width: var(--max-prose);
+      margin: 3rem auto 0;
+      padding: clamp(1.5rem, 3vw, 2.25rem);
+      background: linear-gradient(145deg, rgba(24, 101, 74, 0.05) 0%, var(--white) 52%);
+      border: 1px solid var(--hair);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+
+    .testimonial-feature::before {
+      content: '';
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 4px;
+      background: var(--accent);
+    }
+
+    .testimonial-mark {
+      position: absolute;
+      top: 0.15rem;
+      left: 1.1rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 4.5rem;
+      line-height: 1;
+      font-weight: 700;
+      color: rgba(24, 101, 74, 0.1);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .testimonial-quote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+
+    .testimonial-lead {
+      font-size: clamp(1.1rem, 2vw, 1.25rem);
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial-body {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray);
+    }
+
+    .testimonial-quote strong {
+      color: var(--ink);
+      font-weight: 600;
+      background: linear-gradient(to bottom, transparent 58%, rgba(24, 101, 74, 0.14) 58%);
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+    }
+
+    .testimonial-cite {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    .testimonial-avatar {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-cite-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .testimonial-name {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .testimonial-role {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
     /* Mobile row expand — chevron only; hidden on desktop */
     .scenario-row-label { display: block; flex: 1; min-width: 0; }
 
@@ -1492,8 +1648,20 @@
     ====================================================== */
     #claim {
       scroll-margin-top: 100px;
-      background: var(--ink);
+      position: relative;
       color: var(--white);
+      background-color: #1a1410;
+      background-image:
+        linear-gradient(180deg, rgba(18, 14, 10, 0.92) 0%, rgba(18, 14, 10, 0.5) 45%, rgba(18, 14, 10, 0.9) 100%),
+        url('assets/claim-july4-hero.png');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    #claim .container {
+      position: relative;
+      z-index: 1;
     }
 
     .claim-inner {
@@ -1501,8 +1669,10 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 2rem;
-      padding: clamp(4rem, 8vw, 7rem) 0;
+      gap: 1.5rem;
+      min-height: clamp(420px, 68vh, 620px);
+      justify-content: center;
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
     }
 
     .claim-h2 {
@@ -1515,14 +1685,16 @@
     }
 
     .claim-lede {
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-      line-height: 1.75;
-      color: rgba(255,255,255,0.65);
-      max-width: 54ch;
+      font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.78);
+      max-width: 42ch;
     }
 
     .claim-price-card {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: var(--radius-lg);
       padding: 2rem 2.5rem;
@@ -1564,8 +1736,9 @@
       font-family: var(--mono);
       font-size: 0.65rem;
       letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.5);
       text-align: center;
+      max-width: 48ch;
     }
 
     /* ======================================================
@@ -1670,6 +1843,17 @@
 
       #promo-bar .countdown {
         font-size: 0.85rem;
+      }
+
+      #promo-bar .spots-meter {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+        gap: 0.7rem;
+      }
+
+      #promo-bar .spots-track {
+        width: min(7.5rem, 36vw);
       }
 
       .btn-primary {
@@ -2168,17 +2352,6 @@
       .val-bar { max-width: none; }
     }
 
-    /* --- 1776 seal --- */
-    .claim-seal {
-      color: #6EE7B7;
-      line-height: 0;
-      margin-bottom: 0.25rem;
-    }
-    .claim-seal svg {
-      width: clamp(78px, 11vw, 102px);
-      height: auto;
-      opacity: 0.92;
-    }
   </style>
 </head>
 <body>
@@ -2193,7 +2366,11 @@
        PROMO BAR
   ==================================================== -->
   <div id="promo-bar" role="banner" aria-label="Promotional announcement">
-    <span class="promo-text">$1,776 Wealth Plan — public release <span class="promo-sub">ends Sunday, July 5 at midnight ET</span></span>
+    <span class="promo-text">$1,776 Wealth Plan, public release <span class="promo-sub">ends Sunday, July 5 at midnight ET</span></span>
+    <span class="spots-meter" aria-live="polite">
+      <span class="spots-copy"><span class="spots-count" data-spots-left>50</span><span class="spots-label" data-spots-label>spots open</span></span>
+      <span class="spots-track" aria-hidden="true"><span class="spots-fill" data-spots-fill></span></span>
+    </span>
     <span
       class="countdown"
       data-deadline="2026-07-06T03:59:00Z"
@@ -2224,16 +2401,15 @@
             </h1>
           </div>
 
-          <!-- RIGHT: VSL placeholder (swap .vsl-frame inner for embed when ready) -->
+          <!-- RIGHT: VSL — click-to-play Vimeo facade (loads iframe on demand) -->
           <div class="hero-vsl">
-            <div class="vsl-frame" id="hero-vsl">
-              <!-- Replace button with iframe/script embed (Wistia, Vimeo, etc.) -->
-              <button type="button" class="vsl-play">
+            <div class="vsl-frame" id="hero-vsl" data-vimeo-src="https://player.vimeo.com/video/1206240039?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;app_id=122963">
+              <button type="button" class="vsl-play" aria-label="Play video: See how the Wealth Plan works (1 minute 43 seconds)">
                 <span class="vsl-play-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </span>
                 <span class="vsl-play-text">See how the Wealth Plan works</span>
-                <span class="vsl-duration">~12 min</span>
+                <span class="vsl-duration">1:43</span>
               </button>
             </div>
           </div>
@@ -2241,17 +2417,15 @@
           <!-- LEFT: lede + CTA + countdown -->
           <div class="hero-body">
             <div class="hero-lede">
-              <p class="hero-lede-hook">You don't need more tips. YouTube, Instagram, TikTok — half the advice out there contradicts the other half.</p>
-              <p class="hero-lede-turn">You don't have a knowledge problem. <strong>None of those tips fit your income, your taxes, or your goals.</strong></p>
-              <p class="hero-lede-detail">We build you one plan from your actual numbers — the moves that fit you, and the one to do first.</p>
-              <p class="hero-lede-offer">We used to only do this for private clients. For July 4th, you can get one for <strong>$1,776</strong>.</p>
+              <p class="hero-lede-hook">You've collected more money advice than you could ever use — and half of it contradicts the other half.</p>
+              <p class="hero-lede-turn">Worse, it's built for someone else's income, someone else's taxes, someone else's goals. <strong>Never yours.</strong></p>
+              <p class="hero-lede-offer">Until now we only did this for private clients. For July 4th, you can get yours for <strong>$1,776</strong>.</p>
             </div>
 
             <div class="hero-cta-group">
               <a href="/checkout" class="btn btn-primary-lg">
-                Build My Plan · $1,776
+                Build My Wealth Plan · $1,776
               </a>
-              <p class="hero-reassurance">One payment · Your numbers, not a template · Find at least $1,776 in opportunity or we refund you</p>
             </div>
           </div>
 
@@ -2267,8 +2441,8 @@
         <div class="plan-showcase-inner">
           <div class="plan-showcase-copy">
             <p class="kicker">What you receive</p>
-            <h2 class="section-h2" id="plan-showcase-heading">Your name on the cover. Your numbers inside.</h2>
-            <p>Not a fill-in PDF. You send us your numbers. Income, taxes, retirement, business, real estate. We build the plan around what applies to you. Wrong moves get cut. The rest go in the right order.</p>
+            <h2 class="section-h2" id="plan-showcase-heading">A 25-page wealth plan built from your actual numbers.</h2>
+            <p>You send us your actual numbers across income, taxes, retirement, business, and real estate, and we build a 25-to-30-page plan around what genuinely applies to you. The moves that don't fit get thrown out, and what's left gets mapped across the next 12 months, in the order you should actually run it.</p>
           </div>
 
           <div class="plan-showcase-doc">
@@ -2290,9 +2464,6 @@
                   decoding="async"
                 >
               </picture>
-              <div class="price-chip">
-                $1,776 <span class="chip-sub">Limited release</span>
-              </div>
             </div>
           </div>
         </div>
@@ -2305,31 +2476,31 @@
     <section id="proof" aria-labelledby="proof-heading">
       <div class="container">
         <p class="proof-intro" id="proof-heading">
-          We've done <strong>hundreds of these</strong> — W-2 earners, business owners, two-income families, people rebuilding after a bad year. Same process every time: run the numbers, find the moves, put them in order.
+          We've built <strong>hundreds of these</strong> for W-2 earners, business owners, two-income families, and people clawing their way back after a rough year. We run your numbers, find the moves hiding inside them, and put those moves in the order that gets you the most, the soonest.
         </p>
 
         <div class="proof-stats">
           <div class="proof-stat">
             <span class="proof-label">Typical year one</span>
             <div class="proof-num">$79,114</div>
-            <p class="proof-desc">What a typical plan finds in year one — taxes, retirement, business, and cash flow only</p>
+            <p class="proof-desc">What a typical plan finds in year one: taxes, retirement, business, and cash flow only</p>
           </div>
           <div class="proof-stat">
-            <span class="proof-label">Full financial picture</span>
+            <span class="proof-label">With real estate added</span>
             <div class="proof-num">$312,861</div>
-            <p class="proof-desc">Typical total once you add real estate, a spouse's income, or more cash to deploy</p>
+            <p class="proof-desc">What plans often reach once real estate, a spouse's income, or more cash gets pulled in</p>
           </div>
           <div class="proof-stat proof-stat--peak">
             <div class="peak-figure">
               <span class="proof-label">All-time record</span>
               <div class="proof-num">$939,433</div>
             </div>
-            <p class="proof-desc">Our biggest plan ever — one family's numbers, sequenced correctly.</p>
+            <p class="proof-desc">Our biggest plan ever. One family's numbers, sequenced correctly.</p>
           </div>
         </div>
 
         <p class="proof-closing">
-          Most of it is money you're <strong>already earning</strong>. It was just going to the wrong places.
+          The plan helps you reclaim your own money and multiply it.
         </p>
       </div>
     </section>
@@ -2347,12 +2518,12 @@
             <h2 class="section-h2" id="money-h2">You did the work. So why don't you feel ahead?</h2>
 
             <div class="body-text">
-              <p>You <strong>crossed six figures</strong>. You thought things would feel different by now. But the money disappears before you can use it. April hurt more than last year. And the wealth you're building? You can't point to it.</p>
-              <p>You've tried. Saved the threads. Watched the videos. One guru says max the 401(k). The next says skip it and buy rentals. A third says kill all debt first. They're all right — for someone else's situation. <strong>Not yours.</strong></p>
-              <p>Part of it is the system. At $100K–$400K on a W-2 or 1099, you're in some of the highest tax brackets in the country. The tools to lower that exist. Nobody at your job is going to set them up for you.</p>
-              <p>Your CPA won't catch it either. Most CPAs are paid to file last year, not to plan next year. By the time yours opens your return in March, every window that mattered closed back in December.</p>
-              <p><strong>People who keep more aren't smarter. Most don't earn more.</strong> Same tax code. Someone mapped their numbers and picked the moves that applied. First step. Second step. What to skip for now. Most people lose years guessing because they never got that map. <strong>Almost nobody has one.</strong></p>
-              <p>One client in El Paso had <strong>$60,448 hiding in his own numbers</strong> — <strong>$37,448 of it in tax savings</strong> from one year of moves, done in the right sequence. For years that money went to the IRS because nobody had ever run the numbers. That's the gap. And you can close it.</p>
+              <p>You <strong>crossed six figures</strong> and figured life would feel different by now. Instead the money's gone before you can do anything with it, April stung worse than the year before, and if someone asked you to point to the wealth you're supposedly building, you'd have a hard time finding it.</p>
+              <p>You've put in the effort. You've saved the threads and watched the videos. One guru tells you to max the 401(k), the next says skip it and buy rentals, a third swears you kill every dollar of debt first. Every one of them is right for somebody out there. <strong>The trouble is that none of them are looking at your situation.</strong></p>
+              <p>Some of this is just how the system is built. Earn well on a W-2 or 1099 and, between federal, state, and payroll tax, someone in California, New York, or New Jersey can lose 40 to 50 cents on every dollar before it ever hits their account. That's months of every year working for the government instead of for your own family. The tools to bring it down are real and completely legal, but nobody at your job is going to walk over and set them up for you.</p>
+              <p>Your CPA won't catch it either. Most CPAs get paid to file last year, and planning next year was never part of the deal. By the time yours opens your return in March, every window that mattered closed back in December.</p>
+              <p><strong>The people who keep more of what they earn work from the exact same tax code you do. Plenty of them earn less than you.</strong> The only real difference is that someone sat down, mapped their numbers, and showed them which moves applied, what to do first, and what to leave alone for now. Set up the entity before the retirement plan, or after? Fund the HSA before the Roth, or the other way around? Get the order wrong and you can undo your own hard work. Most people fall behind for one reason: no one ever told them what to do first.</p>
+              <p>One client in El Paso was sitting on <strong>$60,448 buried inside his own numbers</strong>, and <strong>$37,448 of it was pure tax savings</strong> from a single year of moves run in the right order. That money had been going straight to the IRS for years, for no reason other than nobody had ever run his numbers and handed him the order. That's the gap, and it's one you can close.</p>
             </div>
           </div>
 
@@ -2375,8 +2546,8 @@
             <div class="body-text">
               <p>I come from a middle-class, first-generation immigrant family. My parents <strong>came from Korea</strong> with almost nothing. They worked 14-to-16-hour days running a restaurant and a t-shirt shop. No trust fund. No shortcuts. When I finished college, I had no real clue what to do with money.</p>
               <p>So I did the "right" thing and took a corporate sales job, and I hated it. Living for the weekend, asking permission to take a day off, staring down 40 more years of the same. So I started learning everything I could about taxes, investing, and real estate.</p>
-              <p>The more I learned, the more I saw: rich people weren't doing anything magical. They just knew which boxes to check, in which order. I had to learn that same playbook. <strong>By 28, my wife and I were financially free and walked away from our jobs.</strong> Since then we've built a $15M+ real estate portfolio from scratch.</p>
-              <p>Now we've got two boys, and life looks nothing like a 9-to-5. Every high earner I knew kept asking: <em>what do I actually do — and in what order?</em> <strong>This plan is that answer on paper,</strong> so you don't spend ten years learning it the hard way.</p>
+              <p>The more I learned, the more I saw: rich people were doing something simple: they just knew which boxes to check, in which order. I had to learn that same playbook. <strong>By 28, my wife and I were financially free and walked away from our jobs.</strong> Since then we've built a $15M+ real estate portfolio from scratch.</p>
+              <p>Now we've got two boys, and life looks nothing like a 9-to-5. Every high earner I knew kept asking: <em>what do I actually do, and in what order?</em> <strong>This plan is that answer on paper,</strong> so you don't spend ten years learning it the hard way.</p>
             </div>
 
             <div class="founder-stats">
@@ -2395,7 +2566,7 @@
             </div>
 
             <blockquote class="founder-quote">
-              "I paid tuition for ten years to learn this order. The plan is me saving you that tuition."
+              "I spent ten years learning which strategies actually work, which ones to skip, and what order to run them in. This plan saves you that decade — a step-by-step roadmap of exactly what I'd do in your situation."
               <cite>Preston Seo · Founder, Legacy Investing Show</cite>
             </blockquote>
           </div>
@@ -2424,10 +2595,10 @@
     ==================================================== -->
     <section class="section" id="plan" aria-labelledby="plan-h2">
       <div class="container">
-        <span class="kicker">What you'll actually hold</span>
-        <h2 class="section-h2" id="plan-h2">Page count doesn't matter. Here's what you walk away with.</h2>
+        <span class="kicker">What you walk away with</span>
+        <h2 class="section-h2" id="plan-h2">You'll finally know exactly where your money should go next.</h2>
         <p class="body-text" style="max-width:var(--max-prose); margin-bottom:2.5rem;">
-          25–30 pages, built from your intake. We blurred the sample on purpose. Here's what's inside:
+          All 25 to 30 pages are built from your own numbers, mapping your moves month by month across the next 12 months. Here is what yours gives you the moment it lands in your inbox.
         </p>
 
         <!-- Flip-through -->
@@ -2442,13 +2613,12 @@
                 height="512"
                 loading="lazy"
                 decoding="async"
-                alt="Animated flip-through of a real Legacy Wealth Plan, showing pages cover to calendar with client details removed"
+                alt="Animated flip-through of a Legacy Wealth Plan specimen, cover to calendar with private details redacted"
               >
             </picture>
             <div class="flipthrough-info">
-              <span class="tag-chip">Specimen · Real Plan · Redacted</span>
-              <h3 class="flipthrough-h">Twenty-six pages. Thirty seconds.</h3>
-              <p class="flipthrough-cap">A real client plan, cover to calendar. Name removed, details blurred — enough to see the work, not enough to copy.</p>
+              <h3 class="flipthrough-h">A full year of strategies — cover to calendar, on one desk.</h3>
+              <p class="flipthrough-cap">Flip through from the opening pages to your 12-month calendar. Every strategy sequenced, every month accounted for. We blurred names and private details so you can see exactly how thorough yours will be.</p>
             </div>
           </div>
         </div>
@@ -2467,20 +2637,19 @@
             >
           </picture>
           <div>
-            <h3 class="plan-specimen-h">It ends with dates on a calendar — not a list of ideas you'll never start.</h3>
+            <h3 class="plan-specimen-h">You close it knowing exactly what to do first.</h3>
             <p class="plan-specimen-desc">The last pages give you dates: what to do this week, what waits until next month, what needs your CPA's OK first. You close it knowing step one.</p>
             <ul class="plan-specimen-list">
+              <li>Your full 12 months, mapped month by month</li>
+              <li>A week-by-week breakdown of your first 30 days</li>
               <li>The moves with a deadline, flagged before the windows close</li>
-              <li>A week-by-week map of your first 30 days</li>
               <li>The exact questions to bring your CPA and attorney</li>
             </ul>
           </div>
         </div>
 
-        <p class="body-text" style="max-width:var(--max-prose); margin-top:2rem; text-align:center; margin-left:auto; margin-right:auto;">What's inside yours depends on you. We've done hundreds of these. No two came back the same.</p>
-
         <blockquote class="pull-quote" style="max-width:var(--max-prose); margin-left:auto; margin-right:auto;">
-          You didn't need more videos. You needed a sequence — yours.
+          Put the right moves in the right order, and the money finally starts staying with you.
         </blockquote>
 
       </div>
@@ -2491,17 +2660,17 @@
     ==================================================== -->
     <section class="section section-alt" id="method" aria-labelledby="method-h2">
       <div class="container">
-        <span class="kicker">How yours gets built</span>
-        <h2 class="section-h2" id="method-h2">Your numbers go in. A 30-day action plan comes out.</h2>
+        <span class="kicker">From questionnaire to roadmap</span>
+        <h2 class="section-h2" id="method-h2">Share your numbers — get back a plan you can start this week.</h2>
         <p class="method-lede">
-          You fill out a short intake. We run your numbers against every strategy we use. The plan comes back with what fits, what doesn't, and what to do first. Month one is already on the calendar. No pile of ideas with nowhere to start.
+          You fill out a detailed questionnaire. We run your numbers against every strategy we use and build your 12-month roadmap: which moves to make, in what order, with your first 30 days already on a calendar. Most plans land within 7 days.
         </p>
 
         <ol class="method-list">
-          <li data-step="I."><strong>Map the numbers</strong> Income, filing status, debt, retirement, business, real estate goals, cash on hand. One picture.</li>
-          <li data-step="II."><strong>Find the moves</strong> Tax, business, retirement, cash flow, debt, investing, and property strategies that fit you. The rest get cut.</li>
-          <li data-step="III."><strong>Put them in order</strong> First move. What can wait. What needs your CPA before you touch it. Sequence is the whole game.</li>
-          <li data-step="IV."><strong>Start the first 30 days</strong> A clear path for your talks with your CPA, attorney, advisor, and real estate contacts. You walk in with the map already drawn.</li>
+          <li data-step="I."><strong>We map where you stand</strong> Your income, taxes, debt, retirement, business, and real estate goals — pulled into one clear picture.</li>
+          <li data-step="II."><strong>We find your moves</strong> Every strategy tested against your numbers. We keep only the ones that put real money back in your pocket.</li>
+          <li data-step="III."><strong>We sequence them</strong> What runs now, what waits, what needs your CPA first. The sequence is where most of the money gets won.</li>
+          <li data-step="IV."><strong>You start week one</strong> Your first 30 days on a calendar, plus talking points for every CPA, attorney, advisor, and realtor conversation — so you know exactly what to ask for.</li>
         </ol>
       </div>
     </section>
@@ -2511,10 +2680,10 @@
     ==================================================== -->
     <section class="section" id="scenarios" aria-labelledby="scenarios-h2">
       <div class="container">
-        <span class="kicker">What it found for people like you</span>
-        <h2 class="section-h2" id="scenarios-h2">Same price. Seven different lives. Seven different numbers.</h2>
+        <span class="kicker">Proof it isn't a template</span>
+        <h2 class="section-h2" id="scenarios-h2">Same questions everyone answers. Completely different plans every time.</h2>
         <p class="scenarios-lede">
-          Real clients. Different incomes, ages, and stages. Same $1,776 plan — different number every time. Column one: tax, retirement, business, and cash-flow moves only. Column two: what changed once real estate and bigger cash came in. Even the smallest row beat the $1,776 price.
+          W-2 earners, business owners, couples near retirement, families rebuilding — same questionnaire, different situations, different money found every time. The first figure is year-one value from taxes, retirement, business, and cash flow only. The second is what happened once real estate and bigger cash got pulled in. Even the lowest number here pays for the plan several times over.
         </p>
 
         <div class="table-wrap">
@@ -2550,7 +2719,7 @@
                 <td data-label="Starting Point">Family with a business, investments, and real estate all in play</td>
                 <td class="td-num" data-label="Value In Year One">$73,363</td>
                 <td class="td-num" data-label="With Real Estate Added">$445,650</td>
-                <td data-label="What Drove The Number">Real estate + retirement + business setup + investments — finally on one map</td>
+                <td data-label="What Drove The Number">Real estate, retirement, business setup, and investments, finally on one map</td>
               </tr>
               <tr>
                 <td data-label="Starting Point">Business owner eyeing a second property</td>
@@ -2574,11 +2743,18 @@
           </table>
         </div>
 
-        <figure class="testimonial-feature" style="max-width:var(--max-prose); margin:3rem auto 0; background:var(--white); border:1px solid var(--hair); border-left:4px solid var(--accent); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); padding:clamp(1.5rem,3vw,2rem);">
-          <blockquote style="margin:0; font-size:1.05rem; line-height:1.7; color:var(--ink);">
-            "It completely changed the way I think about my taxes and my credit. Getting my bookkeeping set up made tax season so much easier — and it's the reason I finally opened custodial investment accounts for my kids. Now I actually know what I'm working toward: clearing the credit cards and building our emergency fund."
+        <figure class="testimonial-feature">
+          <span class="testimonial-mark" aria-hidden="true">&ldquo;</span>
+          <blockquote class="testimonial-quote">
+            <p class="testimonial-lead">It completely changed the way I think about <strong>my taxes and my credit</strong>.</p>
+            <p class="testimonial-body">Getting my bookkeeping set up made <strong>tax season so much easier</strong>, and it's the reason I finally <strong>opened custodial investment accounts for my kids</strong>. Now I actually know what I'm working toward: <strong>clearing the credit cards and building our emergency fund</strong>.</p>
           </blockquote>
-          <figcaption style="margin-top:1rem; font-family:var(--mono); font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--faint);">— Leilani &middot; Wealth Plan client</figcaption>
+          <figcaption class="testimonial-cite">
+            <span class="testimonial-avatar" aria-hidden="true">L</span>
+            <span class="testimonial-cite-text">
+              <span class="testimonial-name">Leilani</span>
+            </span>
+          </figcaption>
         </figure>
 
       </div>
@@ -2590,16 +2766,16 @@
     <section class="section section-alt" id="who" aria-labelledby="who-h2">
       <div class="container">
         <span class="kicker">Who it's for</span>
-        <h2 class="section-h2" id="who-h2">No one-size-fits-all answer. Your plan finds yours.</h2>
+        <h2 class="section-h2" id="who-h2">Your plan zeroes in on the moves that pay off most for someone in your exact spot.</h2>
         <p class="who-intro">
-          We find the moves that actually matter for you. These four come up the most:
+          Here are the four situations we see most often, and what your plan goes after in each one.
         </p>
 
         <div class="who-index">
           <div class="who-item">
             <p class="who-num">01</p>
             <h3 class="who-h3">W-2 earner paying too much tax</h3>
-            <p class="who-body">Solid income, messy setup. Usually missing easy wins: retirement, HSA, withholding, spouse's accounts, or a side biz structure.</p>
+            <p class="who-body">You earn well, but the setup underneath it is a mess, and the easy wins keep slipping past you: retirement contributions, an HSA, your withholding, your spouse's accounts, the structure around a side business.</p>
           </div>
           <div class="who-item">
             <p class="who-num">02</p>
@@ -2609,12 +2785,12 @@
           <div class="who-item">
             <p class="who-num">03</p>
             <h3 class="who-h3">Curious about real estate</h3>
-            <p class="who-body">STR, LTR, co-hosting, or first buy — timing and tax setup matter more than the hype.</p>
+            <p class="who-body">Whether you're eyeing a short-term rental, a long-term hold, co-hosting, or your very first purchase, the timing and the tax setup matter far more than whatever's trending online.</p>
           </div>
           <div class="who-item">
             <p class="who-num">04</p>
             <h3 class="who-h3">Dual-income household</h3>
-            <p class="who-body">A spouse's income, a family business, retirement limits, and how you file can all change the plan.</p>
+            <p class="who-body">Once you factor in a spouse's income, a family business, two sets of retirement limits, and the way you choose to file, the whole plan shifts underneath you.</p>
           </div>
         </div>
 
@@ -2659,17 +2835,18 @@
               <p>For America's 250th birthday, we're opening it to everyone for the first time. You don't have to be a private client to get one.</p>
               <p>The price is <strong>$1,776</strong> for this limited release. One payment, for a plan built on your numbers that you keep forever.</p>
               <p>Most of what the plan finds is money you were about to send the IRS. You're basically buying independence with your own tax savings.</p>
-              <p>So why $1,776 for something this deep? Because it should pay for itself in year one — and we put that in writing. If we can't find at least <strong>$1,776</strong> in opportunity, you get a full refund. The price should be the least interesting part.</p>
+              <p>Two hundred and fifty years ago, a handful of people signed a document they had no guarantee they'd survive, because they were done waiting for permission. Your plan is a smaller version of that, with your numbers on it.</p>
+              <p>So why $1,776 for something this deep? Because it should pay for itself in year one, and we put that in writing. If we can't find at least <strong>$1,776</strong> in opportunity, you get a full refund. The price should be the least interesting part.</p>
               <p>The price holds through Sunday, July 5 at midnight ET. After that, it goes back behind the private-client door, with no date set to open it again.</p>
             </div>
 
             <div class="what-you-get">
               <h3 class="wyg-heading">What you get.</h3>
               <ul class="wyg-list">
-                <li><strong>Your own wealth plan</strong>, 25 to 30 pages, built from your intake. Yours to keep forever.</li>
-                <li><strong>A first-30-days action plan</strong> with week-by-week dates, so you know your first move the moment you close it.</li>
+                <li><strong>Your own 25-to-30-page wealth plan</strong>, built from your questionnaire and yours to keep forever.</li>
+                <li><strong>A full 12-month plan, mapped month by month</strong>, with your first 30 days broken down week by week, so you know your first move the moment you close it.</li>
                 <li><strong>The exact questions to bring your CPA and attorney</strong>, so those meetings start in the right place.</li>
-                <li><strong>A value range up front</strong> — the conservative number, and the bigger one if you run the plan.</li>
+                <li><strong>A value range up front</strong>, the conservative number plus the bigger one if you run the whole plan.</li>
               </ul>
             </div>
           </div>
@@ -2689,13 +2866,6 @@
                   </div>
                   <div class="ledger-val">$79,114</div>
                 </div>
-                <div class="ledger-row">
-                  <div class="ledger-item">
-                    <p class="ledger-name">The plan itself</p>
-                    <p class="ledger-sub">Private clients only, until now</p>
-                  </div>
-                  <div class="ledger-val">Private only</div>
-                </div>
                 <div class="ledger-row final">
                   <div class="ledger-item">
                     <p class="ledger-name">July 4th Public Release</p>
@@ -2706,8 +2876,9 @@
               </div>
               <div class="ledger-cta">
                 <a href="/checkout" class="btn btn-primary-lg" style="width:100%; justify-content:center;">
-                  Build My Plan · $1,776
+                  Build My Wealth Plan · $1,776
                 </a>
+                <p style="margin-top:0.75rem; font-size:0.8rem; line-height:1.5; color:var(--faint); text-align:center;">Prefer to split it? Choose <strong>Splitit</strong> at checkout — up to 12 monthly payments at 0% interest (about $148/mo).</p>
               </div>
             </div>
           </div>
@@ -2727,12 +2898,16 @@
         <div class="guarantee-prose">
           <div class="guarantee-item">
             <h3 class="g-title">Worth your $1,776, or it's on us.</h3>
-            <p class="g-body">Every plan opens with a value range — conservative number, higher number if you execute. The typical plan finds $79,114 in its first year. <strong>If yours can't show at least $1,776 in opportunity, we redo it free or refund you. We don't keep money we didn't earn.</strong></p>
+            <p class="g-body">Your plan has to show you at least <strong>$1,776 you could save or make in your first 12 months</strong>. If it doesn't, you don't pay for it.</p>
+            <p class="g-body">Honestly, that floor is almost impossible to miss. Across the hundreds of plans we've built, the average client finds around <strong>$79,114</strong>. But say your situation turns out to be the rare exception, and there just isn't a big move waiting there to cut your taxes, knock down your debt, invest smarter, or free up your cash flow.</p>
+            <p class="g-body">If that happens, we get right back in it with you. We dig into your situation, your limits, and your goals, and find what else we can do to earn you a real return on the $1,776.</p>
+            <p class="g-body"><strong>And if we still come up short, you get every dollar back, no questions asked.</strong></p>
           </div>
           <div class="guarantee-item">
             <h3 class="g-title">100% credited toward the Legacy Wealth Blueprint.</h3>
-            <p class="g-body">Upgrade to the full Legacy Wealth Blueprint within 90 days and <strong>your full $1,776 applies as credit.</strong> Try the plan first — it doesn't cost you extra.</p>
+            <p class="g-body">Upgrade to the full Legacy Wealth Blueprint within 90 days and <strong>your full $1,776 applies as credit.</strong> Try the plan first. It costs you nothing extra.</p>
           </div>
+          <p class="g-body" style="text-align:center; font-weight:600; margin-top:1.75rem;">Your worst case is a refund. Your normal case is a plan worth many times what you paid.</p>
         </div>
       </div>
     </section>
@@ -2753,7 +2928,7 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              Personalized. After you order, you fill out a short form. It covers your income, filing status, state, age, debt, retirement accounts, business, property interest, and the cash you have to work with. We build the plan around your own numbers. The samples above are real client plans with the details removed, and no two are the same.
+              Personalized. After you order, you fill out a detailed form. It covers your income, filing status, state, age, debt, retirement accounts, business, property interest, and the cash you have to work with. We build the plan around your own numbers. The samples above are real client plans with the details removed, and no two are the same.
             </div>
           </details>
 
@@ -2763,7 +2938,17 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              You'll get a short intake form. You fill in your income, filing status, accounts, debt, business, and real estate goals. Once you send it back, our team builds your plan from those numbers and delivers it to you, with your first 30 days already mapped. You'll see the exact turnaround time the moment you start your intake.
+              You'll get a detailed questionnaire. You fill in your income, filing status, accounts, debt, business, and real estate goals. Once you send it back, our team builds your full 12-month plan from those numbers — with your first 30 days already mapped week by week. Your finished plan is delivered within 7 days of completing your questionnaire.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Can I split the payment?
+              <span class="faq-toggle" aria-hidden="true"></span>
+            </summary>
+            <div class="faq-answer">
+              Yes. Choose Splitit at checkout and break the $1,776 into up to 12 monthly payments at 0% interest — about $148 a month. Same plan, same price, just spread out. It's yours to keep either way.
             </div>
           </details>
 
@@ -2773,7 +2958,7 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              Your CPA still matters — this just makes that meeting useful. Most CPAs file last year, not plan next year. You walk in with a map and specific questions. We include exactly what to bring them.
+              Your CPA still matters. This just makes that meeting useful. Most CPAs file last year and stop there, while planning next year lands on you. You walk in with a map and specific questions. We include exactly what to bring them.
             </div>
           </details>
 
@@ -2783,7 +2968,7 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              Good — that's what should happen. Every move is written so you and your CPA or attorney can decide together. They know your full picture; they have final say. We list the exact questions to ask. This is education to use with your pros, not a replacement.
+              Good, that's what should happen. Every move is written so you and your CPA or attorney can decide together. They know your full picture and they have final say. We list the exact questions to ask. Think of this as homework that makes the time with your pros count.
             </div>
           </details>
 
@@ -2793,7 +2978,7 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              No. The plan looks across tax, retirement, business setup, cash flow, debt, investing, and real estate. The point is getting the pieces to work together. Usually that fit is where the real money is — not any one move.
+              No. The plan looks across tax, retirement, business setup, cash flow, debt, investing, and real estate. The point is getting the pieces to work together. Usually the fit between them is where the real money shows up, more than any single move.
             </div>
           </details>
 
@@ -2813,7 +2998,7 @@
               <span class="faq-toggle" aria-hidden="true"></span>
             </summary>
             <div class="faq-answer">
-              Two parts. One: if the finished plan doesn't show at least $1,776 in opportunity, we revise free or refund. Two: upgrade to Legacy Wealth Blueprint within 90 days and your $1,776 applies as credit. Numbers are estimates based on your profile — not guaranteed filed-return outcomes.
+              Two parts. One: if the finished plan doesn't show at least $1,776 in opportunity, we revise free or refund. Two: upgrade to Legacy Wealth Blueprint within 90 days and your $1,776 applies as credit. Numbers are estimates based on your profile, and they aren't guaranteed filed-return outcomes.
             </div>
           </details>
 
@@ -2847,54 +3032,17 @@
     <section id="claim" aria-labelledby="claim-h2">
       <div class="container">
         <div class="claim-inner">
-          <div class="claim-seal" aria-hidden="true">
-            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none">
-              <defs>
-                <path id="seal-arc" d="M60 60 m 0 -47 a 47 47 0 1 1 0 94 a 47 47 0 1 1 0 -94"/>
-              </defs>
-              <circle cx="60" cy="60" r="57" stroke="currentColor" stroke-width="1" opacity="0.42"/>
-              <circle cx="60" cy="60" r="50" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-              <text fill="currentColor" font-family="'JetBrains Mono', monospace" font-size="8.2" letter-spacing="2.4">
-                <textPath href="#seal-arc" startOffset="3%">AMERICA'S 250TH &#9733; 1776 — 2026 &#9733; </textPath>
-              </text>
-              <text x="60" y="57" text-anchor="middle" fill="currentColor" font-family="'JetBrains Mono', monospace" font-size="23" font-weight="500" letter-spacing="1">1776</text>
-              <path d="M60 65 l2 4.3 4.7.4 -3.6 3.1 1.1 4.6 -4.2-2.5 -4.2 2.5 1.1-4.6 -3.6-3.1 4.7-.4z" fill="currentColor" opacity="0.85"/>
-            </svg>
-          </div>
           <h2 class="claim-h2" id="claim-h2">Make this July 4th the year you stop winging it.</h2>
-          <p class="claim-lede">
-            April is coming either way. Walk in with a plan, or walk in like last year. One payment. Your numbers, sequenced. First 30 days on a calendar. CPA questions already written. Yours to keep.
-          </p>
-
-          <div class="claim-price-card">
-            <div class="claim-price">$1,776</div>
-            <div class="claim-price-sub">July 4th public release · Through Sunday, July 5 at midnight ET</div>
-          </div>
 
           <a
             href="/checkout"
             class="claim-btn"
-          >Build My Plan · $1,776</a>
-
-          <p class="claim-note">Secure checkout · One payment · Your numbers, not a template · Find at least $1,776 in opportunity or we refund you</p>
+          >Get My Wealth Plan · $1,776</a>
         </div>
       </div>
     </section>
 
   </main>
-
-  <!-- ====================================================
-       FOOTER
-  ==================================================== -->
-  <footer role="contentinfo">
-    <div class="container">
-      <div class="footer-inner">
-        <p class="footer-disclaimer">
-          The information provided is for <strong>educational purposes only</strong> and should not be construed as tax, legal, or investment advice. All dollar figures shown are educational modeled estimates based on individual client profiles, not guarantees and not individualized tax, legal, investment, or financial advice. Individual results will vary based on income, filing status, debt, business activity, property timing, market conditions, and execution. Always consult with qualified professionals, including a CPA, attorney, and licensed financial advisor, before making financial decisions. Questions: <a href="mailto:support@legacyinvestingshow.com">support@legacyinvestingshow.com</a>
-        </p>
-      </div>
-    </div>
-  </footer>
 
   <!-- ====================================================
        STICKY FLOATING CTA
@@ -2922,6 +3070,95 @@
       });
     }
     tick(); setInterval(tick,1000);
+
+    /* ======================================================
+       HERO VSL — click-to-play Vimeo embed (facade)
+    ====================================================== */
+    (function(){
+      const frame = document.getElementById('hero-vsl');
+      if(!frame) return;
+      const btn = frame.querySelector('.vsl-play');
+      const src = frame.dataset.vimeoSrc;
+      if(!btn || !src) return;
+      btn.addEventListener('click', () => {
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.title = 'See how the Wealth Plan works';
+        iframe.setAttribute('frameborder','0');
+        iframe.setAttribute('allow','autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share');
+        iframe.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
+        iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+        btn.remove();
+        frame.appendChild(iframe);
+        iframe.focus();
+      });
+    })();
+
+    /* ======================================================
+       SPOTS LEFT — smooth depletion curve from campaign plan
+    ====================================================== */
+    (function(){
+      const countEl = document.querySelector('[data-spots-left]');
+      const labelEl = document.querySelector('[data-spots-label]');
+      const fillEl = document.querySelector('[data-spots-fill]');
+      if(!countEl || !labelEl || !fillEl) return;
+
+      const TOTAL_SPOTS = 50;
+      const timeline = [
+        { at: '2026-07-01T23:30:00Z', spots: 50 }, // Wed Jul 1, 7:30pm ET: pre-launch tease
+        { at: '2026-07-02T12:00:00Z', spots: 50 }, // Thu Jul 2, 8am ET: open
+        { at: '2026-07-02T17:00:00Z', spots: 44 },
+        { at: '2026-07-02T21:00:00Z', spots: 36 },
+        { at: '2026-07-03T13:00:00Z', spots: 33 },
+        { at: '2026-07-03T20:30:00Z', spots: 30 },
+        { at: '2026-07-04T13:00:00Z', spots: 27 },
+        { at: '2026-07-04T21:00:00Z', spots: 24 },
+        { at: '2026-07-05T12:00:00Z', spots: 20 },
+        { at: '2026-07-05T16:00:00Z', spots: 14 },
+        { at: '2026-07-05T19:30:00Z', spots: 9 },
+        { at: '2026-07-05T22:00:00Z', spots: 5 },
+        { at: '2026-07-06T03:30:00Z', spots: 1 },
+        { at: '2026-07-06T03:59:00Z', spots: 0 }
+      ].map(point => ({ time: new Date(point.at).getTime(), spots: point.spots }));
+
+      function smoothstep(t){
+        return t * t * (3 - 2 * t);
+      }
+
+      function spotsFor(now){
+        if(now <= timeline[0].time) return timeline[0].spots;
+        const last = timeline[timeline.length - 1];
+        if(now >= last.time) return 0;
+
+        for(let i = 0; i < timeline.length - 1; i++){
+          const start = timeline[i];
+          const end = timeline[i + 1];
+          if(now >= start.time && now <= end.time){
+            const span = end.time - start.time || 1;
+            const progress = smoothstep((now - start.time) / span);
+            return start.spots + (end.spots - start.spots) * progress;
+          }
+        }
+
+        return last.spots;
+      }
+
+      function updateSpots(){
+        const now = Date.now();
+        const liveSpots = spotsFor(now);
+        const displaySpots = now >= timeline[timeline.length - 1].time
+          ? 0
+          : Math.max(1, Math.ceil(liveSpots));
+        const percent = Math.max(0, Math.min(100, (liveSpots / TOTAL_SPOTS) * 100));
+
+        countEl.textContent = String(displaySpots);
+        labelEl.textContent = displaySpots === 1 ? 'spot left' : 'spots left';
+        fillEl.style.setProperty('--spots-fill', percent.toFixed(1) + '%');
+      }
+
+      updateSpots();
+      setInterval(updateSpots, 60000);
+    })();
 
     /* ======================================================
        STICKY PROMO BAR HEIGHT → scroll-padding
@@ -3149,7 +3386,7 @@
         '#plan .section-h2', '#plan > .container > .body-text',
         '.flipthrough-card', '.plan-specimen', '.pull-quote',
         '#method .section-h2', '.method-lede',
-        '#scenarios .section-h2', '.scenarios-lede', '.table-wrap',
+        '#scenarios .section-h2', '.scenarios-lede', '.table-wrap', '.testimonial-feature',
         '#who .section-h2', '.who-intro',
         '.pricing-body', '.pricing-card',
         '.guarantee-item',
