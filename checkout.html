@@ -173,11 +173,6 @@
       letter-spacing: -0.02em; line-height: 1.15; color: var(--ink);
       margin-bottom: 0.5rem;
     }
-    .oh-sub {
-      font-size: clamp(0.9rem, 1.6vw, 1rem); line-height: 1.6;
-      color: var(--gray); margin: 0 auto 1rem;
-    }
-    .oh-sub strong { color: var(--ink); font-weight: 600; }
 
     /* CHECKOUT GRID */
     #checkout {
@@ -453,25 +448,6 @@
     .ledger-row.final .ledger-name { font-weight: 700; color: var(--ink); font-size: 0.9rem; }
     .ledger-row.final .ledger-val { font-size: 1.2rem; font-weight: 700; color: var(--accent); }
 
-    .sc-next { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--hair); }
-    .sc-next-t {
-      font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint);
-      margin-bottom: 0.7rem;
-    }
-    .sc-next-step {
-      display: flex; gap: 0.6rem; align-items: flex-start;
-      padding: 0.45rem 0; font-size: 0.78rem; line-height: 1.5; color: var(--gray);
-    }
-    .sc-next-step .n {
-      flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
-      background: var(--accent-soft); color: var(--accent);
-      font-family: var(--mono); font-size: 0.6rem; font-weight: 700;
-      display: inline-flex; align-items: center; justify-content: center;
-      margin-top: 0.1rem;
-    }
-    .sc-next-step strong { color: var(--ink); font-weight: 600; }
-
     /* MOBILE STICKY TOTAL BAR */
     .mobile-total-bar {
       display: none; position: sticky; bottom: 0;
@@ -621,7 +597,6 @@
             <span class="step"><span class="dot">2</span> Confirmation</span>
           </div>
           <h1 class="oh-h1" id="oh-h1">Secure your Legacy Wealth Plan</h1>
-          <p class="oh-sub">One payment of <strong>$1,776</strong>. Built on your real numbers. Yours to keep forever &mdash; instant confirmation email the moment you pay.</p>
         </div>
       </div>
     </section>
@@ -805,12 +780,6 @@
                 </div>
                 <p style="margin:0.5rem 0 0; font-size:0.78rem; line-height:1.5; color:var(--faint);">Prefer to split it? Choose <strong style="color:var(--ink);">Splitit</strong> at checkout for up to 12 monthly payments at 0% interest &mdash; about $148/mo.</p>
 
-                <div class="sc-next">
-                  <div class="sc-next-t">What happens after you pay</div>
-                  <div class="sc-next-step"><span class="n">1</span><span><strong>Instant confirmation email</strong> lands in your inbox.</span></div>
-                  <div class="sc-next-step"><span class="n">2</span><span>You get a <strong>detailed questionnaire</strong> &mdash; income, state, debt, accounts, goals, and more.</span></div>
-                </div>
-
                 <div class="sc-proof" aria-labelledby="pl-h">
                   <p class="pl-intro" id="pl-h">
                     We've built <strong>hundreds of these plans</strong> for W-2 earners, business owners, and two-income families. The value a typical plan finds in year one:
@@ -829,11 +798,6 @@
                       <div class="pl-q-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                       <blockquote class="pl-q-text">"Walked into my CPA with the exact questions already written. First time I felt like we were planning, not just filing."</blockquote>
                       <figcaption class="pl-q-who"><strong>Sarah K.</strong>Business owner &middot; Denver, CO</figcaption>
-                    </figure>
-                    <figure class="pl-q">
-                      <div class="pl-q-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                      <blockquote class="pl-q-text">"Not a generic PDF. It had my income, my state, my debt &mdash; and told me what to do first."</blockquote>
-                      <figcaption class="pl-q-who"><strong>Jennifer &amp; Tom M.</strong>Dual-income household &middot; Orlando, FL</figcaption>
                     </figure>
                   </div>
                 </div>
